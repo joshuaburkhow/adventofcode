@@ -1,0 +1,955 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AlteryxDocument yxmdVer="2022.3">
+  <Nodes>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Transpose.Transpose">
+        <Position x="863" y="84" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ErrorWarn>Warn</ErrorWarn>
+          <KeyFields>
+            <Field field="Stack" />
+          </KeyFields>
+          <DataFields>
+            <Field field="Stack" selected="False" />
+            <Field field="1" selected="True" />
+            <Field field="2" selected="True" />
+            <Field field="3" selected="True" />
+            <Field field="4" selected="True" />
+            <Field field="5" selected="True" />
+            <Field field="6" selected="True" />
+            <Field field="7" selected="True" />
+            <Field field="8" selected="True" />
+            <Field field="9" selected="True" />
+            <Field field="*Unknown" selected="True" />
+          </DataFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Stack" source="TextInput:" type="Byte" />
+            <Field name="Name" size="1" source="Transpose:" type="String" />
+            <Field description="TextToColumns: Parsed from Field_1" name="Value" size="254" source="TextToColumns: Parsed from Field_1" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTranspose" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="1074" y="85" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="1033">
+            <Field field="Column" order="Descending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Column - Descending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Stack" source="TextInput:" type="Byte" />
+            <Field name="Column" source="Transpose:" type="Int16" />
+            <Field description="TextToColumns: Parsed from Field_1" name="Value" size="254" source="TextToColumns: Parsed from Field_1" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1201" y="85" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>!IsEmpty([Value]) &amp;&amp; !IsNull([Value])</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>!IsEmpty([Value]) &amp;&amp; !IsNull([Value])</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Stack" source="TextInput:" type="Byte" />
+            <Field name="Column" source="Transpose:" type="Int16" />
+            <Field description="TextToColumns: Parsed from Field_1" name="Value" size="254" source="TextToColumns: Parsed from Field_1" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Stack" source="TextInput:" type="Byte" />
+            <Field name="Column" source="Transpose:" type="Int16" />
+            <Field description="TextToColumns: Parsed from Field_1" name="Value" size="254" source="TextToColumns: Parsed from Field_1" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="948" y="85" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Name" selected="True" rename="Column" type="Int16" size="2" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Stack" source="TextInput:" type="Byte" />
+            <Field name="Column" source="Transpose:" type="Int16" />
+            <Field description="TextToColumns: Parsed from Field_1" name="Value" size="254" source="TextToColumns: Parsed from Field_1" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="48">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="1327" y="85" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="1033">
+            <Field field="Column" order="Ascending" />
+            <Field field="Stack" order="Descending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Column - Ascending
+Stack - Descending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Stack" source="TextInput:" type="Byte" />
+            <Field name="Column" source="Transpose:" type="Int16" />
+            <Field description="TextToColumns: Parsed from Field_1" name="Value" size="254" source="TextToColumns: Parsed from Field_1" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="53">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+        <Position x="2590" y="67" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupFields>
+            <Field field="Stack" />
+          </GroupFields>
+          <HeaderField field="Column" />
+          <DataField field="Value" />
+          <Methods>
+            <Method method="Concat" />
+            <Separator>,</Separator>
+            <FieldSize value="2048" />
+          </Methods>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Stack" source="CrossTab:Group:Concat:" type="Int32" />
+            <Field name="1" size="2048" source="CrossTab:Header:Column:1:Concat:" type="V_String" />
+            <Field name="2" size="2048" source="CrossTab:Header:Column:2:Concat:" type="V_String" />
+            <Field name="3" size="2048" source="CrossTab:Header:Column:3:Concat:" type="V_String" />
+            <Field name="4" size="2048" source="CrossTab:Header:Column:4:Concat:" type="V_String" />
+            <Field name="5" size="2048" source="CrossTab:Header:Column:5:Concat:" type="V_String" />
+            <Field name="6" size="2048" source="CrossTab:Header:Column:6:Concat:" type="V_String" />
+            <Field name="7" size="2048" source="CrossTab:Header:Column:7:Concat:" type="V_String" />
+            <Field name="8" size="2048" source="CrossTab:Header:Column:8:Concat:" type="V_String" />
+            <Field name="9" size="2048" source="CrossTab:Header:Column:9:Concat:" type="V_String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Stack" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+    </Node>
+    <Node ToolID="54">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="2715" y="65" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="1033">
+            <Field field="Stack" order="Descending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Stack - Descending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Stack" source="CrossTab:Group:Concat:" type="Int32" />
+            <Field name="1" size="2048" source="CrossTab:Header:Column:1:Concat:" type="V_String" />
+            <Field name="2" size="2048" source="CrossTab:Header:Column:2:Concat:" type="V_String" />
+            <Field name="3" size="2048" source="CrossTab:Header:Column:3:Concat:" type="V_String" />
+            <Field name="4" size="2048" source="CrossTab:Header:Column:4:Concat:" type="V_String" />
+            <Field name="5" size="2048" source="CrossTab:Header:Column:5:Concat:" type="V_String" />
+            <Field name="6" size="2048" source="CrossTab:Header:Column:6:Concat:" type="V_String" />
+            <Field name="7" size="2048" source="CrossTab:Header:Column:7:Concat:" type="V_String" />
+            <Field name="8" size="2048" source="CrossTab:Header:Column:8:Concat:" type="V_String" />
+            <Field name="9" size="2048" source="CrossTab:Header:Column:9:Concat:" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="72">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1580" y="85" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Column" />
+            <Field field="Tile_SequenceNum" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="From" />
+            <Field field="Qty" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_Tile_Num" selected="False" input="Left_" />
+                <SelectField field="Left_Tile_SequenceNum" selected="True" rename="RowID" input="Left_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Stack" source="TextInput:" type="Byte" />
+            <Field name="Column" source="Transpose:" type="Int16" />
+            <Field description="TextToColumns: Parsed from Field_1" name="Value" size="254" source="TextToColumns: Parsed from Field_1" type="V_String" />
+            <Field name="Tile_Num" type="Int16" />
+            <Field name="Tile_SequenceNum" type="Int32" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Column" />
+            <Field field="Tile_SequenceNum" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Stack" source="TextInput:" type="Byte" />
+            <Field name="Column" source="Transpose:" type="Int16" />
+            <Field description="TextToColumns: Parsed from Field_1" name="Value" size="254" source="TextToColumns: Parsed from Field_1" type="V_String" />
+            <Field name="RowID" type="Int32" />
+            <Field name="OpsSort" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="TextToColumns: Parsed from Field_1" name="Qty" source="TextToColumns: Parsed from Field_1" type="Byte" />
+            <Field description="TextToColumns: Parsed from Field_1" name="From" source="TextToColumns: Parsed from Field_1" type="Byte" />
+            <Field description="TextToColumns: Parsed from Field_1" name="To" source="TextToColumns: Parsed from Field_1" type="Byte" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Column" order="" />
+            <Field field="RowID" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="OpsSort" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="TextToColumns: Parsed from Field_1" name="Qty" source="TextToColumns: Parsed from Field_1" type="Byte" />
+            <Field description="TextToColumns: Parsed from Field_1" name="From" source="TextToColumns: Parsed from Field_1" type="Byte" />
+            <Field description="TextToColumns: Parsed from Field_1" name="To" source="TextToColumns: Parsed from Field_1" type="Byte" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="From" />
+            <Field field="Qty" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="73">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1760" y="115" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[To]" field="Column" size="2" type="Int16" />
+            <FormulaField expression="10" field="Stack" size="1" type="Byte" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Column = [To]
+Stack = 10
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Stack" source="Formula: 10" type="Byte" />
+            <Field name="Column" source="Formula: [To]" type="Int16" />
+            <Field description="TextToColumns: Parsed from Field_1" name="Value" size="254" source="TextToColumns: Parsed from Field_1" type="V_String" />
+            <Field name="RowID" type="Int32" />
+            <Field name="OpsSort" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="TextToColumns: Parsed from Field_1" name="Qty" source="TextToColumns: Parsed from Field_1" type="Byte" />
+            <Field description="TextToColumns: Parsed from Field_1" name="From" source="TextToColumns: Parsed from Field_1" type="Byte" />
+            <Field description="TextToColumns: Parsed from Field_1" name="To" source="TextToColumns: Parsed from Field_1" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="74">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1923" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Stack" selected="True" />
+            <SelectField field="Column" selected="True" />
+            <SelectField field="Value" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Stack" source="Formula: 10" type="Byte" />
+            <Field name="Column" source="Formula: [To]" type="Int16" />
+            <Field description="TextToColumns: Parsed from Field_1" name="Value" size="254" source="TextToColumns: Parsed from Field_1" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="75">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="2041" y="73" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Stack" source="(Multiple Sources)" type="Byte" />
+            <Field name="Column" source="(Multiple Sources)" type="Int16" />
+            <Field description="TextToColumns: Parsed from Field_1" name="Value" size="254" source="TextToColumns: Parsed from Field_1" type="V_String" />
+            <Field name="Tile_Num" type="Int16" />
+            <Field name="Tile_SequenceNum" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="76">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Tile.Tile">
+        <Position x="2267" y="69" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Method>EqualRecords</Method>
+          <EqualRecords>
+            <NumTiles value="9" />
+            <EqualRecordsGroupField>Column</EqualRecordsGroupField>
+            <SortLocale>1033</SortLocale>
+          </EqualRecords>
+          <GroupFields orderChanged="False">
+            <Field name="Column" />
+          </GroupFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Stack" source="(Multiple Sources)" type="Byte" />
+            <Field name="Column" source="(Multiple Sources)" type="Int16" />
+            <Field description="TextToColumns: Parsed from Field_1" name="Value" size="254" source="TextToColumns: Parsed from Field_1" type="V_String" />
+            <Field name="Tile_Num" type="Int16" />
+            <Field name="Tile_SequenceNum" type="Int32" />
+            <Field name="Tile_Num2" type="Int16" />
+            <Field name="Tile_SequenceNum2" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTile" />
+    </Node>
+    <Node ToolID="77">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="2157" y="72" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="1033">
+            <Field field="Column" order="Ascending" />
+            <Field field="Stack" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Column - Ascending
+Stack - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Stack" source="(Multiple Sources)" type="Byte" />
+            <Field name="Column" source="(Multiple Sources)" type="Int16" />
+            <Field description="TextToColumns: Parsed from Field_1" name="Value" size="254" source="TextToColumns: Parsed from Field_1" type="V_String" />
+            <Field name="Tile_Num" type="Int16" />
+            <Field name="Tile_SequenceNum" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="78">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2375" y="65" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Stack" selected="False" />
+            <SelectField field="Tile_Num" selected="False" />
+            <SelectField field="Tile_SequenceNum" selected="False" rename="Stack" />
+            <SelectField field="Tile_Num2" selected="False" />
+            <SelectField field="Tile_SequenceNum2" selected="True" rename="Stack" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Column" source="(Multiple Sources)" type="Int16" />
+            <Field description="TextToColumns: Parsed from Field_1" name="Value" size="254" source="TextToColumns: Parsed from Field_1" type="V_String" />
+            <Field name="Stack" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="82">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="2463" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="1033">
+            <Field field="Column" order="Ascending" />
+            <Field field="Stack" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Column - Ascending
+Stack - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Column" source="(Multiple Sources)" type="Int16" />
+            <Field description="TextToColumns: Parsed from Field_1" name="Value" size="254" source="TextToColumns: Parsed from Field_1" type="V_String" />
+            <Field name="Stack" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="94">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Tile.Tile">
+        <Position x="1415" y="83" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Method>EqualRecords</Method>
+          <EqualRecords>
+            <NumTiles value="9" />
+            <EqualRecordsGroupField>Column</EqualRecordsGroupField>
+            <SortLocale>1033</SortLocale>
+          </EqualRecords>
+          <GroupFields orderChanged="False">
+            <Field name="Column" />
+          </GroupFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Stack" source="TextInput:" type="Byte" />
+            <Field name="Column" source="Transpose:" type="Int16" />
+            <Field description="TextToColumns: Parsed from Field_1" name="Value" size="254" source="TextToColumns: Parsed from Field_1" type="V_String" />
+            <Field name="Tile_Num" type="Int16" />
+            <Field name="Tile_SequenceNum" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTile" />
+    </Node>
+    <Node ToolID="95">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="96">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="2870" y="27" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Output36</Name>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="97">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="1181" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="False" />
+          <ShowFieldMap value="True" />
+          <Optional value="False" />
+          <Abbrev />
+          <Name>Input80</Name>
+          <TextInput>
+            <Configuration>
+              <Data>
+                <r>
+                  <c>1</c>
+                  <c>3</c>
+                  <c>8</c>
+                  <c>9</c>
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>2</c>
+                  <c>8</c>
+                  <c>9</c>
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>1</c>
+                  <c>8</c>
+                  <c>9</c>
+                </r>
+              </Data>
+              <NumRows value="3" />
+              <Fields>
+                <Field name="OpsSort" />
+                <Field name="Qty" />
+                <Field name="From" />
+                <Field name="To" />
+              </Fields>
+            </Configuration>
+          </TextInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="OpsSort" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="TextToColumns: Parsed from Field_1" name="Qty" source="TextToColumns: Parsed from Field_1" type="Byte" />
+            <Field description="TextToColumns: Parsed from Field_1" name="From" source="TextToColumns: Parsed from Field_1" type="Byte" />
+            <Field description="TextToColumns: Parsed from Field_1" name="To" source="TextToColumns: Parsed from Field_1" type="Byte" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="OpsSort" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="98">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="695" y="85" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="False" />
+          <ShowFieldMap value="True" />
+          <Optional value="False" />
+          <Abbrev />
+          <Name>Input93</Name>
+          <TextInput>
+            <Configuration>
+              <Data>
+                <r>
+                  <c>8</c>
+                  <c>[T]</c>
+                  <c />
+                  <c>[D]</c>
+                  <c />
+                  <c />
+                  <c>[L]</c>
+                  <c />
+                  <c />
+                  <c />
+                </r>
+                <r>
+                  <c>7</c>
+                  <c>[R]</c>
+                  <c />
+                  <c>[S]</c>
+                  <c>[G]</c>
+                  <c />
+                  <c>[P]</c>
+                  <c />
+                  <c />
+                  <c>[H]</c>
+                </r>
+                <r>
+                  <c>6</c>
+                  <c>[G]</c>
+                  <c />
+                  <c>[H]</c>
+                  <c>[W]</c>
+                  <c />
+                  <c>[R]</c>
+                  <c>[L]</c>
+                  <c />
+                  <c>[P]</c>
+                </r>
+                <r>
+                  <c>5</c>
+                  <c>[W]</c>
+                  <c />
+                  <c>[G]</c>
+                  <c>[F]</c>
+                  <c>[H]</c>
+                  <c>[S]</c>
+                  <c>[M]</c>
+                  <c />
+                  <c>[L]</c>
+                </r>
+                <r>
+                  <c>4</c>
+                  <c>[Q]</c>
+                  <c />
+                  <c>[V]</c>
+                  <c>[B]</c>
+                  <c>[J]</c>
+                  <c>[H]</c>
+                  <c>[N]</c>
+                  <c>[R]</c>
+                  <c>[N]</c>
+                </r>
+                <r>
+                  <c>3</c>
+                  <c>[M]</c>
+                  <c>[R]</c>
+                  <c>[R]</c>
+                  <c>[P]</c>
+                  <c>[M]</c>
+                  <c>[T]</c>
+                  <c>[H]</c>
+                  <c>[Q]</c>
+                  <c>[C]</c>
+                </r>
+                <r>
+                  <c>2</c>
+                  <c>[F]</c>
+                  <c>[F]</c>
+                  <c>[Z]</c>
+                  <c>[H]</c>
+                  <c>[S]</c>
+                  <c>[Z]</c>
+                  <c>[T]</c>
+                  <c>[D]</c>
+                  <c>[S]</c>
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>[P]</c>
+                  <c>[H]</c>
+                  <c>[P]</c>
+                  <c>[Q]</c>
+                  <c>[P]</c>
+                  <c>[M]</c>
+                  <c>[P]</c>
+                  <c>[F]</c>
+                  <c>[D]</c>
+                </r>
+              </Data>
+              <NumRows value="8" />
+              <Fields>
+                <Field name="Stack" />
+                <Field name="1" />
+                <Field name="2" />
+                <Field name="3" />
+                <Field name="4" />
+                <Field name="5" />
+                <Field name="6" />
+                <Field name="7" />
+                <Field name="8" />
+                <Field name="9" />
+              </Fields>
+            </Configuration>
+          </TextInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field description="TextToColumns: Parsed from Field_1" name="1" size="254" source="TextToColumns: Parsed from Field_1" type="V_String" />
+            <Field description="TextToColumns: Parsed from Field_1" name="2" size="254" source="TextToColumns: Parsed from Field_1" type="V_String" />
+            <Field description="TextToColumns: Parsed from Field_1" name="3" size="254" source="TextToColumns: Parsed from Field_1" type="V_String" />
+            <Field description="TextToColumns: Parsed from Field_1" name="4" size="254" source="TextToColumns: Parsed from Field_1" type="V_String" />
+            <Field description="TextToColumns: Parsed from Field_1" name="5" size="254" source="TextToColumns: Parsed from Field_1" type="V_String" />
+            <Field description="TextToColumns: Parsed from Field_1" name="6" size="254" source="TextToColumns: Parsed from Field_1" type="V_String" />
+            <Field description="TextToColumns: Parsed from Field_1" name="7" size="254" source="TextToColumns: Parsed from Field_1" type="V_String" />
+            <Field description="TextToColumns: Parsed from Field_1" name="8" size="254" source="TextToColumns: Parsed from Field_1" type="V_String" />
+            <Field description="TextToColumns: Parsed from Field_1" name="9" size="254" source="TextToColumns: Parsed from Field_1" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="True" />
+      <Destination ToolID="48" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="48" Connection="Output" />
+      <Destination ToolID="94" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="53" Connection="Output" />
+      <Destination ToolID="54" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="72" Connection="Join" />
+      <Destination ToolID="73" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="72" Connection="Left" />
+      <Destination ToolID="75" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="74" Connection="Output" />
+      <Destination ToolID="75" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="73" Connection="Output" />
+      <Destination ToolID="74" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="75" Connection="Output" />
+      <Destination ToolID="77" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="76" Connection="Output" />
+      <Destination ToolID="78" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="77" Connection="Output" />
+      <Destination ToolID="76" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="78" Connection="Output" />
+      <Destination ToolID="82" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="82" Connection="Output" />
+      <Destination ToolID="53" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="94" Connection="Output" />
+      <Destination ToolID="72" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="97" Connection="Output" />
+      <Destination ToolID="72" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="54" Connection="Output" />
+      <Destination ToolID="96" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="98" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="0" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name />
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="00000000-0000-0000-0000-000000000000" />
+      <Telemetry>
+        <PreviousWorkflowId value="" />
+        <OriginWorkflowId value="00000000-0000-0000-0000-000000000000" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+    <RuntimeProperties>
+      <Actions />
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (95)</Name>
+          <ToolId value="95" />
+          <Questions>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description />
+              <Name>Macro Output (96)</Name>
+              <ToolId value="96" />
+            </Question>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (97)</Name>
+              <ToolId value="97" />
+            </Question>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (98)</Name>
+              <ToolId value="98" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools />
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>

@@ -1,0 +1,526 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.3">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="90" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="True" />
+          <Name>Input2</Name>
+          <Abbrev />
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <FileInput>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">Day9part2.yxdb</File>
+              <FormatSpecificOptions />
+            </Configuration>
+          </FileInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Day9part2.yxdb</DefaultAnnotationText>
+          <Left value="True" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="HeadX" source="Formula: 0" type="Int16" />
+            <Field name="HeadY" source="Formula: 0" type="Int16" />
+            <Field name="1X" source="Formula: 0" type="Int16" />
+            <Field name="1Y" source="Formula: 0" type="Int16" />
+            <Field name="2X" source="Formula: 0" type="Int16" />
+            <Field name="2Y" source="Formula: 0" type="Int16" />
+            <Field name="3X" source="Formula: 0" type="Int16" />
+            <Field name="3Y" source="Formula: 0" type="Int16" />
+            <Field name="4X" source="Formula: 0" type="Int16" />
+            <Field name="4Y" source="Formula: 0" type="Int16" />
+            <Field name="5X" source="Formula: 0" type="Int16" />
+            <Field name="5Y" source="Formula: 0" type="Int16" />
+            <Field name="6X" source="Formula: 0" type="Int16" />
+            <Field name="6Y" source="Formula: 0" type="Int16" />
+            <Field name="7X" source="Formula: 0" type="Int16" />
+            <Field name="7Y" source="Formula: 0" type="Int16" />
+            <Field name="8X" source="Formula: 0" type="Int16" />
+            <Field name="8Y" source="Formula: 0" type="Int16" />
+            <Field name="9X" source="Formula: 0" type="Int16" />
+            <Field name="9Y" source="Formula: 0" type="Int16" />
+            <Field name="Concat_Direction" size="1073741823" source="Summarize: Concat - Direction" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="90" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="Left([Concat_Direction],1)" field="CurrentDir" size="1073741823" type="V_WString" />
+            <FormulaField expression="Substring([Concat_Direction],1)" field="Concat_Direction" size="1073741823" type="V_WString" />
+            <FormulaField expression="If [CurrentDir]=&quot;R&quot; and [1X]&lt;[HeadX] then 1&#xA;elseif [CurrentDir]=&quot;L&quot; and [1X]&gt;[HeadX] then 2&#xA;elseif [CurrentDir]=&quot;U&quot; and [1Y]&lt;[HeadY] then 3&#xA;elseif [CurrentDir]=&quot;D&quot; and [1Y]&gt;[HeadY] then 4 else 5 endif" field="1Check" size="4" type="Int32" />
+            <FormulaField expression="If [1Check] = 1 then [1X]+1&#xA;elseif [1Check] = 2 then [1X]-1&#xA;elseif [1Check] = 3 then [HeadX]&#xA;elseif [1Check] = 4 then [HeadX] else [1X] endif" field="1X" size="2" type="Int16" />
+            <FormulaField expression="If [1Check] = 1 then [HeadY]&#xA;elseif [1Check]= 2 then &#xA;[HeadY]&#xA;elseif [1Check] = 3  then [1Y]+1&#xA;elseif [1Check] = 4 then [1Y]-1 else [1Y] endif" field="1Y" size="2" type="Int16" />
+            <FormulaField expression="[HeadX]+&#xA;switch([CurrentDir],0,&quot;R&quot;,1,&quot;L&quot;,-1)" field="HeadX" size="2" type="Int16" />
+            <FormulaField expression="[HeadY]+&#xA;switch([CurrentDir],0,&quot;U&quot;,1,&quot;D&quot;,-1)" field="HeadY" size="2" type="Int16" />
+            <FormulaField expression="If Max(ABS([1X]-[2X]),ABS([1Y]-[2Y]))&lt;=1 then 0&#xA;elseif [1X]=[2X] AND [1Y]=[2Y]+2 then 1&#xA;elseif [1Y]&gt;=[2Y]+1 AND [1X]&gt;=[2X]+1 then 2&#xA;elseif [1Y]=[2Y] and [1X]=[2X]+2 then 3&#xA;elseif [1Y]&lt;=[2Y]-1 and [1X]&gt;=[2X]+1 then 4&#xA;elseif [1X]=[2X]  and [1Y]=[2Y]-2 then 5&#xA;elseif [1Y]&lt;=[2Y]-1 and [1X] &lt;= [2X] -1 then 6&#xA;elseif [1Y]=[2Y] and [1X]=[2X]-2 then 7&#xA;elseif [1Y]&gt;=[2Y]+1 and [1X]&lt;=[2X]-1 then 8 &#xA;else 9 endif" field="2Check" size="4" type="Int32" />
+            <FormulaField expression="switch([2Check],[2X],&#xA;2,[2X]+1,&#xA;3,[2X]+1,&#xA;4,[2X]+1,&#xA;6,[2X]-1,&#xA;7,[2X]-1,&#xA;8,[2X]-1)" field="2X" size="2" type="Int16" />
+            <FormulaField expression="switch([2Check],[2Y],&#xA;1,[2Y]+1,&#xA;2,[2Y]+1,&#xA;4,[2Y]-1,&#xA;5,[2Y]-1,&#xA;6,[2y]-1,&#xA;8,[2Y]+1)" field="2Y" size="2" type="Int16" />
+            <FormulaField expression="If Max(ABS([2X]-[3X]),ABS([2Y]-[3Y]))&lt;=1 then 0&#xA;elseif [2X]=[3X] AND [2Y]=[3Y]+2 then 1&#xA;elseif [2Y]&gt;=[3Y]+1 AND [2X]&gt;=[3X]+1 then 2&#xA;elseif [2Y]=[3Y] and [2X]=[3X]+2 then 3&#xA;elseif [2Y]&lt;=[3Y]-1 and [2X]&gt;=[3X]+1 then 4&#xA;elseif [2X]=[3X]  and [2Y]=[3Y]-2 then 5&#xA;elseif [2Y]&lt;=[3Y]-1 and [2X] &lt;= [3X] -1 then 6&#xA;elseif [2Y]=[3Y] and [2X]=[3X]-2 then 7&#xA;elseif [2Y]&gt;=[3Y]+1 and [2X]&lt;=[3X]-1 then 8&#xA;else 9 endif&#xA;" field="3Check" size="4" type="Int32" />
+            <FormulaField expression="switch([3Check],[3X],&#xA;2,[3X]+1,&#xA;3,[3X]+1,&#xA;4,[3X]+1,&#xA;6,[3X]-1,&#xA;7,[3X]-1,&#xA;8,[3X]-1)&#xA;" field="3X" size="2" type="Int16" />
+            <FormulaField expression="switch([3Check],[3Y],&#xA;1,[3Y]+1,&#xA;2,[3Y]+1,&#xA;4,[3Y]-1,&#xA;5,[3Y]-1,&#xA;6,[3Y]-1,&#xA;8,[3Y]+1)&#xA;" field="3Y" size="2" type="Int16" />
+            <FormulaField expression="If Max(ABS([3X]-[4X]),ABS([3Y]-[4Y]))&lt;=1 then 0&#xA;elseif [3X]=[4X] AND [3Y]=[4Y]+2 then 1&#xA;elseif [3Y]&gt;=[4Y]+1 AND [3X]&gt;=[4X]+1 then 2&#xA;elseif [3Y]=[4Y] and [3X]=[4X]+2 then 3&#xA;elseif [3Y]&lt;=[4Y]-1 and [3X]&gt;=[4X]+1 then 4&#xA;elseif [3X]=[4X]  and [3Y]=[4Y]-2 then 5&#xA;elseif [3Y]&lt;=[4Y]-1 and [3X] &lt;= [4X] -1 then 6&#xA;elseif [3Y]=[4Y] and [3X]=[4X]-2 then 7&#xA;elseif [3Y]&gt;=[4Y]+1 and [3X]&lt;=[4X]-1 then 8&#xA;else 9 endif&#xA;" field="4Check" size="4" type="Int32" />
+            <FormulaField expression="switch([4Check],[4X],&#xA;2,[4X]+1,&#xA;3,[4X]+1,&#xA;4,[4X]+1,&#xA;6,[4X]-1,&#xA;7,[4X]-1,&#xA;8,[4X]-1)&#xA;" field="4X" size="2" type="Int16" />
+            <FormulaField expression="switch([4Check],[4Y],&#xA;1,[4Y]+1,&#xA;2,[4Y]+1,&#xA;4,[4Y]-1,&#xA;5,[4Y]-1,&#xA;6,[4Y]-1,&#xA;8,[4Y]+1)&#xA;" field="4Y" size="2" type="Int16" />
+            <FormulaField expression="If Max(ABS([4X]-[5X]),ABS([4Y]-[5Y]))&lt;=1 then 0&#xA;elseif [4X]=[5X] AND [4Y]=[5Y]+2 then 1&#xA;elseif [4Y]&gt;=[5Y]+1 AND [4X]&gt;=[5X]+1 then 2&#xA;elseif [4Y]=[5Y] and [4X]=[5X]+2 then 3&#xA;elseif [4Y]&lt;=[5Y]-1 and [4X]&gt;=[5X]+1 then 4&#xA;elseif [4X]=[5X]  and [4Y]=[5Y]-2 then 5&#xA;elseif [4Y]&lt;=[5Y]-1 and [4X] &lt;= [5X] -1 then 6&#xA;elseif [4Y]=[5Y] and [4X]=[5X]-2 then 7&#xA;elseif [4Y]&gt;=[5Y]+1 and [4X]&lt;=[5X]-1 then 8&#xA;else 9 endif&#xA;" field="5Check" size="2" type="Int16" />
+            <FormulaField expression="switch([5Check],[5X],&#xA;2,[5X]+1,&#xA;3,[5X]+1,&#xA;4,[5X]+1,&#xA;6,[5X]-1,&#xA;7,[5X]-1,&#xA;8,[5X]-1)&#xA;" field="5X" size="2" type="Int16" />
+            <FormulaField expression="switch([5Check],[5Y],&#xA;1,[5Y]+1,&#xA;2,[5Y]+1,&#xA;4,[5Y]-1,&#xA;5,[5Y]-1,&#xA;6,[5Y]-1,&#xA;8,[5Y]+1)&#xA;" field="5Y" size="2" type="Int16" />
+            <FormulaField expression="If Max(ABS([5X]-[6X]),ABS([5Y]-[6Y]))&lt;=1 then 0&#xA;elseif [5X]=[6X] AND [5Y]=[6Y]+2 then 1&#xA;elseif [5Y]&gt;=[6Y]+1 AND [5X]&gt;=[6X]+1 then 2&#xA;elseif [5Y]=[6Y] and [5X]=[6X]+2 then 3&#xA;elseif [5Y]&lt;=[6Y]-1 and [5X]&gt;=[6X]+1 then 4&#xA;elseif [5X]=[6X]  and [5Y]=[6Y]-2 then 5&#xA;elseif [5Y]&lt;=[6Y]-1 and [5X] &lt;= [6X] -1 then 6&#xA;elseif [5Y]=[6Y] and [5X]=[6X]-2 then 7&#xA;elseif [5Y]&gt;=[6Y]+1 and [5X]&lt;=[6X]-1 then 8&#xA;else 9 endif&#xA;" field="6Check" size="4" type="Int32" />
+            <FormulaField expression="switch([6Check],[6X],&#xA;2,[6X]+1,&#xA;3,[6X]+1,&#xA;4,[6X]+1,&#xA;6,[6X]-1,&#xA;7,[6X]-1,&#xA;8,[6X]-1)&#xA;" field="6X" size="2" type="Int16" />
+            <FormulaField expression="switch([6Check],[6Y],&#xA;1,[6Y]+1,&#xA;2,[6Y]+1,&#xA;4,[6Y]-1,&#xA;5,[6Y]-1,&#xA;6,[6Y]-1,&#xA;8,[6Y]+1)&#xA;" field="6Y" size="2" type="Int16" />
+            <FormulaField expression="If Max(ABS([6X]-[7X]),ABS([6Y]-[7Y]))&lt;=1 then 0&#xA;elseif [6X]=[7X] AND [6Y]=[7Y]+2 then 1&#xA;elseif [6Y]&gt;=[7Y]+1 AND [6X]&gt;=[7X]+1 then 2&#xA;elseif [6Y]=[7Y] and [6X]=[7X]+2 then 3&#xA;elseif [6Y]&lt;=[7Y]-1 and [6X]&gt;=[7X]+1 then 4&#xA;elseif [6X]=[7X]  and [6Y]=[7Y]-2 then 5&#xA;elseif [6Y]&lt;=[7Y]-1 and [6X] &lt;= [7X] -1 then 6&#xA;elseif [6Y]=[7Y] and [6X]=[7X]-2 then 7&#xA;elseif [6Y]&gt;=[7Y]+1 and [6X]&lt;=[7X]-1 then 8&#xA;else 9 endif&#xA;" field="7Check" size="4" type="Int32" />
+            <FormulaField expression="switch([7Check],[7X],&#xA;2,[7X]+1,&#xA;3,[7X]+1,&#xA;4,[7X]+1,&#xA;6,[7X]-1,&#xA;7,[7X]-1,&#xA;8,[7X]-1)&#xA;" field="7X" size="2" type="Int16" />
+            <FormulaField expression="switch([7Check],[7Y],&#xA;1,[7Y]+1,&#xA;2,[7Y]+1,&#xA;4,[7Y]-1,&#xA;5,[7Y]-1,&#xA;6,[7Y]-1,&#xA;8,[7Y]+1)&#xA;" field="7Y" size="2" type="Int16" />
+            <FormulaField expression="If Max(ABS([7X]-[8X]),ABS([7Y]-[8Y]))&lt;=1 then 0&#xA;elseif [7X]=[8X] AND [7Y]=[8Y]+2 then 1&#xA;elseif [7Y]&gt;=[8Y]+1 AND [7X]&gt;=[8X]+1 then 2&#xA;elseif [7Y]=[8Y] and [7X]=[8X]+2 then 3&#xA;elseif [7Y]&lt;=[8Y]-1 and [7X]&gt;=[8X]+1 then 4&#xA;elseif [7X]=[8X]  and [7Y]=[8Y]-2 then 5&#xA;elseif [7Y]&lt;=[8Y]-1 and [7X] &lt;= [8X] -1 then 6&#xA;elseif [7Y]=[8Y] and [7X]=[8X]-2 then 7&#xA;elseif [7Y]&gt;=[8Y]+1 and [7X]&lt;=[8X]-1 then 8&#xA;else 9 endif&#xA;" field="8Check" size="2" type="Int16" />
+            <FormulaField expression="switch([8Check],[8X],&#xA;2,[8X]+1,&#xA;3,[8X]+1,&#xA;4,[8X]+1,&#xA;6,[8X]-1,&#xA;7,[8X]-1,&#xA;8,[8X]-1)&#xA;" field="8X" size="2" type="Int16" />
+            <FormulaField expression="switch([8Check],[8Y],&#xA;1,[8Y]+1,&#xA;2,[8Y]+1,&#xA;4,[8Y]-1,&#xA;5,[8Y]-1,&#xA;6,[8Y]-1,&#xA;8,[8Y]+1)&#xA;" field="8Y" size="2" type="Int16" />
+            <FormulaField expression="If Max(ABS([8X]-[9X]),ABS([8Y]-[9Y]))&lt;=1 then 0&#xA;elseif [8X]=[9X] AND [8Y]=[9Y]+2 then 1&#xA;elseif [8Y]&gt;=[9Y]+1 AND [8X]&gt;=[9X]+1 then 2&#xA;elseif [8Y]=[9Y] and [8X]=[9X]+2 then 3&#xA;elseif [8Y]&lt;=[9Y]-1 and [8X]&gt;=[9X]+1 then 4&#xA;elseif [8X]=[9X]  and [8Y]=[9Y]-2 then 5&#xA;elseif [8Y]&lt;=[9Y]-1 and [8X] &lt;= [9X] -1 then 6&#xA;elseif [8Y]=[9Y] and [8X]=[9X]-2 then 7&#xA;elseif [8Y]&gt;=[9Y]+1 and [8X]&lt;=[9X]-1 then 8&#xA;else 9 endif&#xA;" field="9Check" size="2" type="Int16" />
+            <FormulaField expression="switch([9Check],[9X],&#xA;2,[9X]+1,&#xA;3,[9X]+1,&#xA;4,[9X]+1,&#xA;6,[9X]-1,&#xA;7,[9X]-1,&#xA;8,[9X]-1)&#xA;" field="9X" size="2" type="Int16" />
+            <FormulaField expression="switch([9Check],[9Y],&#xA;1,[9Y]+1,&#xA;2,[9Y]+1,&#xA;4,[9Y]-1,&#xA;5,[9Y]-1,&#xA;6,[9Y]-1,&#xA;8,[9Y]+1)&#xA;" field="9Y" size="2" type="Int16" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>CurrentDir = Left([Concat_Direction],1)
+Concat_Direction = Substring([Concat_Dir...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="HeadX" source="Formula: [HeadX]+&#xA;switch([CurrentDir],0,&quot;R&quot;,1,&quot;L&quot;,-1)" type="Int16" />
+            <Field name="HeadY" source="Formula: [HeadY]+&#xA;switch([CurrentDir],0,&quot;U&quot;,1,&quot;D&quot;,-1)" type="Int16" />
+            <Field name="1X" source="Formula: If [1Check] = 1 then [1X]+1&#xA;elseif [1Check] = 2 then [1X]-1&#xA;elseif [1Check] = 3 then [HeadX]&#xA;elseif [1Check] = 4 then [HeadX] else [1X] endif" type="Int16" />
+            <Field name="1Y" source="Formula: If [1Check] = 1 then [HeadY]&#xA;elseif [1Check]= 2 then &#xA;[HeadY]&#xA;elseif [1Check] = 3  then [1Y]+1&#xA;elseif [1Check] = 4 then [1Y]-1 else [1Y] endif" type="Int16" />
+            <Field name="2X" source="Formula: switch([2Check],[2X],&#xA;2,[2X]+1,&#xA;3,[2X]+1,&#xA;4,[2X]+1,&#xA;6,[2X]-1,&#xA;7,[2X]-1,&#xA;8,[2X]-1)" type="Int16" />
+            <Field name="2Y" source="Formula: switch([2Check],[2Y],&#xA;1,[2Y]+1,&#xA;2,[2Y]+1,&#xA;4,[2Y]-1,&#xA;5,[2Y]-1,&#xA;6,[2y]-1,&#xA;8,[2Y]+1)" type="Int16" />
+            <Field name="3X" source="Formula: switch([3Check],[3X],&#xA;2,[3X]+1,&#xA;3,[3X]+1,&#xA;4,[3X]+1,&#xA;6,[3X]-1,&#xA;7,[3X]-1,&#xA;8,[3X]-1)&#xA;" type="Int16" />
+            <Field name="3Y" source="Formula: switch([3Check],[3Y],&#xA;1,[3Y]+1,&#xA;2,[3Y]+1,&#xA;4,[3Y]-1,&#xA;5,[3Y]-1,&#xA;6,[3Y]-1,&#xA;8,[3Y]+1)&#xA;" type="Int16" />
+            <Field name="4X" source="Formula: switch([4Check],[4X],&#xA;2,[4X]+1,&#xA;3,[4X]+1,&#xA;4,[4X]+1,&#xA;6,[4X]-1,&#xA;7,[4X]-1,&#xA;8,[4X]-1)&#xA;" type="Int16" />
+            <Field name="4Y" source="Formula: switch([4Check],[4Y],&#xA;1,[4Y]+1,&#xA;2,[4Y]+1,&#xA;4,[4Y]-1,&#xA;5,[4Y]-1,&#xA;6,[4Y]-1,&#xA;8,[4Y]+1)&#xA;" type="Int16" />
+            <Field name="5X" source="Formula: switch([5Check],[5X],&#xA;2,[5X]+1,&#xA;3,[5X]+1,&#xA;4,[5X]+1,&#xA;6,[5X]-1,&#xA;7,[5X]-1,&#xA;8,[5X]-1)&#xA;" type="Int16" />
+            <Field name="5Y" source="Formula: switch([5Check],[5Y],&#xA;1,[5Y]+1,&#xA;2,[5Y]+1,&#xA;4,[5Y]-1,&#xA;5,[5Y]-1,&#xA;6,[5Y]-1,&#xA;8,[5Y]+1)&#xA;" type="Int16" />
+            <Field name="6X" source="Formula: switch([6Check],[6X],&#xA;2,[6X]+1,&#xA;3,[6X]+1,&#xA;4,[6X]+1,&#xA;6,[6X]-1,&#xA;7,[6X]-1,&#xA;8,[6X]-1)&#xA;" type="Int16" />
+            <Field name="6Y" source="Formula: switch([6Check],[6Y],&#xA;1,[6Y]+1,&#xA;2,[6Y]+1,&#xA;4,[6Y]-1,&#xA;5,[6Y]-1,&#xA;6,[6Y]-1,&#xA;8,[6Y]+1)&#xA;" type="Int16" />
+            <Field name="7X" source="Formula: switch([7Check],[7X],&#xA;2,[7X]+1,&#xA;3,[7X]+1,&#xA;4,[7X]+1,&#xA;6,[7X]-1,&#xA;7,[7X]-1,&#xA;8,[7X]-1)&#xA;" type="Int16" />
+            <Field name="7Y" source="Formula: switch([7Check],[7Y],&#xA;1,[7Y]+1,&#xA;2,[7Y]+1,&#xA;4,[7Y]-1,&#xA;5,[7Y]-1,&#xA;6,[7Y]-1,&#xA;8,[7Y]+1)&#xA;" type="Int16" />
+            <Field name="8X" source="Formula: switch([8Check],[8X],&#xA;2,[8X]+1,&#xA;3,[8X]+1,&#xA;4,[8X]+1,&#xA;6,[8X]-1,&#xA;7,[8X]-1,&#xA;8,[8X]-1)&#xA;" type="Int16" />
+            <Field name="8Y" source="Formula: switch([8Check],[8Y],&#xA;1,[8Y]+1,&#xA;2,[8Y]+1,&#xA;4,[8Y]-1,&#xA;5,[8Y]-1,&#xA;6,[8Y]-1,&#xA;8,[8Y]+1)&#xA;" type="Int16" />
+            <Field name="9X" source="Formula: switch([9Check],[9X],&#xA;2,[9X]+1,&#xA;3,[9X]+1,&#xA;4,[9X]+1,&#xA;6,[9X]-1,&#xA;7,[9X]-1,&#xA;8,[9X]-1)&#xA;" type="Int16" />
+            <Field name="9Y" source="Formula: switch([9Check],[9Y],&#xA;1,[9Y]+1,&#xA;2,[9Y]+1,&#xA;4,[9Y]-1,&#xA;5,[9Y]-1,&#xA;6,[9Y]-1,&#xA;8,[9Y]+1)&#xA;" type="Int16" />
+            <Field name="Concat_Direction" size="1073741823" source="Formula: Substring([Concat_Direction],1)" type="V_WString" />
+            <Field name="CurrentDir" size="1073741823" source="Formula: Left([Concat_Direction],1)" type="V_WString" />
+            <Field name="1Check" source="Formula: If [CurrentDir]=&quot;R&quot; and [1X]&lt;[HeadX] then 1&#xA;elseif [CurrentDir]=&quot;L&quot; and [1X]&gt;[HeadX] then 2&#xA;elseif [CurrentDir]=&quot;U&quot; and [1Y]&lt;[HeadY] then 3&#xA;elseif [CurrentDir]=&quot;D&quot; and [1Y]&gt;[HeadY] then 4 else 5 endif" type="Int32" />
+            <Field name="2Check" source="Formula: If Max(ABS([1X]-[2X]),ABS([1Y]-[2Y]))&lt;=1 then 0&#xA;elseif [1X]=[2X] AND [1Y]=[2Y]+2 then 1&#xA;elseif [1Y]&gt;=[2Y]+1 AND [1X]&gt;=[2X]+1 then 2&#xA;elseif [1Y]=[2Y] and [1X]=[2X]+2 then 3&#xA;elseif [1Y]&lt;=[2Y]-1 and [1X]&gt;=[2X]+1 then 4&#xA;elseif [1X]=[2X]  and [1Y]=[2Y]-2 then 5&#xA;elseif [1Y]&lt;=[2Y]-1 and [1X] &lt;= [2X] -1 then 6&#xA;elseif [1Y]=[2Y] and [1X]=[2X]-2 then 7&#xA;elseif [1Y]&gt;=[2Y]+1 and [1X]&lt;=[2X]-1 then 8 &#xA;else 9 endif" type="Int32" />
+            <Field name="3Check" source="Formula: If Max(ABS([2X]-[3X]),ABS([2Y]-[3Y]))&lt;=1 then 0&#xA;elseif [2X]=[3X] AND [2Y]=[3Y]+2 then 1&#xA;elseif [2Y]&gt;=[3Y]+1 AND [2X]&gt;=[3X]+1 then 2&#xA;elseif [2Y]=[3Y] and [2X]=[3X]+2 then 3&#xA;elseif [2Y]&lt;=[3Y]-1 and [2X]&gt;=[3X]+1 then 4&#xA;elseif [2X]=[3X]  and [2Y]=[3Y]-2 then 5&#xA;elseif [2Y]&lt;=[3Y]-1 and [2X] &lt;= [3X] -1 then 6&#xA;elseif [2Y]=[3Y] and [2X]=[3X]-2 then 7&#xA;elseif [2Y]&gt;=[3Y]+1 and [2X]&lt;=[3X]-1 then 8&#xA;else 9 endif&#xA;" type="Int32" />
+            <Field name="4Check" source="Formula: If Max(ABS([3X]-[4X]),ABS([3Y]-[4Y]))&lt;=1 then 0&#xA;elseif [3X]=[4X] AND [3Y]=[4Y]+2 then 1&#xA;elseif [3Y]&gt;=[4Y]+1 AND [3X]&gt;=[4X]+1 then 2&#xA;elseif [3Y]=[4Y] and [3X]=[4X]+2 then 3&#xA;elseif [3Y]&lt;=[4Y]-1 and [3X]&gt;=[4X]+1 then 4&#xA;elseif [3X]=[4X]  and [3Y]=[4Y]-2 then 5&#xA;elseif [3Y]&lt;=[4Y]-1 and [3X] &lt;= [4X] -1 then 6&#xA;elseif [3Y]=[4Y] and [3X]=[4X]-2 then 7&#xA;elseif [3Y]&gt;=[4Y]+1 and [3X]&lt;=[4X]-1 then 8&#xA;else 9 endif&#xA;" type="Int32" />
+            <Field name="5Check" source="Formula: If Max(ABS([4X]-[5X]),ABS([4Y]-[5Y]))&lt;=1 then 0&#xA;elseif [4X]=[5X] AND [4Y]=[5Y]+2 then 1&#xA;elseif [4Y]&gt;=[5Y]+1 AND [4X]&gt;=[5X]+1 then 2&#xA;elseif [4Y]=[5Y] and [4X]=[5X]+2 then 3&#xA;elseif [4Y]&lt;=[5Y]-1 and [4X]&gt;=[5X]+1 then 4&#xA;elseif [4X]=[5X]  and [4Y]=[5Y]-2 then 5&#xA;elseif [4Y]&lt;=[5Y]-1 and [4X] &lt;= [5X] -1 then 6&#xA;elseif [4Y]=[5Y] and [4X]=[5X]-2 then 7&#xA;elseif [4Y]&gt;=[5Y]+1 and [4X]&lt;=[5X]-1 then 8&#xA;else 9 endif&#xA;" type="Int16" />
+            <Field name="6Check" source="Formula: If Max(ABS([5X]-[6X]),ABS([5Y]-[6Y]))&lt;=1 then 0&#xA;elseif [5X]=[6X] AND [5Y]=[6Y]+2 then 1&#xA;elseif [5Y]&gt;=[6Y]+1 AND [5X]&gt;=[6X]+1 then 2&#xA;elseif [5Y]=[6Y] and [5X]=[6X]+2 then 3&#xA;elseif [5Y]&lt;=[6Y]-1 and [5X]&gt;=[6X]+1 then 4&#xA;elseif [5X]=[6X]  and [5Y]=[6Y]-2 then 5&#xA;elseif [5Y]&lt;=[6Y]-1 and [5X] &lt;= [6X] -1 then 6&#xA;elseif [5Y]=[6Y] and [5X]=[6X]-2 then 7&#xA;elseif [5Y]&gt;=[6Y]+1 and [5X]&lt;=[6X]-1 then 8&#xA;else 9 endif&#xA;" type="Int32" />
+            <Field name="7Check" source="Formula: If Max(ABS([6X]-[7X]),ABS([6Y]-[7Y]))&lt;=1 then 0&#xA;elseif [6X]=[7X] AND [6Y]=[7Y]+2 then 1&#xA;elseif [6Y]&gt;=[7Y]+1 AND [6X]&gt;=[7X]+1 then 2&#xA;elseif [6Y]=[7Y] and [6X]=[7X]+2 then 3&#xA;elseif [6Y]&lt;=[7Y]-1 and [6X]&gt;=[7X]+1 then 4&#xA;elseif [6X]=[7X]  and [6Y]=[7Y]-2 then 5&#xA;elseif [6Y]&lt;=[7Y]-1 and [6X] &lt;= [7X] -1 then 6&#xA;elseif [6Y]=[7Y] and [6X]=[7X]-2 then 7&#xA;elseif [6Y]&gt;=[7Y]+1 and [6X]&lt;=[7X]-1 then 8&#xA;else 9 endif&#xA;" type="Int32" />
+            <Field name="8Check" source="Formula: If Max(ABS([7X]-[8X]),ABS([7Y]-[8Y]))&lt;=1 then 0&#xA;elseif [7X]=[8X] AND [7Y]=[8Y]+2 then 1&#xA;elseif [7Y]&gt;=[8Y]+1 AND [7X]&gt;=[8X]+1 then 2&#xA;elseif [7Y]=[8Y] and [7X]=[8X]+2 then 3&#xA;elseif [7Y]&lt;=[8Y]-1 and [7X]&gt;=[8X]+1 then 4&#xA;elseif [7X]=[8X]  and [7Y]=[8Y]-2 then 5&#xA;elseif [7Y]&lt;=[8Y]-1 and [7X] &lt;= [8X] -1 then 6&#xA;elseif [7Y]=[8Y] and [7X]=[8X]-2 then 7&#xA;elseif [7Y]&gt;=[8Y]+1 and [7X]&lt;=[8X]-1 then 8&#xA;else 9 endif&#xA;" type="Int16" />
+            <Field name="9Check" source="Formula: If Max(ABS([8X]-[9X]),ABS([8Y]-[9Y]))&lt;=1 then 0&#xA;elseif [8X]=[9X] AND [8Y]=[9Y]+2 then 1&#xA;elseif [8Y]&gt;=[9Y]+1 AND [8X]&gt;=[9X]+1 then 2&#xA;elseif [8Y]=[9Y] and [8X]=[9X]+2 then 3&#xA;elseif [8Y]&lt;=[9Y]-1 and [8X]&gt;=[9X]+1 then 4&#xA;elseif [8X]=[9X]  and [8Y]=[9Y]-2 then 5&#xA;elseif [8Y]&lt;=[9Y]-1 and [8X] &lt;= [9X] -1 then 6&#xA;elseif [8Y]=[9Y] and [8X]=[9X]-2 then 7&#xA;elseif [8Y]&gt;=[9Y]+1 and [8X]&lt;=[9X]-1 then 8&#xA;else 9 endif&#xA;" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="78" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="HeadX" selected="True" />
+            <SelectField field="HeadY" selected="True" />
+            <SelectField field="1X" selected="True" />
+            <SelectField field="1Y" selected="True" />
+            <SelectField field="2X" selected="True" />
+            <SelectField field="2Y" selected="True" />
+            <SelectField field="3X" selected="True" />
+            <SelectField field="3Y" selected="True" />
+            <SelectField field="4X" selected="True" />
+            <SelectField field="4Y" selected="True" />
+            <SelectField field="5X" selected="True" />
+            <SelectField field="5Y" selected="True" />
+            <SelectField field="6X" selected="True" />
+            <SelectField field="6Y" selected="True" />
+            <SelectField field="7X" selected="True" />
+            <SelectField field="7Y" selected="True" />
+            <SelectField field="8X" selected="True" />
+            <SelectField field="8Y" selected="True" />
+            <SelectField field="9X" selected="True" />
+            <SelectField field="9Y" selected="True" />
+            <SelectField field="Concat_Direction" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="HeadX" source="Formula: [HeadX]+&#xA;switch([CurrentDir],0,&quot;R&quot;,1,&quot;L&quot;,-1)" type="Int16" />
+            <Field name="HeadY" source="Formula: [HeadY]+&#xA;switch([CurrentDir],0,&quot;U&quot;,1,&quot;D&quot;,-1)" type="Int16" />
+            <Field name="1X" source="Formula: If [1Check] = 1 then [1X]+1&#xA;elseif [1Check] = 2 then [1X]-1&#xA;elseif [1Check] = 3 then [HeadX]&#xA;elseif [1Check] = 4 then [HeadX] else [1X] endif" type="Int16" />
+            <Field name="1Y" source="Formula: If [1Check] = 1 then [HeadY]&#xA;elseif [1Check]= 2 then &#xA;[HeadY]&#xA;elseif [1Check] = 3  then [1Y]+1&#xA;elseif [1Check] = 4 then [1Y]-1 else [1Y] endif" type="Int16" />
+            <Field name="2X" source="Formula: switch([2Check],[2X],&#xA;2,[2X]+1,&#xA;3,[2X]+1,&#xA;4,[2X]+1,&#xA;6,[2X]-1,&#xA;7,[2X]-1,&#xA;8,[2X]-1)" type="Int16" />
+            <Field name="2Y" source="Formula: switch([2Check],[2Y],&#xA;1,[2Y]+1,&#xA;2,[2Y]+1,&#xA;4,[2Y]-1,&#xA;5,[2Y]-1,&#xA;6,[2y]-1,&#xA;8,[2Y]+1)" type="Int16" />
+            <Field name="3X" source="Formula: switch([3Check],[3X],&#xA;2,[3X]+1,&#xA;3,[3X]+1,&#xA;4,[3X]+1,&#xA;6,[3X]-1,&#xA;7,[3X]-1,&#xA;8,[3X]-1)&#xA;" type="Int16" />
+            <Field name="3Y" source="Formula: switch([3Check],[3Y],&#xA;1,[3Y]+1,&#xA;2,[3Y]+1,&#xA;4,[3Y]-1,&#xA;5,[3Y]-1,&#xA;6,[3Y]-1,&#xA;8,[3Y]+1)&#xA;" type="Int16" />
+            <Field name="4X" source="Formula: switch([4Check],[4X],&#xA;2,[4X]+1,&#xA;3,[4X]+1,&#xA;4,[4X]+1,&#xA;6,[4X]-1,&#xA;7,[4X]-1,&#xA;8,[4X]-1)&#xA;" type="Int16" />
+            <Field name="4Y" source="Formula: switch([4Check],[4Y],&#xA;1,[4Y]+1,&#xA;2,[4Y]+1,&#xA;4,[4Y]-1,&#xA;5,[4Y]-1,&#xA;6,[4Y]-1,&#xA;8,[4Y]+1)&#xA;" type="Int16" />
+            <Field name="5X" source="Formula: switch([5Check],[5X],&#xA;2,[5X]+1,&#xA;3,[5X]+1,&#xA;4,[5X]+1,&#xA;6,[5X]-1,&#xA;7,[5X]-1,&#xA;8,[5X]-1)&#xA;" type="Int16" />
+            <Field name="5Y" source="Formula: switch([5Check],[5Y],&#xA;1,[5Y]+1,&#xA;2,[5Y]+1,&#xA;4,[5Y]-1,&#xA;5,[5Y]-1,&#xA;6,[5Y]-1,&#xA;8,[5Y]+1)&#xA;" type="Int16" />
+            <Field name="6X" source="Formula: switch([6Check],[6X],&#xA;2,[6X]+1,&#xA;3,[6X]+1,&#xA;4,[6X]+1,&#xA;6,[6X]-1,&#xA;7,[6X]-1,&#xA;8,[6X]-1)&#xA;" type="Int16" />
+            <Field name="6Y" source="Formula: switch([6Check],[6Y],&#xA;1,[6Y]+1,&#xA;2,[6Y]+1,&#xA;4,[6Y]-1,&#xA;5,[6Y]-1,&#xA;6,[6Y]-1,&#xA;8,[6Y]+1)&#xA;" type="Int16" />
+            <Field name="7X" source="Formula: switch([7Check],[7X],&#xA;2,[7X]+1,&#xA;3,[7X]+1,&#xA;4,[7X]+1,&#xA;6,[7X]-1,&#xA;7,[7X]-1,&#xA;8,[7X]-1)&#xA;" type="Int16" />
+            <Field name="7Y" source="Formula: switch([7Check],[7Y],&#xA;1,[7Y]+1,&#xA;2,[7Y]+1,&#xA;4,[7Y]-1,&#xA;5,[7Y]-1,&#xA;6,[7Y]-1,&#xA;8,[7Y]+1)&#xA;" type="Int16" />
+            <Field name="8X" source="Formula: switch([8Check],[8X],&#xA;2,[8X]+1,&#xA;3,[8X]+1,&#xA;4,[8X]+1,&#xA;6,[8X]-1,&#xA;7,[8X]-1,&#xA;8,[8X]-1)&#xA;" type="Int16" />
+            <Field name="8Y" source="Formula: switch([8Check],[8Y],&#xA;1,[8Y]+1,&#xA;2,[8Y]+1,&#xA;4,[8Y]-1,&#xA;5,[8Y]-1,&#xA;6,[8Y]-1,&#xA;8,[8Y]+1)&#xA;" type="Int16" />
+            <Field name="9X" source="Formula: switch([9Check],[9X],&#xA;2,[9X]+1,&#xA;3,[9X]+1,&#xA;4,[9X]+1,&#xA;6,[9X]-1,&#xA;7,[9X]-1,&#xA;8,[9X]-1)&#xA;" type="Int16" />
+            <Field name="9Y" source="Formula: switch([9Check],[9Y],&#xA;1,[9Y]+1,&#xA;2,[9Y]+1,&#xA;4,[9Y]-1,&#xA;5,[9Y]-1,&#xA;6,[9Y]-1,&#xA;8,[9Y]+1)&#xA;" type="Int16" />
+            <Field name="Concat_Direction" size="1073741823" source="Formula: Substring([Concat_Direction],1)" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="198" y="270" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Concat_Direction" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="HeadX" source="Formula: [HeadX]+&#xA;switch([CurrentDir],0,&quot;R&quot;,1,&quot;L&quot;,-1)" type="Int16" />
+            <Field name="HeadY" source="Formula: [HeadY]+&#xA;switch([CurrentDir],0,&quot;U&quot;,1,&quot;D&quot;,-1)" type="Int16" />
+            <Field name="1X" source="Formula: If [1Check] = 1 then [1X]+1&#xA;elseif [1Check] = 2 then [1X]-1&#xA;elseif [1Check] = 3 then [HeadX]&#xA;elseif [1Check] = 4 then [HeadX] else [1X] endif" type="Int16" />
+            <Field name="1Y" source="Formula: If [1Check] = 1 then [HeadY]&#xA;elseif [1Check]= 2 then &#xA;[HeadY]&#xA;elseif [1Check] = 3  then [1Y]+1&#xA;elseif [1Check] = 4 then [1Y]-1 else [1Y] endif" type="Int16" />
+            <Field name="2X" source="Formula: switch([2Check],[2X],&#xA;2,[2X]+1,&#xA;3,[2X]+1,&#xA;4,[2X]+1,&#xA;6,[2X]-1,&#xA;7,[2X]-1,&#xA;8,[2X]-1)" type="Int16" />
+            <Field name="2Y" source="Formula: switch([2Check],[2Y],&#xA;1,[2Y]+1,&#xA;2,[2Y]+1,&#xA;4,[2Y]-1,&#xA;5,[2Y]-1,&#xA;6,[2y]-1,&#xA;8,[2Y]+1)" type="Int16" />
+            <Field name="3X" source="Formula: switch([3Check],[3X],&#xA;2,[3X]+1,&#xA;3,[3X]+1,&#xA;4,[3X]+1,&#xA;6,[3X]-1,&#xA;7,[3X]-1,&#xA;8,[3X]-1)&#xA;" type="Int16" />
+            <Field name="3Y" source="Formula: switch([3Check],[3Y],&#xA;1,[3Y]+1,&#xA;2,[3Y]+1,&#xA;4,[3Y]-1,&#xA;5,[3Y]-1,&#xA;6,[3Y]-1,&#xA;8,[3Y]+1)&#xA;" type="Int16" />
+            <Field name="4X" source="Formula: switch([4Check],[4X],&#xA;2,[4X]+1,&#xA;3,[4X]+1,&#xA;4,[4X]+1,&#xA;6,[4X]-1,&#xA;7,[4X]-1,&#xA;8,[4X]-1)&#xA;" type="Int16" />
+            <Field name="4Y" source="Formula: switch([4Check],[4Y],&#xA;1,[4Y]+1,&#xA;2,[4Y]+1,&#xA;4,[4Y]-1,&#xA;5,[4Y]-1,&#xA;6,[4Y]-1,&#xA;8,[4Y]+1)&#xA;" type="Int16" />
+            <Field name="5X" source="Formula: switch([5Check],[5X],&#xA;2,[5X]+1,&#xA;3,[5X]+1,&#xA;4,[5X]+1,&#xA;6,[5X]-1,&#xA;7,[5X]-1,&#xA;8,[5X]-1)&#xA;" type="Int16" />
+            <Field name="5Y" source="Formula: switch([5Check],[5Y],&#xA;1,[5Y]+1,&#xA;2,[5Y]+1,&#xA;4,[5Y]-1,&#xA;5,[5Y]-1,&#xA;6,[5Y]-1,&#xA;8,[5Y]+1)&#xA;" type="Int16" />
+            <Field name="6X" source="Formula: switch([6Check],[6X],&#xA;2,[6X]+1,&#xA;3,[6X]+1,&#xA;4,[6X]+1,&#xA;6,[6X]-1,&#xA;7,[6X]-1,&#xA;8,[6X]-1)&#xA;" type="Int16" />
+            <Field name="6Y" source="Formula: switch([6Check],[6Y],&#xA;1,[6Y]+1,&#xA;2,[6Y]+1,&#xA;4,[6Y]-1,&#xA;5,[6Y]-1,&#xA;6,[6Y]-1,&#xA;8,[6Y]+1)&#xA;" type="Int16" />
+            <Field name="7X" source="Formula: switch([7Check],[7X],&#xA;2,[7X]+1,&#xA;3,[7X]+1,&#xA;4,[7X]+1,&#xA;6,[7X]-1,&#xA;7,[7X]-1,&#xA;8,[7X]-1)&#xA;" type="Int16" />
+            <Field name="7Y" source="Formula: switch([7Check],[7Y],&#xA;1,[7Y]+1,&#xA;2,[7Y]+1,&#xA;4,[7Y]-1,&#xA;5,[7Y]-1,&#xA;6,[7Y]-1,&#xA;8,[7Y]+1)&#xA;" type="Int16" />
+            <Field name="8X" source="Formula: switch([8Check],[8X],&#xA;2,[8X]+1,&#xA;3,[8X]+1,&#xA;4,[8X]+1,&#xA;6,[8X]-1,&#xA;7,[8X]-1,&#xA;8,[8X]-1)&#xA;" type="Int16" />
+            <Field name="8Y" source="Formula: switch([8Check],[8Y],&#xA;1,[8Y]+1,&#xA;2,[8Y]+1,&#xA;4,[8Y]-1,&#xA;5,[8Y]-1,&#xA;6,[8Y]-1,&#xA;8,[8Y]+1)&#xA;" type="Int16" />
+            <Field name="9X" source="Formula: switch([9Check],[9X],&#xA;2,[9X]+1,&#xA;3,[9X]+1,&#xA;4,[9X]+1,&#xA;6,[9X]-1,&#xA;7,[9X]-1,&#xA;8,[9X]-1)&#xA;" type="Int16" />
+            <Field name="9Y" source="Formula: switch([9Check],[9Y],&#xA;1,[9Y]+1,&#xA;2,[9Y]+1,&#xA;4,[9Y]-1,&#xA;5,[9Y]-1,&#xA;6,[9Y]-1,&#xA;8,[9Y]+1)&#xA;" type="Int16" />
+            <Field name="CurrentDir" size="1073741823" source="Formula: Left([Concat_Direction],1)" type="V_WString" />
+            <Field name="1Check" source="Formula: If [CurrentDir]=&quot;R&quot; and [1X]&lt;[HeadX] then 1&#xA;elseif [CurrentDir]=&quot;L&quot; and [1X]&gt;[HeadX] then 2&#xA;elseif [CurrentDir]=&quot;U&quot; and [1Y]&lt;[HeadY] then 3&#xA;elseif [CurrentDir]=&quot;D&quot; and [1Y]&gt;[HeadY] then 4 else 5 endif" type="Int32" />
+            <Field name="2Check" source="Formula: If Max(ABS([1X]-[2X]),ABS([1Y]-[2Y]))&lt;=1 then 0&#xA;elseif [1X]=[2X] AND [1Y]=[2Y]+2 then 1&#xA;elseif [1Y]&gt;=[2Y]+1 AND [1X]&gt;=[2X]+1 then 2&#xA;elseif [1Y]=[2Y] and [1X]=[2X]+2 then 3&#xA;elseif [1Y]&lt;=[2Y]-1 and [1X]&gt;=[2X]+1 then 4&#xA;elseif [1X]=[2X]  and [1Y]=[2Y]-2 then 5&#xA;elseif [1Y]&lt;=[2Y]-1 and [1X] &lt;= [2X] -1 then 6&#xA;elseif [1Y]=[2Y] and [1X]=[2X]-2 then 7&#xA;elseif [1Y]&gt;=[2Y]+1 and [1X]&lt;=[2X]-1 then 8 &#xA;else 9 endif" type="Int32" />
+            <Field name="3Check" source="Formula: If Max(ABS([2X]-[3X]),ABS([2Y]-[3Y]))&lt;=1 then 0&#xA;elseif [2X]=[3X] AND [2Y]=[3Y]+2 then 1&#xA;elseif [2Y]&gt;=[3Y]+1 AND [2X]&gt;=[3X]+1 then 2&#xA;elseif [2Y]=[3Y] and [2X]=[3X]+2 then 3&#xA;elseif [2Y]&lt;=[3Y]-1 and [2X]&gt;=[3X]+1 then 4&#xA;elseif [2X]=[3X]  and [2Y]=[3Y]-2 then 5&#xA;elseif [2Y]&lt;=[3Y]-1 and [2X] &lt;= [3X] -1 then 6&#xA;elseif [2Y]=[3Y] and [2X]=[3X]-2 then 7&#xA;elseif [2Y]&gt;=[3Y]+1 and [2X]&lt;=[3X]-1 then 8&#xA;else 9 endif&#xA;" type="Int32" />
+            <Field name="4Check" source="Formula: If Max(ABS([3X]-[4X]),ABS([3Y]-[4Y]))&lt;=1 then 0&#xA;elseif [3X]=[4X] AND [3Y]=[4Y]+2 then 1&#xA;elseif [3Y]&gt;=[4Y]+1 AND [3X]&gt;=[4X]+1 then 2&#xA;elseif [3Y]=[4Y] and [3X]=[4X]+2 then 3&#xA;elseif [3Y]&lt;=[4Y]-1 and [3X]&gt;=[4X]+1 then 4&#xA;elseif [3X]=[4X]  and [3Y]=[4Y]-2 then 5&#xA;elseif [3Y]&lt;=[4Y]-1 and [3X] &lt;= [4X] -1 then 6&#xA;elseif [3Y]=[4Y] and [3X]=[4X]-2 then 7&#xA;elseif [3Y]&gt;=[4Y]+1 and [3X]&lt;=[4X]-1 then 8&#xA;else 9 endif&#xA;" type="Int32" />
+            <Field name="5Check" source="Formula: If Max(ABS([4X]-[5X]),ABS([4Y]-[5Y]))&lt;=1 then 0&#xA;elseif [4X]=[5X] AND [4Y]=[5Y]+2 then 1&#xA;elseif [4Y]&gt;=[5Y]+1 AND [4X]&gt;=[5X]+1 then 2&#xA;elseif [4Y]=[5Y] and [4X]=[5X]+2 then 3&#xA;elseif [4Y]&lt;=[5Y]-1 and [4X]&gt;=[5X]+1 then 4&#xA;elseif [4X]=[5X]  and [4Y]=[5Y]-2 then 5&#xA;elseif [4Y]&lt;=[5Y]-1 and [4X] &lt;= [5X] -1 then 6&#xA;elseif [4Y]=[5Y] and [4X]=[5X]-2 then 7&#xA;elseif [4Y]&gt;=[5Y]+1 and [4X]&lt;=[5X]-1 then 8&#xA;else 9 endif&#xA;" type="Int16" />
+            <Field name="6Check" source="Formula: If Max(ABS([5X]-[6X]),ABS([5Y]-[6Y]))&lt;=1 then 0&#xA;elseif [5X]=[6X] AND [5Y]=[6Y]+2 then 1&#xA;elseif [5Y]&gt;=[6Y]+1 AND [5X]&gt;=[6X]+1 then 2&#xA;elseif [5Y]=[6Y] and [5X]=[6X]+2 then 3&#xA;elseif [5Y]&lt;=[6Y]-1 and [5X]&gt;=[6X]+1 then 4&#xA;elseif [5X]=[6X]  and [5Y]=[6Y]-2 then 5&#xA;elseif [5Y]&lt;=[6Y]-1 and [5X] &lt;= [6X] -1 then 6&#xA;elseif [5Y]=[6Y] and [5X]=[6X]-2 then 7&#xA;elseif [5Y]&gt;=[6Y]+1 and [5X]&lt;=[6X]-1 then 8&#xA;else 9 endif&#xA;" type="Int32" />
+            <Field name="7Check" source="Formula: If Max(ABS([6X]-[7X]),ABS([6Y]-[7Y]))&lt;=1 then 0&#xA;elseif [6X]=[7X] AND [6Y]=[7Y]+2 then 1&#xA;elseif [6Y]&gt;=[7Y]+1 AND [6X]&gt;=[7X]+1 then 2&#xA;elseif [6Y]=[7Y] and [6X]=[7X]+2 then 3&#xA;elseif [6Y]&lt;=[7Y]-1 and [6X]&gt;=[7X]+1 then 4&#xA;elseif [6X]=[7X]  and [6Y]=[7Y]-2 then 5&#xA;elseif [6Y]&lt;=[7Y]-1 and [6X] &lt;= [7X] -1 then 6&#xA;elseif [6Y]=[7Y] and [6X]=[7X]-2 then 7&#xA;elseif [6Y]&gt;=[7Y]+1 and [6X]&lt;=[7X]-1 then 8&#xA;else 9 endif&#xA;" type="Int32" />
+            <Field name="8Check" source="Formula: If Max(ABS([7X]-[8X]),ABS([7Y]-[8Y]))&lt;=1 then 0&#xA;elseif [7X]=[8X] AND [7Y]=[8Y]+2 then 1&#xA;elseif [7Y]&gt;=[8Y]+1 AND [7X]&gt;=[8X]+1 then 2&#xA;elseif [7Y]=[8Y] and [7X]=[8X]+2 then 3&#xA;elseif [7Y]&lt;=[8Y]-1 and [7X]&gt;=[8X]+1 then 4&#xA;elseif [7X]=[8X]  and [7Y]=[8Y]-2 then 5&#xA;elseif [7Y]&lt;=[8Y]-1 and [7X] &lt;= [8X] -1 then 6&#xA;elseif [7Y]=[8Y] and [7X]=[8X]-2 then 7&#xA;elseif [7Y]&gt;=[8Y]+1 and [7X]&lt;=[8X]-1 then 8&#xA;else 9 endif&#xA;" type="Int16" />
+            <Field name="9Check" source="Formula: If Max(ABS([8X]-[9X]),ABS([8Y]-[9Y]))&lt;=1 then 0&#xA;elseif [8X]=[9X] AND [8Y]=[9Y]+2 then 1&#xA;elseif [8Y]&gt;=[9Y]+1 AND [8X]&gt;=[9X]+1 then 2&#xA;elseif [8Y]=[9Y] and [8X]=[9X]+2 then 3&#xA;elseif [8Y]&lt;=[9Y]-1 and [8X]&gt;=[9X]+1 then 4&#xA;elseif [8X]=[9X]  and [8Y]=[9Y]-2 then 5&#xA;elseif [8Y]&lt;=[9Y]-1 and [8X] &lt;= [9X] -1 then 6&#xA;elseif [8Y]=[9Y] and [8X]=[9X]-2 then 7&#xA;elseif [8Y]&gt;=[9Y]+1 and [8X]&lt;=[9X]-1 then 8&#xA;else 9 endif&#xA;" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="210" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Output6</Name>
+          <Abbrev>O</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Output</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="54" y="426" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Iterative</Name>
+          <Abbrev>I</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Output</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="66" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>!isempty([Concat_Direction])</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>!isempty([Concat_Direction])</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="HeadX" source="Formula: [HeadX]+&#xA;switch([CurrentDir],0,&quot;R&quot;,1,&quot;L&quot;,-1)" type="Int16" />
+            <Field name="HeadY" source="Formula: [HeadY]+&#xA;switch([CurrentDir],0,&quot;U&quot;,1,&quot;D&quot;,-1)" type="Int16" />
+            <Field name="1X" source="Formula: If [1Check] = 1 then [1X]+1&#xA;elseif [1Check] = 2 then [1X]-1&#xA;elseif [1Check] = 3 then [HeadX]&#xA;elseif [1Check] = 4 then [HeadX] else [1X] endif" type="Int16" />
+            <Field name="1Y" source="Formula: If [1Check] = 1 then [HeadY]&#xA;elseif [1Check]= 2 then &#xA;[HeadY]&#xA;elseif [1Check] = 3  then [1Y]+1&#xA;elseif [1Check] = 4 then [1Y]-1 else [1Y] endif" type="Int16" />
+            <Field name="2X" source="Formula: switch([2Check],[2X],&#xA;2,[2X]+1,&#xA;3,[2X]+1,&#xA;4,[2X]+1,&#xA;6,[2X]-1,&#xA;7,[2X]-1,&#xA;8,[2X]-1)" type="Int16" />
+            <Field name="2Y" source="Formula: switch([2Check],[2Y],&#xA;1,[2Y]+1,&#xA;2,[2Y]+1,&#xA;4,[2Y]-1,&#xA;5,[2Y]-1,&#xA;6,[2y]-1,&#xA;8,[2Y]+1)" type="Int16" />
+            <Field name="3X" source="Formula: switch([3Check],[3X],&#xA;2,[3X]+1,&#xA;3,[3X]+1,&#xA;4,[3X]+1,&#xA;6,[3X]-1,&#xA;7,[3X]-1,&#xA;8,[3X]-1)&#xA;" type="Int16" />
+            <Field name="3Y" source="Formula: switch([3Check],[3Y],&#xA;1,[3Y]+1,&#xA;2,[3Y]+1,&#xA;4,[3Y]-1,&#xA;5,[3Y]-1,&#xA;6,[3Y]-1,&#xA;8,[3Y]+1)&#xA;" type="Int16" />
+            <Field name="4X" source="Formula: switch([4Check],[4X],&#xA;2,[4X]+1,&#xA;3,[4X]+1,&#xA;4,[4X]+1,&#xA;6,[4X]-1,&#xA;7,[4X]-1,&#xA;8,[4X]-1)&#xA;" type="Int16" />
+            <Field name="4Y" source="Formula: switch([4Check],[4Y],&#xA;1,[4Y]+1,&#xA;2,[4Y]+1,&#xA;4,[4Y]-1,&#xA;5,[4Y]-1,&#xA;6,[4Y]-1,&#xA;8,[4Y]+1)&#xA;" type="Int16" />
+            <Field name="5X" source="Formula: switch([5Check],[5X],&#xA;2,[5X]+1,&#xA;3,[5X]+1,&#xA;4,[5X]+1,&#xA;6,[5X]-1,&#xA;7,[5X]-1,&#xA;8,[5X]-1)&#xA;" type="Int16" />
+            <Field name="5Y" source="Formula: switch([5Check],[5Y],&#xA;1,[5Y]+1,&#xA;2,[5Y]+1,&#xA;4,[5Y]-1,&#xA;5,[5Y]-1,&#xA;6,[5Y]-1,&#xA;8,[5Y]+1)&#xA;" type="Int16" />
+            <Field name="6X" source="Formula: switch([6Check],[6X],&#xA;2,[6X]+1,&#xA;3,[6X]+1,&#xA;4,[6X]+1,&#xA;6,[6X]-1,&#xA;7,[6X]-1,&#xA;8,[6X]-1)&#xA;" type="Int16" />
+            <Field name="6Y" source="Formula: switch([6Check],[6Y],&#xA;1,[6Y]+1,&#xA;2,[6Y]+1,&#xA;4,[6Y]-1,&#xA;5,[6Y]-1,&#xA;6,[6Y]-1,&#xA;8,[6Y]+1)&#xA;" type="Int16" />
+            <Field name="7X" source="Formula: switch([7Check],[7X],&#xA;2,[7X]+1,&#xA;3,[7X]+1,&#xA;4,[7X]+1,&#xA;6,[7X]-1,&#xA;7,[7X]-1,&#xA;8,[7X]-1)&#xA;" type="Int16" />
+            <Field name="7Y" source="Formula: switch([7Check],[7Y],&#xA;1,[7Y]+1,&#xA;2,[7Y]+1,&#xA;4,[7Y]-1,&#xA;5,[7Y]-1,&#xA;6,[7Y]-1,&#xA;8,[7Y]+1)&#xA;" type="Int16" />
+            <Field name="8X" source="Formula: switch([8Check],[8X],&#xA;2,[8X]+1,&#xA;3,[8X]+1,&#xA;4,[8X]+1,&#xA;6,[8X]-1,&#xA;7,[8X]-1,&#xA;8,[8X]-1)&#xA;" type="Int16" />
+            <Field name="8Y" source="Formula: switch([8Check],[8Y],&#xA;1,[8Y]+1,&#xA;2,[8Y]+1,&#xA;4,[8Y]-1,&#xA;5,[8Y]-1,&#xA;6,[8Y]-1,&#xA;8,[8Y]+1)&#xA;" type="Int16" />
+            <Field name="9X" source="Formula: switch([9Check],[9X],&#xA;2,[9X]+1,&#xA;3,[9X]+1,&#xA;4,[9X]+1,&#xA;6,[9X]-1,&#xA;7,[9X]-1,&#xA;8,[9X]-1)&#xA;" type="Int16" />
+            <Field name="9Y" source="Formula: switch([9Check],[9Y],&#xA;1,[9Y]+1,&#xA;2,[9Y]+1,&#xA;4,[9Y]-1,&#xA;5,[9Y]-1,&#xA;6,[9Y]-1,&#xA;8,[9Y]+1)&#xA;" type="Int16" />
+            <Field name="Concat_Direction" size="1073741823" source="Formula: Substring([Concat_Direction],1)" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="HeadX" source="Formula: [HeadX]+&#xA;switch([CurrentDir],0,&quot;R&quot;,1,&quot;L&quot;,-1)" type="Int16" />
+            <Field name="HeadY" source="Formula: [HeadY]+&#xA;switch([CurrentDir],0,&quot;U&quot;,1,&quot;D&quot;,-1)" type="Int16" />
+            <Field name="1X" source="Formula: If [1Check] = 1 then [1X]+1&#xA;elseif [1Check] = 2 then [1X]-1&#xA;elseif [1Check] = 3 then [HeadX]&#xA;elseif [1Check] = 4 then [HeadX] else [1X] endif" type="Int16" />
+            <Field name="1Y" source="Formula: If [1Check] = 1 then [HeadY]&#xA;elseif [1Check]= 2 then &#xA;[HeadY]&#xA;elseif [1Check] = 3  then [1Y]+1&#xA;elseif [1Check] = 4 then [1Y]-1 else [1Y] endif" type="Int16" />
+            <Field name="2X" source="Formula: switch([2Check],[2X],&#xA;2,[2X]+1,&#xA;3,[2X]+1,&#xA;4,[2X]+1,&#xA;6,[2X]-1,&#xA;7,[2X]-1,&#xA;8,[2X]-1)" type="Int16" />
+            <Field name="2Y" source="Formula: switch([2Check],[2Y],&#xA;1,[2Y]+1,&#xA;2,[2Y]+1,&#xA;4,[2Y]-1,&#xA;5,[2Y]-1,&#xA;6,[2y]-1,&#xA;8,[2Y]+1)" type="Int16" />
+            <Field name="3X" source="Formula: switch([3Check],[3X],&#xA;2,[3X]+1,&#xA;3,[3X]+1,&#xA;4,[3X]+1,&#xA;6,[3X]-1,&#xA;7,[3X]-1,&#xA;8,[3X]-1)&#xA;" type="Int16" />
+            <Field name="3Y" source="Formula: switch([3Check],[3Y],&#xA;1,[3Y]+1,&#xA;2,[3Y]+1,&#xA;4,[3Y]-1,&#xA;5,[3Y]-1,&#xA;6,[3Y]-1,&#xA;8,[3Y]+1)&#xA;" type="Int16" />
+            <Field name="4X" source="Formula: switch([4Check],[4X],&#xA;2,[4X]+1,&#xA;3,[4X]+1,&#xA;4,[4X]+1,&#xA;6,[4X]-1,&#xA;7,[4X]-1,&#xA;8,[4X]-1)&#xA;" type="Int16" />
+            <Field name="4Y" source="Formula: switch([4Check],[4Y],&#xA;1,[4Y]+1,&#xA;2,[4Y]+1,&#xA;4,[4Y]-1,&#xA;5,[4Y]-1,&#xA;6,[4Y]-1,&#xA;8,[4Y]+1)&#xA;" type="Int16" />
+            <Field name="5X" source="Formula: switch([5Check],[5X],&#xA;2,[5X]+1,&#xA;3,[5X]+1,&#xA;4,[5X]+1,&#xA;6,[5X]-1,&#xA;7,[5X]-1,&#xA;8,[5X]-1)&#xA;" type="Int16" />
+            <Field name="5Y" source="Formula: switch([5Check],[5Y],&#xA;1,[5Y]+1,&#xA;2,[5Y]+1,&#xA;4,[5Y]-1,&#xA;5,[5Y]-1,&#xA;6,[5Y]-1,&#xA;8,[5Y]+1)&#xA;" type="Int16" />
+            <Field name="6X" source="Formula: switch([6Check],[6X],&#xA;2,[6X]+1,&#xA;3,[6X]+1,&#xA;4,[6X]+1,&#xA;6,[6X]-1,&#xA;7,[6X]-1,&#xA;8,[6X]-1)&#xA;" type="Int16" />
+            <Field name="6Y" source="Formula: switch([6Check],[6Y],&#xA;1,[6Y]+1,&#xA;2,[6Y]+1,&#xA;4,[6Y]-1,&#xA;5,[6Y]-1,&#xA;6,[6Y]-1,&#xA;8,[6Y]+1)&#xA;" type="Int16" />
+            <Field name="7X" source="Formula: switch([7Check],[7X],&#xA;2,[7X]+1,&#xA;3,[7X]+1,&#xA;4,[7X]+1,&#xA;6,[7X]-1,&#xA;7,[7X]-1,&#xA;8,[7X]-1)&#xA;" type="Int16" />
+            <Field name="7Y" source="Formula: switch([7Check],[7Y],&#xA;1,[7Y]+1,&#xA;2,[7Y]+1,&#xA;4,[7Y]-1,&#xA;5,[7Y]-1,&#xA;6,[7Y]-1,&#xA;8,[7Y]+1)&#xA;" type="Int16" />
+            <Field name="8X" source="Formula: switch([8Check],[8X],&#xA;2,[8X]+1,&#xA;3,[8X]+1,&#xA;4,[8X]+1,&#xA;6,[8X]-1,&#xA;7,[8X]-1,&#xA;8,[8X]-1)&#xA;" type="Int16" />
+            <Field name="8Y" source="Formula: switch([8Check],[8Y],&#xA;1,[8Y]+1,&#xA;2,[8Y]+1,&#xA;4,[8Y]-1,&#xA;5,[8Y]-1,&#xA;6,[8Y]-1,&#xA;8,[8Y]+1)&#xA;" type="Int16" />
+            <Field name="9X" source="Formula: switch([9Check],[9X],&#xA;2,[9X]+1,&#xA;3,[9X]+1,&#xA;4,[9X]+1,&#xA;6,[9X]-1,&#xA;7,[9X]-1,&#xA;8,[9X]-1)&#xA;" type="Int16" />
+            <Field name="9Y" source="Formula: switch([9Check],[9Y],&#xA;1,[9Y]+1,&#xA;2,[9Y]+1,&#xA;4,[9Y]-1,&#xA;5,[9Y]-1,&#xA;6,[9Y]-1,&#xA;8,[9Y]+1)&#xA;" type="Int16" />
+            <Field name="Concat_Direction" size="1073741823" source="Formula: Substring([Concat_Direction],1)" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="True" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Vertical</LayoutType>
+    <Constants>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Input (2)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Output (6)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Output (7)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+    </Constants>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>day9part2</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="2b4c6160-418a-4060-ab71-040351b81fae" />
+      <Telemetry>
+        <PreviousWorkflowId value="52f5ec4f-6a57-47e4-a9af-02a59a77754b" />
+        <OriginWorkflowId value="52f5ec4f-6a57-47e4-a9af-02a59a77754b" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="False" />
+    </Events>
+    <RuntimeProperties>
+      <Actions />
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (1)</Name>
+          <ToolId value="1" />
+          <Questions>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (2)</Name>
+              <ToolId value="2" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (6)</Description>
+              <Name>Macro Output (6)</Name>
+              <ToolId value="6" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (7)</Description>
+              <Name>Macro Output (7)</Name>
+              <ToolId value="7" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <IterativeMacro>
+        <Input>Input2</Input>
+        <Output>Iterative</Output>
+        <IterationLimit value="100000" />
+        <LimitBehavior>Error</LimitBehavior>
+        <OutputMode>AllSame</OutputMode>
+      </IterativeMacro>
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="2" Selected="True" />
+        <Tool ToolId="6" Selected="True" />
+        <Tool ToolId="7" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>

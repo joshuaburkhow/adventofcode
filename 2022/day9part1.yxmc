@@ -1,0 +1,372 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.3">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="162" y="30" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="True" />
+          <Name>Input2</Name>
+          <Abbrev />
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <FileInput>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">Day9part1.yxdb</File>
+              <FormatSpecificOptions />
+            </Configuration>
+          </FileInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Day9part1.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Concat_Direction" size="1073741823" source="Summarize: Concat - Direction" type="V_WString" />
+            <Field name="HeadX" source="Formula: 0" type="Int32" />
+            <Field name="HeadY" source="Formula: 0" type="Int32" />
+            <Field name="TailX" source="Formula: 0" type="Int32" />
+            <Field name="TailY" source="Formula: 0" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="162" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="Left([Concat_Direction],1)" field="CurrentDir" size="1073741823" type="V_WString" />
+            <FormulaField expression="Substring([Concat_Direction],1)" field="Concat_Direction" size="1073741823" type="V_WString" />
+            <FormulaField expression="If [CurrentDir]=&quot;R&quot; and [TailX]&lt;[HeadX] then 1&#xA;elseif [CurrentDir]=&quot;L&quot; and [TailX]&gt;[HeadX] then 2&#xA;elseif [CurrentDir]=&quot;U&quot; and [TailY]&lt;[HeadY] then 3&#xA;elseif [CurrentDir]=&quot;D&quot; and [TailY]&gt;[HeadY] then 4 else 5 endif" field="TailCheck" size="4" type="Int32" />
+            <FormulaField expression="If TailCheck = 1 then [TailX]+1&#xA;elseif TailCheck = 2 then [TailX]-1&#xA;elseif TailCheck = 3 then [HeadX]&#xA;elseif TailCheck = 4 then [HeadX] else [TailX] endif" field="TailX" size="4" type="Int32" />
+            <FormulaField expression="If TailCheck = 1 then [HeadY]&#xA;elseif TailCheck = 2 then &#xA;[HeadY]&#xA;elseif TailCheck = 3  then [TailY]+1&#xA;elseif TailCheck = 4 then [TailY]-1 else [TailY] endif" field="TailY" size="4" type="Int32" />
+            <FormulaField expression="[HeadX]+&#xA;switch([CurrentDir],0,&quot;R&quot;,1,&quot;L&quot;,-1)" field="HeadX" size="4" type="Int32" />
+            <FormulaField expression="[HeadY]+&#xA;switch([CurrentDir],0,&quot;U&quot;,1,&quot;D&quot;,-1)" field="HeadY" size="4" type="Int32" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>CurrentDir = Left([Concat_Direction],1)
+Concat_Direction = Substring([Concat_Dir...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Concat_Direction" size="1073741823" source="Formula: Substring([Concat_Direction],1)" type="V_WString" />
+            <Field name="HeadX" source="Formula: [HeadX]+&#xA;switch([CurrentDir],0,&quot;R&quot;,1,&quot;L&quot;,-1)" type="Int32" />
+            <Field name="HeadY" source="Formula: [HeadY]+&#xA;switch([CurrentDir],0,&quot;U&quot;,1,&quot;D&quot;,-1)" type="Int32" />
+            <Field name="TailX" source="Formula: If TailCheck = 1 then [TailX]+1&#xA;elseif TailCheck = 2 then [TailX]-1&#xA;elseif TailCheck = 3 then [HeadX]&#xA;elseif TailCheck = 4 then [HeadX] else [TailX] endif" type="Int32" />
+            <Field name="TailY" source="Formula: If TailCheck = 1 then [HeadY]&#xA;elseif TailCheck = 2 then &#xA;[HeadY]&#xA;elseif TailCheck = 3  then [TailY]+1&#xA;elseif TailCheck = 4 then [TailY]-1 else [TailY] endif" type="Int32" />
+            <Field name="CurrentDir" size="1073741823" source="Formula: Left([Concat_Direction],1)" type="V_WString" />
+            <Field name="TailCheck" source="Formula: If [CurrentDir]=&quot;R&quot; and [TailX]&lt;[HeadX] then 1&#xA;elseif [CurrentDir]=&quot;L&quot; and [TailX]&gt;[HeadX] then 2&#xA;elseif [CurrentDir]=&quot;U&quot; and [TailY]&lt;[HeadY] then 3&#xA;elseif [CurrentDir]=&quot;D&quot; and [TailY]&gt;[HeadY] then 4 else 5 endif" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="150" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Concat_Direction" selected="True" />
+            <SelectField field="HeadX" selected="True" />
+            <SelectField field="HeadY" selected="True" />
+            <SelectField field="TailX" selected="True" />
+            <SelectField field="TailY" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Concat_Direction" size="1073741823" source="Formula: Substring([Concat_Direction],1)" type="V_WString" />
+            <Field name="HeadX" source="Formula: [HeadX]+&#xA;switch([CurrentDir],0,&quot;R&quot;,1,&quot;L&quot;,-1)" type="Int32" />
+            <Field name="HeadY" source="Formula: [HeadY]+&#xA;switch([CurrentDir],0,&quot;U&quot;,1,&quot;D&quot;,-1)" type="Int32" />
+            <Field name="TailX" source="Formula: If TailCheck = 1 then [TailX]+1&#xA;elseif TailCheck = 2 then [TailX]-1&#xA;elseif TailCheck = 3 then [HeadX]&#xA;elseif TailCheck = 4 then [HeadX] else [TailX] endif" type="Int32" />
+            <Field name="TailY" source="Formula: If TailCheck = 1 then [HeadY]&#xA;elseif TailCheck = 2 then &#xA;[HeadY]&#xA;elseif TailCheck = 3  then [TailY]+1&#xA;elseif TailCheck = 4 then [TailY]-1 else [TailY] endif" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="270" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Concat_Direction" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="HeadX" source="Formula: [HeadX]+&#xA;switch([CurrentDir],0,&quot;R&quot;,1,&quot;L&quot;,-1)" type="Int32" />
+            <Field name="HeadY" source="Formula: [HeadY]+&#xA;switch([CurrentDir],0,&quot;U&quot;,1,&quot;D&quot;,-1)" type="Int32" />
+            <Field name="TailX" source="Formula: If TailCheck = 1 then [TailX]+1&#xA;elseif TailCheck = 2 then [TailX]-1&#xA;elseif TailCheck = 3 then [HeadX]&#xA;elseif TailCheck = 4 then [HeadX] else [TailX] endif" type="Int32" />
+            <Field name="TailY" source="Formula: If TailCheck = 1 then [HeadY]&#xA;elseif TailCheck = 2 then &#xA;[HeadY]&#xA;elseif TailCheck = 3  then [TailY]+1&#xA;elseif TailCheck = 4 then [TailY]-1 else [TailY] endif" type="Int32" />
+            <Field name="CurrentDir" size="1073741823" source="Formula: Left([Concat_Direction],1)" type="V_WString" />
+            <Field name="TailCheck" source="Formula: If [CurrentDir]=&quot;R&quot; and [TailX]&lt;[HeadX] then 1&#xA;elseif [CurrentDir]=&quot;L&quot; and [TailX]&gt;[HeadX] then 2&#xA;elseif [CurrentDir]=&quot;U&quot; and [TailY]&lt;[HeadY] then 3&#xA;elseif [CurrentDir]=&quot;D&quot; and [TailY]&gt;[HeadY] then 4 else 5 endif" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="282" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Output6</Name>
+          <Abbrev>O</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Output</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="126" y="402" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Iterative</Name>
+          <Abbrev>I</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Output</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="138" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>!isempty([Concat_Direction])</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>!isempty([Concat_Direction])</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Concat_Direction" size="1073741823" source="Formula: Substring([Concat_Direction],1)" type="V_WString" />
+            <Field name="HeadX" source="Formula: [HeadX]+&#xA;switch([CurrentDir],0,&quot;R&quot;,1,&quot;L&quot;,-1)" type="Int32" />
+            <Field name="HeadY" source="Formula: [HeadY]+&#xA;switch([CurrentDir],0,&quot;U&quot;,1,&quot;D&quot;,-1)" type="Int32" />
+            <Field name="TailX" source="Formula: If TailCheck = 1 then [TailX]+1&#xA;elseif TailCheck = 2 then [TailX]-1&#xA;elseif TailCheck = 3 then [HeadX]&#xA;elseif TailCheck = 4 then [HeadX] else [TailX] endif" type="Int32" />
+            <Field name="TailY" source="Formula: If TailCheck = 1 then [HeadY]&#xA;elseif TailCheck = 2 then &#xA;[HeadY]&#xA;elseif TailCheck = 3  then [TailY]+1&#xA;elseif TailCheck = 4 then [TailY]-1 else [TailY] endif" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Concat_Direction" size="1073741823" source="Formula: Substring([Concat_Direction],1)" type="V_WString" />
+            <Field name="HeadX" source="Formula: [HeadX]+&#xA;switch([CurrentDir],0,&quot;R&quot;,1,&quot;L&quot;,-1)" type="Int32" />
+            <Field name="HeadY" source="Formula: [HeadY]+&#xA;switch([CurrentDir],0,&quot;U&quot;,1,&quot;D&quot;,-1)" type="Int32" />
+            <Field name="TailX" source="Formula: If TailCheck = 1 then [TailX]+1&#xA;elseif TailCheck = 2 then [TailX]-1&#xA;elseif TailCheck = 3 then [HeadX]&#xA;elseif TailCheck = 4 then [HeadX] else [TailX] endif" type="Int32" />
+            <Field name="TailY" source="Formula: If TailCheck = 1 then [HeadY]&#xA;elseif TailCheck = 2 then &#xA;[HeadY]&#xA;elseif TailCheck = 3  then [TailY]+1&#xA;elseif TailCheck = 4 then [TailY]-1 else [TailY] endif" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="True" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Vertical</LayoutType>
+    <Constants>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Input (2)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Output (6)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Output (7)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+    </Constants>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>day9part1</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="52f5ec4f-6a57-47e4-a9af-02a59a77754b" />
+      <Telemetry>
+        <PreviousWorkflowId value="" />
+        <OriginWorkflowId value="52f5ec4f-6a57-47e4-a9af-02a59a77754b" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="False" />
+    </Events>
+    <RuntimeProperties>
+      <Actions />
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (1)</Name>
+          <ToolId value="1" />
+          <Questions>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (2)</Name>
+              <ToolId value="2" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (6)</Description>
+              <Name>Macro Output (6)</Name>
+              <ToolId value="6" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (7)</Description>
+              <Name>Macro Output (7)</Name>
+              <ToolId value="7" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <IterativeMacro>
+        <Input>Input2</Input>
+        <Output>Iterative</Output>
+        <IterationLimit value="100000" />
+        <LimitBehavior>Error</LimitBehavior>
+        <OutputMode>AllSame</OutputMode>
+      </IterativeMacro>
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="6" Selected="True" />
+        <Tool ToolId="7" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>

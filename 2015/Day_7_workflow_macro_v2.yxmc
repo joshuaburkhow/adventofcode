@@ -1,0 +1,3684 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.1">
+  <Nodes>
+    <Node ToolID="49">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="330" y="71" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="5" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="1" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_1" selected="True" input="Left_" type="V_String" size="25" />
+                <SelectField field="Left_2" selected="True" input="Left_" type="V_String" size="25" />
+                <SelectField field="Left_3" selected="True" input="Left_" type="V_String" size="25" />
+                <SelectField field="Left_4" selected="True" input="Left_" type="V_String" size="25" />
+                <SelectField field="Left_5" selected="True" input="Left_" type="V_String" size="25" />
+                <SelectField field="Left_6" selected="True" input="Left_" type="V_String" size="25" />
+                <SelectField field="Right_1" selected="True" rename="Right_1" input="Right_" type="V_String" size="25" />
+                <SelectField field="Right_2" selected="True" rename="Right_2" input="Right_" type="V_String" size="25" />
+                <SelectField field="Right_3" selected="True" rename="Right_3" input="Right_" type="V_String" size="25" />
+                <SelectField field="Right_4" selected="True" rename="Right_4" input="Right_" type="V_String" size="25" />
+                <SelectField field="Right_5" selected="True" rename="Right_5" input="Right_" type="V_String" size="25" />
+                <SelectField field="Right_6" selected="True" rename="Right_6" input="Right_" type="V_String" size="25" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="1" size="2" source="TextInput:" type="String" />
+            <Field name="2" size="6" source="TextInput:" type="String" />
+            <Field name="3" size="5" source="TextInput:" type="String" />
+            <Field name="4" size="2" source="TextInput:" type="String" />
+            <Field name="5" size="2" source="TextInput:" type="String" />
+            <Field name="6" source="TextInput:" type="Int32" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="5" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="1" size="25" source="TextInput:" type="V_String" />
+            <Field name="2" size="25" source="TextInput:" type="V_String" />
+            <Field name="3" size="25" source="TextInput:" type="V_String" />
+            <Field name="4" size="25" source="TextInput:" type="V_String" />
+            <Field name="5" size="25" source="TextInput:" type="V_String" />
+            <Field name="6" size="25" source="TextInput:" type="V_String" />
+            <Field name="Right_1" size="25" source="TextInput:" type="V_String" />
+            <Field name="Right_2" size="25" source="TextInput:" type="V_String" />
+            <Field name="Right_3" size="25" source="TextInput:" type="V_String" />
+            <Field name="Right_4" size="25" source="TextInput:" type="V_String" />
+            <Field name="Right_5" size="25" source="TextInput:" type="V_String" />
+            <Field name="Right_6" size="25" source="TextInput:" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="1" size="2" source="TextInput:" type="String" />
+            <Field name="2" size="6" source="TextInput:" type="String" />
+            <Field name="3" size="5" source="TextInput:" type="String" />
+            <Field name="4" size="2" source="TextInput:" type="String" />
+            <Field name="5" size="2" source="TextInput:" type="String" />
+            <Field name="6" source="TextInput:" type="Int32" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="1" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="50">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="461" y="71" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IF REGEX_Match(tostring([6]), '^\d+$') THEN [6] ELSE [Right_1] ENDIF" field="Right_1" size="25" type="V_String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Right_1 = IF REGEX_Match(tostring([6]), '^\d+$') THEN [6] ELSE [Right_1] ENDIF
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="1" size="25" source="TextInput:" type="V_String" />
+            <Field name="2" size="25" source="TextInput:" type="V_String" />
+            <Field name="3" size="25" source="TextInput:" type="V_String" />
+            <Field name="4" size="25" source="TextInput:" type="V_String" />
+            <Field name="5" size="25" source="TextInput:" type="V_String" />
+            <Field name="6" size="25" source="TextInput:" type="V_String" />
+            <Field name="Right_1" size="25" source="Formula: IF REGEX_Match(tostring([6]), '^\d+$') THEN [6] ELSE [Right_1] ENDIF" type="V_String" />
+            <Field name="Right_2" size="25" source="TextInput:" type="V_String" />
+            <Field name="Right_3" size="25" source="TextInput:" type="V_String" />
+            <Field name="Right_4" size="25" source="TextInput:" type="V_String" />
+            <Field name="Right_5" size="25" source="TextInput:" type="V_String" />
+            <Field name="Right_6" size="25" source="TextInput:" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="51">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="591" y="71" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IF (REGEX_Match(tostring([Right_1]), '^-?\d+$') || isempty([Right_1])) &amp;&amp; REGEX_Match(tostring([Right_3]), '^-?\d+$') THEN&#xA;  IF [Right_2] = &quot;RSHIFT&quot; &#xA;  THEN ShiftRight(ToNumber([Right_1]), ToNumber([Right_3]))&#xA;      ELSEIF [Right_2] = &quot;LSHIFT&quot;&#xA;      THEN ShiftLeft(ToNumber([Right_1]),ToNumber([Right_3]))&#xA;      ELSEIF [Right_2] = &quot;AND&quot;&#xA;      THEN BinaryAnd(ToNumber([Right_1]),ToNumber([Right_3]))&#xA;      ELSEIF [Right_2] = &quot;OR&quot;&#xA;      THEN BinaryOr(ToNumber([Right_1]),ToNumber([Right_3]))&#xA;      ELSEIF [Right_2] = &quot;NOT&quot;&#xA;      THEN BinaryNot(ToNumber([Right_3]))&#xA;      ELSE [Right_6]&#xA;  ENDIF&#xA;  ELSE [Right_6]&#xA;ENDIF" field="Right_6" size="25" type="V_String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Right_6 = IF (REGEX_Match(tostring([Right_1]), '^-?\d+$') || isempty([Right_1]))...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="1" size="25" source="TextInput:" type="V_String" />
+            <Field name="2" size="25" source="TextInput:" type="V_String" />
+            <Field name="3" size="25" source="TextInput:" type="V_String" />
+            <Field name="4" size="25" source="TextInput:" type="V_String" />
+            <Field name="5" size="25" source="TextInput:" type="V_String" />
+            <Field name="6" size="25" source="TextInput:" type="V_String" />
+            <Field name="Right_1" size="25" source="Formula: IF REGEX_Match(tostring([6]), '^\d+$') THEN [6] ELSE [Right_1] ENDIF" type="V_String" />
+            <Field name="Right_2" size="25" source="TextInput:" type="V_String" />
+            <Field name="Right_3" size="25" source="TextInput:" type="V_String" />
+            <Field name="Right_4" size="25" source="TextInput:" type="V_String" />
+            <Field name="Right_5" size="25" source="TextInput:" type="V_String" />
+            <Field name="Right_6" size="25" source="Formula: IF (REGEX_Match(tostring([Right_1]), '^-?\d+$') || isempty([Right_1])) &amp;&amp; REGEX_Match(tostring([Right_3]), '^-?\d+$') THEN&#xA;  IF [Right_2] = &quot;RSHIFT&quot; &#xA;  THEN ShiftRight(ToNumber([Right_1]), ToNumber([Right_3]))&#xA;      ELSEIF [Right_2] = &quot;LSHIFT&quot;&#xA;      THEN ShiftLeft(ToNumber([Right_1]),ToNumber([Right_3]))&#xA;      ELSEIF [Right_2] = &quot;AND&quot;&#xA;      THEN BinaryAnd(ToNumber([Right_1]),ToNumber([Right_3]))&#xA;      ELSEIF [Right_2] = &quot;OR&quot;&#xA;      THEN BinaryOr(ToNumber([Right_1]),ToNumber([Right_3]))&#xA;      ELSEIF [Right_2] = &quot;NOT&quot;&#xA;      THEN BinaryNot(ToNumber([Right_3]))&#xA;      ELSE [Right_6]&#xA;  ENDIF&#xA;  ELSE [Right_6]&#xA;ENDIF" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="52">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="722" y="71" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="1" selected="False" />
+            <SelectField field="2" selected="False" />
+            <SelectField field="3" selected="False" />
+            <SelectField field="4" selected="False" />
+            <SelectField field="5" selected="False" />
+            <SelectField field="6" selected="False" />
+            <SelectField field="Right_1" selected="True" rename="1" />
+            <SelectField field="Right_2" selected="True" rename="2" />
+            <SelectField field="Right_3" selected="True" rename="3" />
+            <SelectField field="Right_4" selected="True" rename="4" />
+            <SelectField field="Right_5" selected="True" rename="5" />
+            <SelectField field="Right_6" selected="True" rename="6" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="1" size="25" source="Formula: IF REGEX_Match(tostring([6]), '^\d+$') THEN [6] ELSE [Right_1] ENDIF" type="V_String" />
+            <Field name="2" size="25" source="TextInput:" type="V_String" />
+            <Field name="3" size="25" source="TextInput:" type="V_String" />
+            <Field name="4" size="25" source="TextInput:" type="V_String" />
+            <Field name="5" size="25" source="TextInput:" type="V_String" />
+            <Field name="6" size="25" source="Formula: IF (REGEX_Match(tostring([Right_1]), '^-?\d+$') || isempty([Right_1])) &amp;&amp; REGEX_Match(tostring([Right_3]), '^-?\d+$') THEN&#xA;  IF [Right_2] = &quot;RSHIFT&quot; &#xA;  THEN ShiftRight(ToNumber([Right_1]), ToNumber([Right_3]))&#xA;      ELSEIF [Right_2] = &quot;LSHIFT&quot;&#xA;      THEN ShiftLeft(ToNumber([Right_1]),ToNumber([Right_3]))&#xA;      ELSEIF [Right_2] = &quot;AND&quot;&#xA;      THEN BinaryAnd(ToNumber([Right_1]),ToNumber([Right_3]))&#xA;      ELSEIF [Right_2] = &quot;OR&quot;&#xA;      THEN BinaryOr(ToNumber([Right_1]),ToNumber([Right_3]))&#xA;      ELSEIF [Right_2] = &quot;NOT&quot;&#xA;      THEN BinaryNot(ToNumber([Right_3]))&#xA;      ELSE [Right_6]&#xA;  ENDIF&#xA;  ELSE [Right_6]&#xA;ENDIF" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="53">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="848" y="71" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="True" />
+          <OutputOrder>
+            <Connection>#1</Connection>
+            <Connection>#2</Connection>
+          </OutputOrder>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="1" size="25" source="(Multiple Sources)" type="V_String" />
+            <Field name="2" size="25" source="TextInput:" type="V_String" />
+            <Field name="3" size="25" source="TextInput:" type="V_String" />
+            <Field name="4" size="25" source="TextInput:" type="V_String" />
+            <Field name="5" size="25" source="TextInput:" type="V_String" />
+            <Field name="6" size="25" source="(Multiple Sources)" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="54">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="56">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="1017" y="63" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Output56</Name>
+          <Abbrev />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Output</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="61">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="315" y="282" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="5" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="1" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_1" selected="True" input="Left_" />
+                <SelectField field="Left_2" selected="True" input="Left_" />
+                <SelectField field="Left_3" selected="True" input="Left_" />
+                <SelectField field="Left_4" selected="True" input="Left_" />
+                <SelectField field="Left_5" selected="True" input="Left_" />
+                <SelectField field="Left_6" selected="True" input="Left_" />
+                <SelectField field="Right_1" selected="True" rename="Right_1" input="Right_" />
+                <SelectField field="Right_2" selected="True" rename="Right_2" input="Right_" />
+                <SelectField field="Right_3" selected="True" rename="Right_3" input="Right_" />
+                <SelectField field="Right_4" selected="True" rename="Right_4" input="Right_" />
+                <SelectField field="Right_5" selected="True" rename="Right_5" input="Right_" />
+                <SelectField field="Right_6" selected="True" rename="Right_6" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="1" size="25" source="(Multiple Sources)" type="V_String" />
+            <Field name="2" size="25" source="TextInput:" type="V_String" />
+            <Field name="3" size="25" source="TextInput:" type="V_String" />
+            <Field name="4" size="25" source="TextInput:" type="V_String" />
+            <Field name="5" size="25" source="TextInput:" type="V_String" />
+            <Field name="6" size="25" source="(Multiple Sources)" type="V_String" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="5" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="1" size="25" source="(Multiple Sources)" type="V_String" />
+            <Field name="2" size="25" source="TextInput:" type="V_String" />
+            <Field name="3" size="25" source="TextInput:" type="V_String" />
+            <Field name="4" size="25" source="TextInput:" type="V_String" />
+            <Field name="5" size="25" source="TextInput:" type="V_String" />
+            <Field name="6" size="25" source="(Multiple Sources)" type="V_String" />
+            <Field name="Right_1" size="25" source="(Multiple Sources)" type="V_String" />
+            <Field name="Right_2" size="25" source="TextInput:" type="V_String" />
+            <Field name="Right_3" size="25" source="TextInput:" type="V_String" />
+            <Field name="Right_4" size="25" source="TextInput:" type="V_String" />
+            <Field name="Right_5" size="25" source="TextInput:" type="V_String" />
+            <Field name="Right_6" size="25" source="(Multiple Sources)" type="V_String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="5" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="1" size="25" source="(Multiple Sources)" type="V_String" />
+            <Field name="2" size="25" source="TextInput:" type="V_String" />
+            <Field name="3" size="25" source="TextInput:" type="V_String" />
+            <Field name="4" size="25" source="TextInput:" type="V_String" />
+            <Field name="5" size="25" source="TextInput:" type="V_String" />
+            <Field name="6" size="25" source="(Multiple Sources)" type="V_String" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="1" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="62">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="446" y="282" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IF REGEX_Match(tostring([6]), '^\d+$') THEN [6] ELSE [Right_1] ENDIF" field="Right_1" size="25" type="V_String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Right_1 = IF REGEX_Match(tostring([6]), '^\d+$') THEN [6] ELSE [Right_1] ENDIF
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="1" size="25" source="(Multiple Sources)" type="V_String" />
+            <Field name="2" size="25" source="TextInput:" type="V_String" />
+            <Field name="3" size="25" source="TextInput:" type="V_String" />
+            <Field name="4" size="25" source="TextInput:" type="V_String" />
+            <Field name="5" size="25" source="TextInput:" type="V_String" />
+            <Field name="6" size="25" source="(Multiple Sources)" type="V_String" />
+            <Field name="Right_1" size="25" source="Formula: IF REGEX_Match(tostring([6]), '^\d+$') THEN [6] ELSE [Right_1] ENDIF" type="V_String" />
+            <Field name="Right_2" size="25" source="TextInput:" type="V_String" />
+            <Field name="Right_3" size="25" source="TextInput:" type="V_String" />
+            <Field name="Right_4" size="25" source="TextInput:" type="V_String" />
+            <Field name="Right_5" size="25" source="TextInput:" type="V_String" />
+            <Field name="Right_6" size="25" source="(Multiple Sources)" type="V_String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="5" order="" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="63">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="576" y="282" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IF (REGEX_Match(tostring([Right_1]), '^-?\d+$') || isempty([Right_1])) &amp;&amp; REGEX_Match(tostring([Right_3]), '^-?\d+$') THEN&#xA;  IF [Right_2] = &quot;RSHIFT&quot; &#xA;  THEN ShiftRight(ToNumber([Right_1]), ToNumber([Right_3]))&#xA;      ELSEIF [Right_2] = &quot;LSHIFT&quot;&#xA;      THEN ShiftLeft(ToNumber([Right_1]),ToNumber([Right_3]))&#xA;      ELSEIF [Right_2] = &quot;AND&quot;&#xA;      THEN BinaryAnd(ToNumber([Right_1]),ToNumber([Right_3]))&#xA;      ELSEIF [Right_2] = &quot;OR&quot;&#xA;      THEN BinaryOr(ToNumber([Right_1]),ToNumber([Right_3]))&#xA;      ELSEIF [Right_2] = &quot;NOT&quot;&#xA;      THEN BinaryNot(ToNumber([Right_3]))&#xA;      ELSE [Right_6]&#xA;  ENDIF&#xA;  ELSE [Right_6]&#xA;ENDIF" field="Right_6" size="25" type="V_String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Right_6 = IF (REGEX_Match(tostring([Right_1]), '^-?\d+$') || isempty([Right_1]))...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="1" size="25" source="(Multiple Sources)" type="V_String" />
+            <Field name="2" size="25" source="TextInput:" type="V_String" />
+            <Field name="3" size="25" source="TextInput:" type="V_String" />
+            <Field name="4" size="25" source="TextInput:" type="V_String" />
+            <Field name="5" size="25" source="TextInput:" type="V_String" />
+            <Field name="6" size="25" source="(Multiple Sources)" type="V_String" />
+            <Field name="Right_1" size="25" source="Formula: IF REGEX_Match(tostring([6]), '^\d+$') THEN [6] ELSE [Right_1] ENDIF" type="V_String" />
+            <Field name="Right_2" size="25" source="TextInput:" type="V_String" />
+            <Field name="Right_3" size="25" source="TextInput:" type="V_String" />
+            <Field name="Right_4" size="25" source="TextInput:" type="V_String" />
+            <Field name="Right_5" size="25" source="TextInput:" type="V_String" />
+            <Field name="Right_6" size="25" source="Formula: IF (REGEX_Match(tostring([Right_1]), '^-?\d+$') || isempty([Right_1])) &amp;&amp; REGEX_Match(tostring([Right_3]), '^-?\d+$') THEN&#xA;  IF [Right_2] = &quot;RSHIFT&quot; &#xA;  THEN ShiftRight(ToNumber([Right_1]), ToNumber([Right_3]))&#xA;      ELSEIF [Right_2] = &quot;LSHIFT&quot;&#xA;      THEN ShiftLeft(ToNumber([Right_1]),ToNumber([Right_3]))&#xA;      ELSEIF [Right_2] = &quot;AND&quot;&#xA;      THEN BinaryAnd(ToNumber([Right_1]),ToNumber([Right_3]))&#xA;      ELSEIF [Right_2] = &quot;OR&quot;&#xA;      THEN BinaryOr(ToNumber([Right_1]),ToNumber([Right_3]))&#xA;      ELSEIF [Right_2] = &quot;NOT&quot;&#xA;      THEN BinaryNot(ToNumber([Right_3]))&#xA;      ELSE [Right_6]&#xA;  ENDIF&#xA;  ELSE [Right_6]&#xA;ENDIF" type="V_String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="5" order="" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="64">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="707" y="282" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="1" selected="False" />
+            <SelectField field="2" selected="False" />
+            <SelectField field="3" selected="False" />
+            <SelectField field="4" selected="False" />
+            <SelectField field="5" selected="False" />
+            <SelectField field="6" selected="False" />
+            <SelectField field="Right_1" selected="True" rename="1" />
+            <SelectField field="Right_2" selected="True" rename="2" />
+            <SelectField field="Right_3" selected="True" rename="3" />
+            <SelectField field="Right_4" selected="True" rename="4" />
+            <SelectField field="Right_5" selected="True" rename="5" />
+            <SelectField field="Right_6" selected="True" rename="6" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="1" size="25" source="Formula: IF REGEX_Match(tostring([6]), '^\d+$') THEN [6] ELSE [Right_1] ENDIF" type="V_String" />
+            <Field name="2" size="25" source="TextInput:" type="V_String" />
+            <Field name="3" size="25" source="TextInput:" type="V_String" />
+            <Field name="4" size="25" source="TextInput:" type="V_String" />
+            <Field name="5" size="25" source="TextInput:" type="V_String" />
+            <Field name="6" size="25" source="Formula: IF (REGEX_Match(tostring([Right_1]), '^-?\d+$') || isempty([Right_1])) &amp;&amp; REGEX_Match(tostring([Right_3]), '^-?\d+$') THEN&#xA;  IF [Right_2] = &quot;RSHIFT&quot; &#xA;  THEN ShiftRight(ToNumber([Right_1]), ToNumber([Right_3]))&#xA;      ELSEIF [Right_2] = &quot;LSHIFT&quot;&#xA;      THEN ShiftLeft(ToNumber([Right_1]),ToNumber([Right_3]))&#xA;      ELSEIF [Right_2] = &quot;AND&quot;&#xA;      THEN BinaryAnd(ToNumber([Right_1]),ToNumber([Right_3]))&#xA;      ELSEIF [Right_2] = &quot;OR&quot;&#xA;      THEN BinaryOr(ToNumber([Right_1]),ToNumber([Right_3]))&#xA;      ELSEIF [Right_2] = &quot;NOT&quot;&#xA;      THEN BinaryNot(ToNumber([Right_3]))&#xA;      ELSE [Right_6]&#xA;  ENDIF&#xA;  ELSE [Right_6]&#xA;ENDIF" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="65">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="838" y="282" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="True" />
+          <OutputOrder>
+            <Connection>#1</Connection>
+            <Connection>#3</Connection>
+            <Connection>#2</Connection>
+          </OutputOrder>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="1" size="25" source="(Multiple Sources)" type="V_String" />
+            <Field name="2" size="25" source="TextInput:" type="V_String" />
+            <Field name="3" size="25" source="TextInput:" type="V_String" />
+            <Field name="4" size="25" source="TextInput:" type="V_String" />
+            <Field name="5" size="25" source="TextInput:" type="V_String" />
+            <Field name="6" size="25" source="(Multiple Sources)" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="67">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="319" y="491" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="5" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="3" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_1" selected="True" input="Left_" />
+                <SelectField field="Left_2" selected="True" input="Left_" />
+                <SelectField field="Left_3" selected="True" input="Left_" />
+                <SelectField field="Left_4" selected="True" input="Left_" />
+                <SelectField field="Left_5" selected="True" input="Left_" />
+                <SelectField field="Left_6" selected="True" input="Left_" />
+                <SelectField field="Right_1" selected="True" rename="Right_1" input="Right_" />
+                <SelectField field="Right_2" selected="True" rename="Right_2" input="Right_" />
+                <SelectField field="Right_3" selected="True" rename="Right_3" input="Right_" />
+                <SelectField field="Right_4" selected="True" rename="Right_4" input="Right_" />
+                <SelectField field="Right_5" selected="True" rename="Right_5" input="Right_" />
+                <SelectField field="Right_6" selected="True" rename="Right_6" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="1" size="25" source="(Multiple Sources)" type="V_String" />
+            <Field name="2" size="25" source="TextInput:" type="V_String" />
+            <Field name="3" size="25" source="TextInput:" type="V_String" />
+            <Field name="4" size="25" source="TextInput:" type="V_String" />
+            <Field name="5" size="25" source="TextInput:" type="V_String" />
+            <Field name="6" size="25" source="(Multiple Sources)" type="V_String" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="5" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="1" size="25" source="(Multiple Sources)" type="V_String" />
+            <Field name="2" size="25" source="TextInput:" type="V_String" />
+            <Field name="3" size="25" source="TextInput:" type="V_String" />
+            <Field name="4" size="25" source="TextInput:" type="V_String" />
+            <Field name="5" size="25" source="TextInput:" type="V_String" />
+            <Field name="6" size="25" source="(Multiple Sources)" type="V_String" />
+            <Field name="Right_1" size="25" source="(Multiple Sources)" type="V_String" />
+            <Field name="Right_2" size="25" source="TextInput:" type="V_String" />
+            <Field name="Right_3" size="25" source="TextInput:" type="V_String" />
+            <Field name="Right_4" size="25" source="TextInput:" type="V_String" />
+            <Field name="Right_5" size="25" source="TextInput:" type="V_String" />
+            <Field name="Right_6" size="25" source="(Multiple Sources)" type="V_String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="5" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="1" size="25" source="(Multiple Sources)" type="V_String" />
+            <Field name="2" size="25" source="TextInput:" type="V_String" />
+            <Field name="3" size="25" source="TextInput:" type="V_String" />
+            <Field name="4" size="25" source="TextInput:" type="V_String" />
+            <Field name="5" size="25" source="TextInput:" type="V_String" />
+            <Field name="6" size="25" source="(Multiple Sources)" type="V_String" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="3" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="68">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="450" y="491" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IF REGEX_Match(tostring([6]), '^\d+$') THEN [6] ELSE [Right_3] ENDIF" field="Right_3" size="25" type="V_String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Right_3 = IF REGEX_Match(tostring([6]), '^\d+$') THEN [6] ELSE [Right_3] ENDIF
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="1" size="25" source="(Multiple Sources)" type="V_String" />
+            <Field name="2" size="25" source="TextInput:" type="V_String" />
+            <Field name="3" size="25" source="TextInput:" type="V_String" />
+            <Field name="4" size="25" source="TextInput:" type="V_String" />
+            <Field name="5" size="25" source="TextInput:" type="V_String" />
+            <Field name="6" size="25" source="(Multiple Sources)" type="V_String" />
+            <Field name="Right_1" size="25" source="(Multiple Sources)" type="V_String" />
+            <Field name="Right_2" size="25" source="TextInput:" type="V_String" />
+            <Field name="Right_3" size="25" source="Formula: IF REGEX_Match(tostring([6]), '^\d+$') THEN [6] ELSE [Right_3] ENDIF" type="V_String" />
+            <Field name="Right_4" size="25" source="TextInput:" type="V_String" />
+            <Field name="Right_5" size="25" source="TextInput:" type="V_String" />
+            <Field name="Right_6" size="25" source="(Multiple Sources)" type="V_String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="5" order="" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="69">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="580" y="491" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IF (REGEX_Match(tostring([Right_1]), '^-?\d+$') || isnull([Right_1])) &amp;&amp; REGEX_Match(tostring([Right_3]), '^-?\d+$') THEN&#xA;  IF [Right_2] = &quot;RSHIFT&quot; &#xA;  	THEN ShiftRight(ToNumber([Right_1]), ToNumber([Right_3]))&#xA;    ELSEIF [Right_2] = &quot;LSHIFT&quot;&#xA;    THEN ShiftLeft(ToNumber([Right_1]),ToNumber([Right_3]))&#xA;    ELSEIF [Right_2] = &quot;AND&quot;&#xA;    THEN BinaryAnd(ToNumber([Right_1]),ToNumber([Right_3]))&#xA;    ELSEIF [Right_2] = &quot;OR&quot;&#xA;    THEN BinaryOr(ToNumber([Right_1]),ToNumber([Right_3]))&#xA;    ELSEIF [Right_2] = &quot;NOT&quot;&#xA;    THEN BinaryNot(ToNumber([Right_3]))&#xA;    ELSE [Right_6]&#xA;  ENDIF&#xA;  ELSE [Right_6]&#xA;ENDIF" field="Right_6" size="25" type="V_String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Right_6 = IF (REGEX_Match(tostring([Right_1]), '^-?\d+$') || isnull([Right_1])) ...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="1" size="25" source="(Multiple Sources)" type="V_String" />
+            <Field name="2" size="25" source="TextInput:" type="V_String" />
+            <Field name="3" size="25" source="TextInput:" type="V_String" />
+            <Field name="4" size="25" source="TextInput:" type="V_String" />
+            <Field name="5" size="25" source="TextInput:" type="V_String" />
+            <Field name="6" size="25" source="(Multiple Sources)" type="V_String" />
+            <Field name="Right_1" size="25" source="(Multiple Sources)" type="V_String" />
+            <Field name="Right_2" size="25" source="TextInput:" type="V_String" />
+            <Field name="Right_3" size="25" source="Formula: IF REGEX_Match(tostring([6]), '^\d+$') THEN [6] ELSE [Right_3] ENDIF" type="V_String" />
+            <Field name="Right_4" size="25" source="TextInput:" type="V_String" />
+            <Field name="Right_5" size="25" source="TextInput:" type="V_String" />
+            <Field name="Right_6" size="25" source="Formula: IF (REGEX_Match(tostring([Right_1]), '^-?\d+$') || isnull([Right_1])) &amp;&amp; REGEX_Match(tostring([Right_3]), '^-?\d+$') THEN&#xA;  IF [Right_2] = &quot;RSHIFT&quot; &#xA;   THEN ShiftRight(ToNumber([Right_1]), ToNumber([Right_3]))&#xA;    ELSEIF [Right_2] = &quot;LSHIFT&quot;&#xA;    THEN ShiftLeft(ToNumber([Right_1]),ToNumber([Right_3]))&#xA;    ELSEIF [Right_2] = &quot;AND&quot;&#xA;    THEN BinaryAnd(ToNumber([Right_1]),ToNumber([Right_3]))&#xA;    ELSEIF [Right_2] = &quot;OR&quot;&#xA;    THEN BinaryOr(ToNumber([Right_1]),ToNumber([Right_3]))&#xA;    ELSEIF [Right_2] = &quot;NOT&quot;&#xA;    THEN BinaryNot(ToNumber([Right_3]))&#xA;    ELSE [Right_6]&#xA;  ENDIF&#xA;  ELSE [Right_6]&#xA;ENDIF" type="V_String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="5" order="" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="70">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="711" y="491" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="1" selected="False" />
+            <SelectField field="2" selected="False" />
+            <SelectField field="3" selected="False" />
+            <SelectField field="4" selected="False" />
+            <SelectField field="5" selected="False" />
+            <SelectField field="6" selected="False" />
+            <SelectField field="Right_1" selected="True" rename="1" />
+            <SelectField field="Right_2" selected="True" rename="2" />
+            <SelectField field="Right_3" selected="True" rename="3" />
+            <SelectField field="Right_4" selected="True" rename="4" />
+            <SelectField field="Right_5" selected="True" rename="5" />
+            <SelectField field="Right_6" selected="True" rename="6" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="1" size="25" source="(Multiple Sources)" type="V_String" />
+            <Field name="2" size="25" source="TextInput:" type="V_String" />
+            <Field name="3" size="25" source="Formula: IF REGEX_Match(tostring([6]), '^\d+$') THEN [6] ELSE [Right_3] ENDIF" type="V_String" />
+            <Field name="4" size="25" source="TextInput:" type="V_String" />
+            <Field name="5" size="25" source="TextInput:" type="V_String" />
+            <Field name="6" size="25" source="Formula: IF (REGEX_Match(tostring([Right_1]), '^-?\d+$') || isnull([Right_1])) &amp;&amp; REGEX_Match(tostring([Right_3]), '^-?\d+$') THEN&#xA;  IF [Right_2] = &quot;RSHIFT&quot; &#xA;   THEN ShiftRight(ToNumber([Right_1]), ToNumber([Right_3]))&#xA;    ELSEIF [Right_2] = &quot;LSHIFT&quot;&#xA;    THEN ShiftLeft(ToNumber([Right_1]),ToNumber([Right_3]))&#xA;    ELSEIF [Right_2] = &quot;AND&quot;&#xA;    THEN BinaryAnd(ToNumber([Right_1]),ToNumber([Right_3]))&#xA;    ELSEIF [Right_2] = &quot;OR&quot;&#xA;    THEN BinaryOr(ToNumber([Right_1]),ToNumber([Right_3]))&#xA;    ELSEIF [Right_2] = &quot;NOT&quot;&#xA;    THEN BinaryNot(ToNumber([Right_3]))&#xA;    ELSE [Right_6]&#xA;  ENDIF&#xA;  ELSE [Right_6]&#xA;ENDIF" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="71">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="842" y="491" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="True" />
+          <OutputOrder>
+            <Connection>#1</Connection>
+            <Connection>#2</Connection>
+          </OutputOrder>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="1" size="25" source="(Multiple Sources)" type="V_String" />
+            <Field name="2" size="25" source="TextInput:" type="V_String" />
+            <Field name="3" size="25" source="(Multiple Sources)" type="V_String" />
+            <Field name="4" size="25" source="TextInput:" type="V_String" />
+            <Field name="5" size="25" source="TextInput:" type="V_String" />
+            <Field name="6" size="25" source="(Multiple Sources)" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="76">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="56" y="69" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="False" />
+          <Name>Input76</Name>
+          <Abbrev />
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <TextInput>
+            <Configuration>
+              <NumRows value="339" />
+              <Fields>
+                <Field name="1" />
+                <Field name="2" />
+                <Field name="3" />
+                <Field name="4" />
+                <Field name="5" />
+                <Field name="6" />
+              </Fields>
+              <Data>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>dq</c>
+                  <c>-&gt;</c>
+                  <c>dr</c>
+                  <c />
+                </r>
+                <r>
+                  <c>kg</c>
+                  <c>OR</c>
+                  <c>kf</c>
+                  <c>-&gt;</c>
+                  <c>kh</c>
+                  <c />
+                </r>
+                <r>
+                  <c>ep</c>
+                  <c>OR</c>
+                  <c>eo</c>
+                  <c>-&gt;</c>
+                  <c>eq</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c />
+                  <c>44430</c>
+                  <c>-&gt;</c>
+                  <c>b</c>
+                  <c>44430</c>
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>gs</c>
+                  <c>-&gt;</c>
+                  <c>gt</c>
+                  <c />
+                </r>
+                <r>
+                  <c>dd</c>
+                  <c>OR</c>
+                  <c>do</c>
+                  <c>-&gt;</c>
+                  <c>dp</c>
+                  <c />
+                </r>
+                <r>
+                  <c>eg</c>
+                  <c>AND</c>
+                  <c>ei</c>
+                  <c>-&gt;</c>
+                  <c>ej</c>
+                  <c />
+                </r>
+                <r>
+                  <c>y</c>
+                  <c>AND</c>
+                  <c>ae</c>
+                  <c>-&gt;</c>
+                  <c>ag</c>
+                  <c />
+                </r>
+                <r>
+                  <c>jx</c>
+                  <c>AND</c>
+                  <c>jz</c>
+                  <c>-&gt;</c>
+                  <c>ka</c>
+                  <c />
+                </r>
+                <r>
+                  <c>lf</c>
+                  <c>RSHIFT</c>
+                  <c>2</c>
+                  <c>-&gt;</c>
+                  <c>lg</c>
+                  <c />
+                </r>
+                <r>
+                  <c>z</c>
+                  <c>AND</c>
+                  <c>aa</c>
+                  <c>-&gt;</c>
+                  <c>ac</c>
+                  <c />
+                </r>
+                <r>
+                  <c>dy</c>
+                  <c>AND</c>
+                  <c>ej</c>
+                  <c>-&gt;</c>
+                  <c>el</c>
+                  <c />
+                </r>
+                <r>
+                  <c>bj</c>
+                  <c>OR</c>
+                  <c>bi</c>
+                  <c>-&gt;</c>
+                  <c>bk</c>
+                  <c />
+                </r>
+                <r>
+                  <c>kk</c>
+                  <c>RSHIFT</c>
+                  <c>3</c>
+                  <c>-&gt;</c>
+                  <c>km</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>cn</c>
+                  <c>-&gt;</c>
+                  <c>co</c>
+                  <c />
+                </r>
+                <r>
+                  <c>gn</c>
+                  <c>AND</c>
+                  <c>gp</c>
+                  <c>-&gt;</c>
+                  <c>gq</c>
+                  <c />
+                </r>
+                <r>
+                  <c>cq</c>
+                  <c>AND</c>
+                  <c>cs</c>
+                  <c>-&gt;</c>
+                  <c>ct</c>
+                  <c />
+                </r>
+                <r>
+                  <c>eo</c>
+                  <c>LSHIFT</c>
+                  <c>15</c>
+                  <c>-&gt;</c>
+                  <c>es</c>
+                  <c />
+                </r>
+                <r>
+                  <c>lg</c>
+                  <c>OR</c>
+                  <c>lm</c>
+                  <c>-&gt;</c>
+                  <c>ln</c>
+                  <c />
+                </r>
+                <r>
+                  <c>dy</c>
+                  <c>OR</c>
+                  <c>ej</c>
+                  <c>-&gt;</c>
+                  <c>ek</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>di</c>
+                  <c>-&gt;</c>
+                  <c>dj</c>
+                  <c />
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>AND</c>
+                  <c>fi</c>
+                  <c>-&gt;</c>
+                  <c>fj</c>
+                  <c />
+                </r>
+                <r>
+                  <c>kf</c>
+                  <c>LSHIFT</c>
+                  <c>15</c>
+                  <c>-&gt;</c>
+                  <c>kj</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>jy</c>
+                  <c>-&gt;</c>
+                  <c>jz</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>ft</c>
+                  <c>-&gt;</c>
+                  <c>fu</c>
+                  <c />
+                </r>
+                <r>
+                  <c>fs</c>
+                  <c>AND</c>
+                  <c>fu</c>
+                  <c>-&gt;</c>
+                  <c>fv</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>hr</c>
+                  <c>-&gt;</c>
+                  <c>hs</c>
+                  <c />
+                </r>
+                <r>
+                  <c>ck</c>
+                  <c>OR</c>
+                  <c>cl</c>
+                  <c>-&gt;</c>
+                  <c>cm</c>
+                  <c />
+                </r>
+                <r>
+                  <c>jp</c>
+                  <c>RSHIFT</c>
+                  <c>5</c>
+                  <c>-&gt;</c>
+                  <c>js</c>
+                  <c />
+                </r>
+                <r>
+                  <c>iv</c>
+                  <c>OR</c>
+                  <c>jb</c>
+                  <c>-&gt;</c>
+                  <c>jc</c>
+                  <c />
+                </r>
+                <r>
+                  <c>is</c>
+                  <c>OR</c>
+                  <c>it</c>
+                  <c>-&gt;</c>
+                  <c>iu</c>
+                  <c />
+                </r>
+                <r>
+                  <c>ld</c>
+                  <c>OR</c>
+                  <c>le</c>
+                  <c>-&gt;</c>
+                  <c>lf</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>fc</c>
+                  <c>-&gt;</c>
+                  <c>fd</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>dm</c>
+                  <c>-&gt;</c>
+                  <c>dn</c>
+                  <c />
+                </r>
+                <r>
+                  <c>bn</c>
+                  <c>OR</c>
+                  <c>by</c>
+                  <c>-&gt;</c>
+                  <c>bz</c>
+                  <c />
+                </r>
+                <r>
+                  <c>aj</c>
+                  <c>AND</c>
+                  <c>al</c>
+                  <c>-&gt;</c>
+                  <c>am</c>
+                  <c />
+                </r>
+                <r>
+                  <c>cd</c>
+                  <c>LSHIFT</c>
+                  <c>15</c>
+                  <c>-&gt;</c>
+                  <c>ch</c>
+                  <c />
+                </r>
+                <r>
+                  <c>jp</c>
+                  <c>AND</c>
+                  <c>ka</c>
+                  <c>-&gt;</c>
+                  <c>kc</c>
+                  <c />
+                </r>
+                <r>
+                  <c>ci</c>
+                  <c>OR</c>
+                  <c>ct</c>
+                  <c>-&gt;</c>
+                  <c>cu</c>
+                  <c />
+                </r>
+                <r>
+                  <c>gv</c>
+                  <c>AND</c>
+                  <c>gx</c>
+                  <c>-&gt;</c>
+                  <c>gy</c>
+                  <c />
+                </r>
+                <r>
+                  <c>de</c>
+                  <c>AND</c>
+                  <c>dk</c>
+                  <c>-&gt;</c>
+                  <c>dm</c>
+                  <c />
+                </r>
+                <r>
+                  <c>x</c>
+                  <c>RSHIFT</c>
+                  <c>5</c>
+                  <c>-&gt;</c>
+                  <c>aa</c>
+                  <c />
+                </r>
+                <r>
+                  <c>et</c>
+                  <c>RSHIFT</c>
+                  <c>2</c>
+                  <c>-&gt;</c>
+                  <c>eu</c>
+                  <c />
+                </r>
+                <r>
+                  <c>x</c>
+                  <c>RSHIFT</c>
+                  <c>1</c>
+                  <c>-&gt;</c>
+                  <c>aq</c>
+                  <c />
+                </r>
+                <r>
+                  <c>ia</c>
+                  <c>OR</c>
+                  <c>ig</c>
+                  <c>-&gt;</c>
+                  <c>ih</c>
+                  <c />
+                </r>
+                <r>
+                  <c>bk</c>
+                  <c>LSHIFT</c>
+                  <c>1</c>
+                  <c>-&gt;</c>
+                  <c>ce</c>
+                  <c />
+                </r>
+                <r>
+                  <c>y</c>
+                  <c>OR</c>
+                  <c>ae</c>
+                  <c>-&gt;</c>
+                  <c>af</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>ca</c>
+                  <c>-&gt;</c>
+                  <c>cb</c>
+                  <c />
+                </r>
+                <r>
+                  <c>e</c>
+                  <c>AND</c>
+                  <c>f</c>
+                  <c>-&gt;</c>
+                  <c>h</c>
+                  <c />
+                </r>
+                <r>
+                  <c>ia</c>
+                  <c>AND</c>
+                  <c>ig</c>
+                  <c>-&gt;</c>
+                  <c>ii</c>
+                  <c />
+                </r>
+                <r>
+                  <c>ck</c>
+                  <c>AND</c>
+                  <c>cl</c>
+                  <c>-&gt;</c>
+                  <c>cn</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>jh</c>
+                  <c>-&gt;</c>
+                  <c>ji</c>
+                  <c />
+                </r>
+                <r>
+                  <c>z</c>
+                  <c>OR</c>
+                  <c>aa</c>
+                  <c>-&gt;</c>
+                  <c>ab</c>
+                  <c />
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>AND</c>
+                  <c>en</c>
+                  <c>-&gt;</c>
+                  <c>eo</c>
+                  <c />
+                </r>
+                <r>
+                  <c>ib</c>
+                  <c>AND</c>
+                  <c>ic</c>
+                  <c>-&gt;</c>
+                  <c>ie</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>eh</c>
+                  <c>-&gt;</c>
+                  <c>ei</c>
+                  <c />
+                </r>
+                <r>
+                  <c>iy</c>
+                  <c>AND</c>
+                  <c>ja</c>
+                  <c>-&gt;</c>
+                  <c>jb</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>bb</c>
+                  <c>-&gt;</c>
+                  <c>bc</c>
+                  <c />
+                </r>
+                <r>
+                  <c>ha</c>
+                  <c>OR</c>
+                  <c>gz</c>
+                  <c>-&gt;</c>
+                  <c>hb</c>
+                  <c />
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>AND</c>
+                  <c>cx</c>
+                  <c>-&gt;</c>
+                  <c>cy</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>ax</c>
+                  <c>-&gt;</c>
+                  <c>ay</c>
+                  <c />
+                </r>
+                <r>
+                  <c>ev</c>
+                  <c>OR</c>
+                  <c>ew</c>
+                  <c>-&gt;</c>
+                  <c>ex</c>
+                  <c />
+                </r>
+                <r>
+                  <c>bn</c>
+                  <c>RSHIFT</c>
+                  <c>2</c>
+                  <c>-&gt;</c>
+                  <c>bo</c>
+                  <c />
+                </r>
+                <r>
+                  <c>er</c>
+                  <c>OR</c>
+                  <c>es</c>
+                  <c>-&gt;</c>
+                  <c>et</c>
+                  <c />
+                </r>
+                <r>
+                  <c>eu</c>
+                  <c>OR</c>
+                  <c>fa</c>
+                  <c>-&gt;</c>
+                  <c>fb</c>
+                  <c />
+                </r>
+                <r>
+                  <c>jp</c>
+                  <c>OR</c>
+                  <c>ka</c>
+                  <c>-&gt;</c>
+                  <c>kb</c>
+                  <c />
+                </r>
+                <r>
+                  <c>ea</c>
+                  <c>AND</c>
+                  <c>eb</c>
+                  <c>-&gt;</c>
+                  <c>ed</c>
+                  <c />
+                </r>
+                <r>
+                  <c>k</c>
+                  <c>AND</c>
+                  <c>m</c>
+                  <c>-&gt;</c>
+                  <c>n</c>
+                  <c />
+                </r>
+                <r>
+                  <c>et</c>
+                  <c>RSHIFT</c>
+                  <c>3</c>
+                  <c>-&gt;</c>
+                  <c>ev</c>
+                  <c />
+                </r>
+                <r>
+                  <c>et</c>
+                  <c>RSHIFT</c>
+                  <c>5</c>
+                  <c>-&gt;</c>
+                  <c>ew</c>
+                  <c />
+                </r>
+                <r>
+                  <c>hz</c>
+                  <c>RSHIFT</c>
+                  <c>1</c>
+                  <c>-&gt;</c>
+                  <c>is</c>
+                  <c />
+                </r>
+                <r>
+                  <c>ki</c>
+                  <c>OR</c>
+                  <c>kj</c>
+                  <c>-&gt;</c>
+                  <c>kk</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>h</c>
+                  <c>-&gt;</c>
+                  <c>i</c>
+                  <c />
+                </r>
+                <r>
+                  <c>lv</c>
+                  <c>LSHIFT</c>
+                  <c>15</c>
+                  <c>-&gt;</c>
+                  <c>lz</c>
+                  <c />
+                </r>
+                <r>
+                  <c>as</c>
+                  <c>RSHIFT</c>
+                  <c>1</c>
+                  <c>-&gt;</c>
+                  <c>bl</c>
+                  <c />
+                </r>
+                <r>
+                  <c>hu</c>
+                  <c>LSHIFT</c>
+                  <c>15</c>
+                  <c>-&gt;</c>
+                  <c>hy</c>
+                  <c />
+                </r>
+                <r>
+                  <c>iw</c>
+                  <c>AND</c>
+                  <c>ix</c>
+                  <c>-&gt;</c>
+                  <c>iz</c>
+                  <c />
+                </r>
+                <r>
+                  <c>lf</c>
+                  <c>RSHIFT</c>
+                  <c>1</c>
+                  <c>-&gt;</c>
+                  <c>ly</c>
+                  <c />
+                </r>
+                <r>
+                  <c>fp</c>
+                  <c>OR</c>
+                  <c>fv</c>
+                  <c>-&gt;</c>
+                  <c>fw</c>
+                  <c />
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>AND</c>
+                  <c>am</c>
+                  <c>-&gt;</c>
+                  <c>an</c>
+                  <c />
+                </r>
+                <r>
+                  <c>ap</c>
+                  <c>LSHIFT</c>
+                  <c>1</c>
+                  <c>-&gt;</c>
+                  <c>bj</c>
+                  <c />
+                </r>
+                <r>
+                  <c>u</c>
+                  <c>LSHIFT</c>
+                  <c>1</c>
+                  <c>-&gt;</c>
+                  <c>ao</c>
+                  <c />
+                </r>
+                <r>
+                  <c>b</c>
+                  <c>RSHIFT</c>
+                  <c>5</c>
+                  <c>-&gt;</c>
+                  <c>f</c>
+                  <c />
+                </r>
+                <r>
+                  <c>jq</c>
+                  <c>AND</c>
+                  <c>jw</c>
+                  <c>-&gt;</c>
+                  <c>jy</c>
+                  <c />
+                </r>
+                <r>
+                  <c>iu</c>
+                  <c>RSHIFT</c>
+                  <c>3</c>
+                  <c>-&gt;</c>
+                  <c>iw</c>
+                  <c />
+                </r>
+                <r>
+                  <c>ih</c>
+                  <c>AND</c>
+                  <c>ij</c>
+                  <c>-&gt;</c>
+                  <c>ik</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>iz</c>
+                  <c>-&gt;</c>
+                  <c>ja</c>
+                  <c />
+                </r>
+                <r>
+                  <c>de</c>
+                  <c>OR</c>
+                  <c>dk</c>
+                  <c>-&gt;</c>
+                  <c>dl</c>
+                  <c />
+                </r>
+                <r>
+                  <c>iu</c>
+                  <c>OR</c>
+                  <c>jf</c>
+                  <c>-&gt;</c>
+                  <c>jg</c>
+                  <c />
+                </r>
+                <r>
+                  <c>as</c>
+                  <c>AND</c>
+                  <c>bd</c>
+                  <c>-&gt;</c>
+                  <c>bf</c>
+                  <c />
+                </r>
+                <r>
+                  <c>b</c>
+                  <c>RSHIFT</c>
+                  <c>3</c>
+                  <c>-&gt;</c>
+                  <c>e</c>
+                  <c />
+                </r>
+                <r>
+                  <c>jq</c>
+                  <c>OR</c>
+                  <c>jw</c>
+                  <c>-&gt;</c>
+                  <c>jx</c>
+                  <c />
+                </r>
+                <r>
+                  <c>iv</c>
+                  <c>AND</c>
+                  <c>jb</c>
+                  <c>-&gt;</c>
+                  <c>jd</c>
+                  <c />
+                </r>
+                <r>
+                  <c>cg</c>
+                  <c>OR</c>
+                  <c>ch</c>
+                  <c>-&gt;</c>
+                  <c>ci</c>
+                  <c />
+                </r>
+                <r>
+                  <c>iu</c>
+                  <c>AND</c>
+                  <c>jf</c>
+                  <c>-&gt;</c>
+                  <c>jh</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c />
+                  <c>lx</c>
+                  <c>-&gt;</c>
+                  <c>a</c>
+                  <c />
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>AND</c>
+                  <c>cc</c>
+                  <c>-&gt;</c>
+                  <c>cd</c>
+                  <c />
+                </r>
+                <r>
+                  <c>ly</c>
+                  <c>OR</c>
+                  <c>lz</c>
+                  <c>-&gt;</c>
+                  <c>ma</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>el</c>
+                  <c>-&gt;</c>
+                  <c>em</c>
+                  <c />
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>AND</c>
+                  <c>bh</c>
+                  <c>-&gt;</c>
+                  <c>bi</c>
+                  <c />
+                </r>
+                <r>
+                  <c>fb</c>
+                  <c>AND</c>
+                  <c>fd</c>
+                  <c>-&gt;</c>
+                  <c>fe</c>
+                  <c />
+                </r>
+                <r>
+                  <c>lf</c>
+                  <c>OR</c>
+                  <c>lq</c>
+                  <c>-&gt;</c>
+                  <c>lr</c>
+                  <c />
+                </r>
+                <r>
+                  <c>bn</c>
+                  <c>RSHIFT</c>
+                  <c>3</c>
+                  <c>-&gt;</c>
+                  <c>bp</c>
+                  <c />
+                </r>
+                <r>
+                  <c>bn</c>
+                  <c>AND</c>
+                  <c>by</c>
+                  <c>-&gt;</c>
+                  <c>ca</c>
+                  <c />
+                </r>
+                <r>
+                  <c>af</c>
+                  <c>AND</c>
+                  <c>ah</c>
+                  <c>-&gt;</c>
+                  <c>ai</c>
+                  <c />
+                </r>
+                <r>
+                  <c>cf</c>
+                  <c>LSHIFT</c>
+                  <c>1</c>
+                  <c>-&gt;</c>
+                  <c>cz</c>
+                  <c />
+                </r>
+                <r>
+                  <c>dw</c>
+                  <c>OR</c>
+                  <c>dx</c>
+                  <c>-&gt;</c>
+                  <c>dy</c>
+                  <c />
+                </r>
+                <r>
+                  <c>gj</c>
+                  <c>AND</c>
+                  <c>gu</c>
+                  <c>-&gt;</c>
+                  <c>gw</c>
+                  <c />
+                </r>
+                <r>
+                  <c>jg</c>
+                  <c>AND</c>
+                  <c>ji</c>
+                  <c>-&gt;</c>
+                  <c>jj</c>
+                  <c />
+                </r>
+                <r>
+                  <c>jr</c>
+                  <c>OR</c>
+                  <c>js</c>
+                  <c>-&gt;</c>
+                  <c>jt</c>
+                  <c />
+                </r>
+                <r>
+                  <c>bl</c>
+                  <c>OR</c>
+                  <c>bm</c>
+                  <c>-&gt;</c>
+                  <c>bn</c>
+                  <c />
+                </r>
+                <r>
+                  <c>gj</c>
+                  <c>RSHIFT</c>
+                  <c>2</c>
+                  <c>-&gt;</c>
+                  <c>gk</c>
+                  <c />
+                </r>
+                <r>
+                  <c>cj</c>
+                  <c>OR</c>
+                  <c>cp</c>
+                  <c>-&gt;</c>
+                  <c>cq</c>
+                  <c />
+                </r>
+                <r>
+                  <c>gj</c>
+                  <c>OR</c>
+                  <c>gu</c>
+                  <c>-&gt;</c>
+                  <c>gv</c>
+                  <c />
+                </r>
+                <r>
+                  <c>b</c>
+                  <c>OR</c>
+                  <c>n</c>
+                  <c>-&gt;</c>
+                  <c>o</c>
+                  <c />
+                </r>
+                <r>
+                  <c>o</c>
+                  <c>AND</c>
+                  <c>q</c>
+                  <c>-&gt;</c>
+                  <c>r</c>
+                  <c />
+                </r>
+                <r>
+                  <c>bi</c>
+                  <c>LSHIFT</c>
+                  <c>15</c>
+                  <c>-&gt;</c>
+                  <c>bm</c>
+                  <c />
+                </r>
+                <r>
+                  <c>dy</c>
+                  <c>RSHIFT</c>
+                  <c>1</c>
+                  <c>-&gt;</c>
+                  <c>er</c>
+                  <c />
+                </r>
+                <r>
+                  <c>cu</c>
+                  <c>AND</c>
+                  <c>cw</c>
+                  <c>-&gt;</c>
+                  <c>cx</c>
+                  <c />
+                </r>
+                <r>
+                  <c>iw</c>
+                  <c>OR</c>
+                  <c>ix</c>
+                  <c>-&gt;</c>
+                  <c>iy</c>
+                  <c />
+                </r>
+                <r>
+                  <c>hc</c>
+                  <c>OR</c>
+                  <c>hd</c>
+                  <c>-&gt;</c>
+                  <c>he</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c />
+                  <c>0</c>
+                  <c>-&gt;</c>
+                  <c>c</c>
+                  <c>0</c>
+                </r>
+                <r>
+                  <c>db</c>
+                  <c>OR</c>
+                  <c>dc</c>
+                  <c>-&gt;</c>
+                  <c>dd</c>
+                  <c />
+                </r>
+                <r>
+                  <c>kk</c>
+                  <c>RSHIFT</c>
+                  <c>2</c>
+                  <c>-&gt;</c>
+                  <c>kl</c>
+                  <c />
+                </r>
+                <r>
+                  <c>eq</c>
+                  <c>LSHIFT</c>
+                  <c>1</c>
+                  <c>-&gt;</c>
+                  <c>fk</c>
+                  <c />
+                </r>
+                <r>
+                  <c>dz</c>
+                  <c>OR</c>
+                  <c>ef</c>
+                  <c>-&gt;</c>
+                  <c>eg</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>ed</c>
+                  <c>-&gt;</c>
+                  <c>ee</c>
+                  <c />
+                </r>
+                <r>
+                  <c>lw</c>
+                  <c>OR</c>
+                  <c>lv</c>
+                  <c>-&gt;</c>
+                  <c>lx</c>
+                  <c />
+                </r>
+                <r>
+                  <c>fw</c>
+                  <c>AND</c>
+                  <c>fy</c>
+                  <c>-&gt;</c>
+                  <c>fz</c>
+                  <c />
+                </r>
+                <r>
+                  <c>dz</c>
+                  <c>AND</c>
+                  <c>ef</c>
+                  <c>-&gt;</c>
+                  <c>eh</c>
+                  <c />
+                </r>
+                <r>
+                  <c>jp</c>
+                  <c>RSHIFT</c>
+                  <c>3</c>
+                  <c>-&gt;</c>
+                  <c>jr</c>
+                  <c />
+                </r>
+                <r>
+                  <c>lg</c>
+                  <c>AND</c>
+                  <c>lm</c>
+                  <c>-&gt;</c>
+                  <c>lo</c>
+                  <c />
+                </r>
+                <r>
+                  <c>ci</c>
+                  <c>RSHIFT</c>
+                  <c>2</c>
+                  <c>-&gt;</c>
+                  <c>cj</c>
+                  <c />
+                </r>
+                <r>
+                  <c>be</c>
+                  <c>AND</c>
+                  <c>bg</c>
+                  <c>-&gt;</c>
+                  <c>bh</c>
+                  <c />
+                </r>
+                <r>
+                  <c>lc</c>
+                  <c>LSHIFT</c>
+                  <c>1</c>
+                  <c>-&gt;</c>
+                  <c>lw</c>
+                  <c />
+                </r>
+                <r>
+                  <c>hm</c>
+                  <c>AND</c>
+                  <c>ho</c>
+                  <c>-&gt;</c>
+                  <c>hp</c>
+                  <c />
+                </r>
+                <r>
+                  <c>jr</c>
+                  <c>AND</c>
+                  <c>js</c>
+                  <c>-&gt;</c>
+                  <c>ju</c>
+                  <c />
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>AND</c>
+                  <c>io</c>
+                  <c>-&gt;</c>
+                  <c>ip</c>
+                  <c />
+                </r>
+                <r>
+                  <c>cm</c>
+                  <c>AND</c>
+                  <c>co</c>
+                  <c>-&gt;</c>
+                  <c>cp</c>
+                  <c />
+                </r>
+                <r>
+                  <c>ib</c>
+                  <c>OR</c>
+                  <c>ic</c>
+                  <c>-&gt;</c>
+                  <c>id</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>bf</c>
+                  <c>-&gt;</c>
+                  <c>bg</c>
+                  <c />
+                </r>
+                <r>
+                  <c>fo</c>
+                  <c>RSHIFT</c>
+                  <c>5</c>
+                  <c>-&gt;</c>
+                  <c>fr</c>
+                  <c />
+                </r>
+                <r>
+                  <c>ip</c>
+                  <c>LSHIFT</c>
+                  <c>15</c>
+                  <c>-&gt;</c>
+                  <c>it</c>
+                  <c />
+                </r>
+                <r>
+                  <c>jt</c>
+                  <c>AND</c>
+                  <c>jv</c>
+                  <c>-&gt;</c>
+                  <c>jw</c>
+                  <c />
+                </r>
+                <r>
+                  <c>jc</c>
+                  <c>AND</c>
+                  <c>je</c>
+                  <c>-&gt;</c>
+                  <c>jf</c>
+                  <c />
+                </r>
+                <r>
+                  <c>du</c>
+                  <c>OR</c>
+                  <c>dt</c>
+                  <c>-&gt;</c>
+                  <c>dv</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>fx</c>
+                  <c>-&gt;</c>
+                  <c>fy</c>
+                  <c />
+                </r>
+                <r>
+                  <c>aw</c>
+                  <c>AND</c>
+                  <c>ay</c>
+                  <c>-&gt;</c>
+                  <c>az</c>
+                  <c />
+                </r>
+                <r>
+                  <c>ge</c>
+                  <c>LSHIFT</c>
+                  <c>15</c>
+                  <c>-&gt;</c>
+                  <c>gi</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>ak</c>
+                  <c>-&gt;</c>
+                  <c>al</c>
+                  <c />
+                </r>
+                <r>
+                  <c>fm</c>
+                  <c>OR</c>
+                  <c>fn</c>
+                  <c>-&gt;</c>
+                  <c>fo</c>
+                  <c />
+                </r>
+                <r>
+                  <c>ff</c>
+                  <c>AND</c>
+                  <c>fh</c>
+                  <c>-&gt;</c>
+                  <c>fi</c>
+                  <c />
+                </r>
+                <r>
+                  <c>ci</c>
+                  <c>RSHIFT</c>
+                  <c>5</c>
+                  <c>-&gt;</c>
+                  <c>cl</c>
+                  <c />
+                </r>
+                <r>
+                  <c>cz</c>
+                  <c>OR</c>
+                  <c>cy</c>
+                  <c>-&gt;</c>
+                  <c>da</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>ey</c>
+                  <c>-&gt;</c>
+                  <c>ez</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>ju</c>
+                  <c>-&gt;</c>
+                  <c>jv</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>ls</c>
+                  <c>-&gt;</c>
+                  <c>lt</c>
+                  <c />
+                </r>
+                <r>
+                  <c>kk</c>
+                  <c>AND</c>
+                  <c>kv</c>
+                  <c>-&gt;</c>
+                  <c>kx</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>ii</c>
+                  <c>-&gt;</c>
+                  <c>ij</c>
+                  <c />
+                </r>
+                <r>
+                  <c>kl</c>
+                  <c>AND</c>
+                  <c>kr</c>
+                  <c>-&gt;</c>
+                  <c>kt</c>
+                  <c />
+                </r>
+                <r>
+                  <c>jk</c>
+                  <c>LSHIFT</c>
+                  <c>15</c>
+                  <c>-&gt;</c>
+                  <c>jo</c>
+                  <c />
+                </r>
+                <r>
+                  <c>e</c>
+                  <c>OR</c>
+                  <c>f</c>
+                  <c>-&gt;</c>
+                  <c>g</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>bs</c>
+                  <c>-&gt;</c>
+                  <c>bt</c>
+                  <c />
+                </r>
+                <r>
+                  <c>hi</c>
+                  <c>AND</c>
+                  <c>hk</c>
+                  <c>-&gt;</c>
+                  <c>hl</c>
+                  <c />
+                </r>
+                <r>
+                  <c>hz</c>
+                  <c>OR</c>
+                  <c>ik</c>
+                  <c>-&gt;</c>
+                  <c>il</c>
+                  <c />
+                </r>
+                <r>
+                  <c>ek</c>
+                  <c>AND</c>
+                  <c>em</c>
+                  <c>-&gt;</c>
+                  <c>en</c>
+                  <c />
+                </r>
+                <r>
+                  <c>ao</c>
+                  <c>OR</c>
+                  <c>an</c>
+                  <c>-&gt;</c>
+                  <c>ap</c>
+                  <c />
+                </r>
+                <r>
+                  <c>dv</c>
+                  <c>LSHIFT</c>
+                  <c>1</c>
+                  <c>-&gt;</c>
+                  <c>ep</c>
+                  <c />
+                </r>
+                <r>
+                  <c>an</c>
+                  <c>LSHIFT</c>
+                  <c>15</c>
+                  <c>-&gt;</c>
+                  <c>ar</c>
+                  <c />
+                </r>
+                <r>
+                  <c>fo</c>
+                  <c>RSHIFT</c>
+                  <c>1</c>
+                  <c>-&gt;</c>
+                  <c>gh</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>im</c>
+                  <c>-&gt;</c>
+                  <c>in</c>
+                  <c />
+                </r>
+                <r>
+                  <c>kk</c>
+                  <c>RSHIFT</c>
+                  <c>1</c>
+                  <c>-&gt;</c>
+                  <c>ld</c>
+                  <c />
+                </r>
+                <r>
+                  <c>hw</c>
+                  <c>LSHIFT</c>
+                  <c>1</c>
+                  <c>-&gt;</c>
+                  <c>iq</c>
+                  <c />
+                </r>
+                <r>
+                  <c>ec</c>
+                  <c>AND</c>
+                  <c>ee</c>
+                  <c>-&gt;</c>
+                  <c>ef</c>
+                  <c />
+                </r>
+                <r>
+                  <c>hb</c>
+                  <c>LSHIFT</c>
+                  <c>1</c>
+                  <c>-&gt;</c>
+                  <c>hv</c>
+                  <c />
+                </r>
+                <r>
+                  <c>kb</c>
+                  <c>AND</c>
+                  <c>kd</c>
+                  <c>-&gt;</c>
+                  <c>ke</c>
+                  <c />
+                </r>
+                <r>
+                  <c>x</c>
+                  <c>AND</c>
+                  <c>ai</c>
+                  <c>-&gt;</c>
+                  <c>ak</c>
+                  <c />
+                </r>
+                <r>
+                  <c>dd</c>
+                  <c>AND</c>
+                  <c>do</c>
+                  <c>-&gt;</c>
+                  <c>dq</c>
+                  <c />
+                </r>
+                <r>
+                  <c>aq</c>
+                  <c>OR</c>
+                  <c>ar</c>
+                  <c>-&gt;</c>
+                  <c>as</c>
+                  <c />
+                </r>
+                <r>
+                  <c>iq</c>
+                  <c>OR</c>
+                  <c>ip</c>
+                  <c>-&gt;</c>
+                  <c>ir</c>
+                  <c />
+                </r>
+                <r>
+                  <c>dl</c>
+                  <c>AND</c>
+                  <c>dn</c>
+                  <c>-&gt;</c>
+                  <c>do</c>
+                  <c />
+                </r>
+                <r>
+                  <c>iu</c>
+                  <c>RSHIFT</c>
+                  <c>5</c>
+                  <c>-&gt;</c>
+                  <c>ix</c>
+                  <c />
+                </r>
+                <r>
+                  <c>as</c>
+                  <c>OR</c>
+                  <c>bd</c>
+                  <c>-&gt;</c>
+                  <c>be</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>go</c>
+                  <c>-&gt;</c>
+                  <c>gp</c>
+                  <c />
+                </r>
+                <r>
+                  <c>fk</c>
+                  <c>OR</c>
+                  <c>fj</c>
+                  <c>-&gt;</c>
+                  <c>fl</c>
+                  <c />
+                </r>
+                <r>
+                  <c>jm</c>
+                  <c>LSHIFT</c>
+                  <c>1</c>
+                  <c>-&gt;</c>
+                  <c>kg</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>cv</c>
+                  <c>-&gt;</c>
+                  <c>cw</c>
+                  <c />
+                </r>
+                <r>
+                  <c>dp</c>
+                  <c>AND</c>
+                  <c>dr</c>
+                  <c>-&gt;</c>
+                  <c>ds</c>
+                  <c />
+                </r>
+                <r>
+                  <c>dt</c>
+                  <c>LSHIFT</c>
+                  <c>15</c>
+                  <c>-&gt;</c>
+                  <c>dx</c>
+                  <c />
+                </r>
+                <r>
+                  <c>et</c>
+                  <c>RSHIFT</c>
+                  <c>1</c>
+                  <c>-&gt;</c>
+                  <c>fm</c>
+                  <c />
+                </r>
+                <r>
+                  <c>dy</c>
+                  <c>RSHIFT</c>
+                  <c>3</c>
+                  <c>-&gt;</c>
+                  <c>ea</c>
+                  <c />
+                </r>
+                <r>
+                  <c>fp</c>
+                  <c>AND</c>
+                  <c>fv</c>
+                  <c>-&gt;</c>
+                  <c>fx</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>p</c>
+                  <c>-&gt;</c>
+                  <c>q</c>
+                  <c />
+                </r>
+                <r>
+                  <c>dd</c>
+                  <c>RSHIFT</c>
+                  <c>2</c>
+                  <c>-&gt;</c>
+                  <c>de</c>
+                  <c />
+                </r>
+                <r>
+                  <c>eu</c>
+                  <c>AND</c>
+                  <c>fa</c>
+                  <c>-&gt;</c>
+                  <c>fc</c>
+                  <c />
+                </r>
+                <r>
+                  <c>ba</c>
+                  <c>AND</c>
+                  <c>bc</c>
+                  <c>-&gt;</c>
+                  <c>bd</c>
+                  <c />
+                </r>
+                <r>
+                  <c>dh</c>
+                  <c>AND</c>
+                  <c>dj</c>
+                  <c>-&gt;</c>
+                  <c>dk</c>
+                  <c />
+                </r>
+                <r>
+                  <c>lr</c>
+                  <c>AND</c>
+                  <c>lt</c>
+                  <c>-&gt;</c>
+                  <c>lu</c>
+                  <c />
+                </r>
+                <r>
+                  <c>he</c>
+                  <c>RSHIFT</c>
+                  <c>1</c>
+                  <c>-&gt;</c>
+                  <c>hx</c>
+                  <c />
+                </r>
+                <r>
+                  <c>ex</c>
+                  <c>AND</c>
+                  <c>ez</c>
+                  <c>-&gt;</c>
+                  <c>fa</c>
+                  <c />
+                </r>
+                <r>
+                  <c>df</c>
+                  <c>OR</c>
+                  <c>dg</c>
+                  <c>-&gt;</c>
+                  <c>dh</c>
+                  <c />
+                </r>
+                <r>
+                  <c>fj</c>
+                  <c>LSHIFT</c>
+                  <c>15</c>
+                  <c>-&gt;</c>
+                  <c>fn</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>kx</c>
+                  <c>-&gt;</c>
+                  <c>ky</c>
+                  <c />
+                </r>
+                <r>
+                  <c>gk</c>
+                  <c>OR</c>
+                  <c>gq</c>
+                  <c>-&gt;</c>
+                  <c>gr</c>
+                  <c />
+                </r>
+                <r>
+                  <c>dy</c>
+                  <c>RSHIFT</c>
+                  <c>2</c>
+                  <c>-&gt;</c>
+                  <c>dz</c>
+                  <c />
+                </r>
+                <r>
+                  <c>gh</c>
+                  <c>OR</c>
+                  <c>gi</c>
+                  <c>-&gt;</c>
+                  <c>gj</c>
+                  <c />
+                </r>
+                <r>
+                  <c>lj</c>
+                  <c>AND</c>
+                  <c>ll</c>
+                  <c>-&gt;</c>
+                  <c>lm</c>
+                  <c />
+                </r>
+                <r>
+                  <c>x</c>
+                  <c>OR</c>
+                  <c>ai</c>
+                  <c>-&gt;</c>
+                  <c>aj</c>
+                  <c />
+                </r>
+                <r>
+                  <c>bz</c>
+                  <c>AND</c>
+                  <c>cb</c>
+                  <c>-&gt;</c>
+                  <c>cc</c>
+                  <c />
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>AND</c>
+                  <c>lu</c>
+                  <c>-&gt;</c>
+                  <c>lv</c>
+                  <c />
+                </r>
+                <r>
+                  <c>as</c>
+                  <c>RSHIFT</c>
+                  <c>3</c>
+                  <c>-&gt;</c>
+                  <c>au</c>
+                  <c />
+                </r>
+                <r>
+                  <c>ce</c>
+                  <c>OR</c>
+                  <c>cd</c>
+                  <c>-&gt;</c>
+                  <c>cf</c>
+                  <c />
+                </r>
+                <r>
+                  <c>il</c>
+                  <c>AND</c>
+                  <c>in</c>
+                  <c>-&gt;</c>
+                  <c>io</c>
+                  <c />
+                </r>
+                <r>
+                  <c>dd</c>
+                  <c>RSHIFT</c>
+                  <c>1</c>
+                  <c>-&gt;</c>
+                  <c>dw</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>lo</c>
+                  <c>-&gt;</c>
+                  <c>lp</c>
+                  <c />
+                </r>
+                <r>
+                  <c>c</c>
+                  <c>LSHIFT</c>
+                  <c>1</c>
+                  <c>-&gt;</c>
+                  <c>t</c>
+                  <c />
+                </r>
+                <r>
+                  <c>dd</c>
+                  <c>RSHIFT</c>
+                  <c>3</c>
+                  <c>-&gt;</c>
+                  <c>df</c>
+                  <c />
+                </r>
+                <r>
+                  <c>dd</c>
+                  <c>RSHIFT</c>
+                  <c>5</c>
+                  <c>-&gt;</c>
+                  <c>dg</c>
+                  <c />
+                </r>
+                <r>
+                  <c>lh</c>
+                  <c>AND</c>
+                  <c>li</c>
+                  <c>-&gt;</c>
+                  <c>lk</c>
+                  <c />
+                </r>
+                <r>
+                  <c>lf</c>
+                  <c>RSHIFT</c>
+                  <c>5</c>
+                  <c>-&gt;</c>
+                  <c>li</c>
+                  <c />
+                </r>
+                <r>
+                  <c>dy</c>
+                  <c>RSHIFT</c>
+                  <c>5</c>
+                  <c>-&gt;</c>
+                  <c>eb</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>kt</c>
+                  <c>-&gt;</c>
+                  <c>ku</c>
+                  <c />
+                </r>
+                <r>
+                  <c>at</c>
+                  <c>OR</c>
+                  <c>az</c>
+                  <c>-&gt;</c>
+                  <c>ba</c>
+                  <c />
+                </r>
+                <r>
+                  <c>x</c>
+                  <c>RSHIFT</c>
+                  <c>3</c>
+                  <c>-&gt;</c>
+                  <c>z</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>lk</c>
+                  <c>-&gt;</c>
+                  <c>ll</c>
+                  <c />
+                </r>
+                <r>
+                  <c>lb</c>
+                  <c>OR</c>
+                  <c>la</c>
+                  <c>-&gt;</c>
+                  <c>lc</c>
+                  <c />
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>AND</c>
+                  <c>r</c>
+                  <c>-&gt;</c>
+                  <c>s</c>
+                  <c />
+                </r>
+                <r>
+                  <c>lh</c>
+                  <c>OR</c>
+                  <c>li</c>
+                  <c>-&gt;</c>
+                  <c>lj</c>
+                  <c />
+                </r>
+                <r>
+                  <c>ln</c>
+                  <c>AND</c>
+                  <c>lp</c>
+                  <c>-&gt;</c>
+                  <c>lq</c>
+                  <c />
+                </r>
+                <r>
+                  <c>kk</c>
+                  <c>RSHIFT</c>
+                  <c>5</c>
+                  <c>-&gt;</c>
+                  <c>kn</c>
+                  <c />
+                </r>
+                <r>
+                  <c>ea</c>
+                  <c>OR</c>
+                  <c>eb</c>
+                  <c>-&gt;</c>
+                  <c>ec</c>
+                  <c />
+                </r>
+                <r>
+                  <c>ci</c>
+                  <c>AND</c>
+                  <c>ct</c>
+                  <c>-&gt;</c>
+                  <c>cv</c>
+                  <c />
+                </r>
+                <r>
+                  <c>b</c>
+                  <c>RSHIFT</c>
+                  <c>2</c>
+                  <c>-&gt;</c>
+                  <c>d</c>
+                  <c />
+                </r>
+                <r>
+                  <c>jp</c>
+                  <c>RSHIFT</c>
+                  <c>1</c>
+                  <c>-&gt;</c>
+                  <c>ki</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>cr</c>
+                  <c>-&gt;</c>
+                  <c>cs</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>jd</c>
+                  <c>-&gt;</c>
+                  <c>je</c>
+                  <c />
+                </r>
+                <r>
+                  <c>jp</c>
+                  <c>RSHIFT</c>
+                  <c>2</c>
+                  <c>-&gt;</c>
+                  <c>jq</c>
+                  <c />
+                </r>
+                <r>
+                  <c>jn</c>
+                  <c>OR</c>
+                  <c>jo</c>
+                  <c>-&gt;</c>
+                  <c>jp</c>
+                  <c />
+                </r>
+                <r>
+                  <c>lf</c>
+                  <c>RSHIFT</c>
+                  <c>3</c>
+                  <c>-&gt;</c>
+                  <c>lh</c>
+                  <c />
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>AND</c>
+                  <c>ds</c>
+                  <c>-&gt;</c>
+                  <c>dt</c>
+                  <c />
+                </r>
+                <r>
+                  <c>lf</c>
+                  <c>AND</c>
+                  <c>lq</c>
+                  <c>-&gt;</c>
+                  <c>ls</c>
+                  <c />
+                </r>
+                <r>
+                  <c>la</c>
+                  <c>LSHIFT</c>
+                  <c>15</c>
+                  <c>-&gt;</c>
+                  <c>le</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>fg</c>
+                  <c>-&gt;</c>
+                  <c>fh</c>
+                  <c />
+                </r>
+                <r>
+                  <c>at</c>
+                  <c>AND</c>
+                  <c>az</c>
+                  <c>-&gt;</c>
+                  <c>bb</c>
+                  <c />
+                </r>
+                <r>
+                  <c>au</c>
+                  <c>AND</c>
+                  <c>av</c>
+                  <c>-&gt;</c>
+                  <c>ax</c>
+                  <c />
+                </r>
+                <r>
+                  <c>kw</c>
+                  <c>AND</c>
+                  <c>ky</c>
+                  <c>-&gt;</c>
+                  <c>kz</c>
+                  <c />
+                </r>
+                <r>
+                  <c>v</c>
+                  <c>OR</c>
+                  <c>w</c>
+                  <c>-&gt;</c>
+                  <c>x</c>
+                  <c />
+                </r>
+                <r>
+                  <c>kk</c>
+                  <c>OR</c>
+                  <c>kv</c>
+                  <c>-&gt;</c>
+                  <c>kw</c>
+                  <c />
+                </r>
+                <r>
+                  <c>ks</c>
+                  <c>AND</c>
+                  <c>ku</c>
+                  <c>-&gt;</c>
+                  <c>kv</c>
+                  <c />
+                </r>
+                <r>
+                  <c>kh</c>
+                  <c>LSHIFT</c>
+                  <c>1</c>
+                  <c>-&gt;</c>
+                  <c>lb</c>
+                  <c />
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>AND</c>
+                  <c>kz</c>
+                  <c>-&gt;</c>
+                  <c>la</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>kc</c>
+                  <c>-&gt;</c>
+                  <c>kd</c>
+                  <c />
+                </r>
+                <r>
+                  <c>x</c>
+                  <c>RSHIFT</c>
+                  <c>2</c>
+                  <c>-&gt;</c>
+                  <c>y</c>
+                  <c />
+                </r>
+                <r>
+                  <c>et</c>
+                  <c>OR</c>
+                  <c>fe</c>
+                  <c>-&gt;</c>
+                  <c>ff</c>
+                  <c />
+                </r>
+                <r>
+                  <c>et</c>
+                  <c>AND</c>
+                  <c>fe</c>
+                  <c>-&gt;</c>
+                  <c>fg</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>ac</c>
+                  <c>-&gt;</c>
+                  <c>ad</c>
+                  <c />
+                </r>
+                <r>
+                  <c>jl</c>
+                  <c>OR</c>
+                  <c>jk</c>
+                  <c>-&gt;</c>
+                  <c>jm</c>
+                  <c />
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>AND</c>
+                  <c>jj</c>
+                  <c>-&gt;</c>
+                  <c>jk</c>
+                  <c />
+                </r>
+                <r>
+                  <c>bn</c>
+                  <c>RSHIFT</c>
+                  <c>1</c>
+                  <c>-&gt;</c>
+                  <c>cg</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>kp</c>
+                  <c>-&gt;</c>
+                  <c>kq</c>
+                  <c />
+                </r>
+                <r>
+                  <c>ci</c>
+                  <c>RSHIFT</c>
+                  <c>3</c>
+                  <c>-&gt;</c>
+                  <c>ck</c>
+                  <c />
+                </r>
+                <r>
+                  <c>ev</c>
+                  <c>AND</c>
+                  <c>ew</c>
+                  <c>-&gt;</c>
+                  <c>ey</c>
+                  <c />
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>AND</c>
+                  <c>ke</c>
+                  <c>-&gt;</c>
+                  <c>kf</c>
+                  <c />
+                </r>
+                <r>
+                  <c>cj</c>
+                  <c>AND</c>
+                  <c>cp</c>
+                  <c>-&gt;</c>
+                  <c>cr</c>
+                  <c />
+                </r>
+                <r>
+                  <c>ir</c>
+                  <c>LSHIFT</c>
+                  <c>1</c>
+                  <c>-&gt;</c>
+                  <c>jl</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>gw</c>
+                  <c>-&gt;</c>
+                  <c>gx</c>
+                  <c />
+                </r>
+                <r>
+                  <c>as</c>
+                  <c>RSHIFT</c>
+                  <c>2</c>
+                  <c>-&gt;</c>
+                  <c>at</c>
+                  <c />
+                </r>
+                <r>
+                  <c>iu</c>
+                  <c>RSHIFT</c>
+                  <c>1</c>
+                  <c>-&gt;</c>
+                  <c>jn</c>
+                  <c />
+                </r>
+                <r>
+                  <c>cy</c>
+                  <c>LSHIFT</c>
+                  <c>15</c>
+                  <c>-&gt;</c>
+                  <c>dc</c>
+                  <c />
+                </r>
+                <r>
+                  <c>hg</c>
+                  <c>OR</c>
+                  <c>hh</c>
+                  <c>-&gt;</c>
+                  <c>hi</c>
+                  <c />
+                </r>
+                <r>
+                  <c>ci</c>
+                  <c>RSHIFT</c>
+                  <c>1</c>
+                  <c>-&gt;</c>
+                  <c>db</c>
+                  <c />
+                </r>
+                <r>
+                  <c>au</c>
+                  <c>OR</c>
+                  <c>av</c>
+                  <c>-&gt;</c>
+                  <c>aw</c>
+                  <c />
+                </r>
+                <r>
+                  <c>km</c>
+                  <c>AND</c>
+                  <c>kn</c>
+                  <c>-&gt;</c>
+                  <c>kp</c>
+                  <c />
+                </r>
+                <r>
+                  <c>gj</c>
+                  <c>RSHIFT</c>
+                  <c>1</c>
+                  <c>-&gt;</c>
+                  <c>hc</c>
+                  <c />
+                </r>
+                <r>
+                  <c>iu</c>
+                  <c>RSHIFT</c>
+                  <c>2</c>
+                  <c>-&gt;</c>
+                  <c>iv</c>
+                  <c />
+                </r>
+                <r>
+                  <c>ab</c>
+                  <c>AND</c>
+                  <c>ad</c>
+                  <c>-&gt;</c>
+                  <c>ae</c>
+                  <c />
+                </r>
+                <r>
+                  <c>da</c>
+                  <c>LSHIFT</c>
+                  <c>1</c>
+                  <c>-&gt;</c>
+                  <c>du</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>bw</c>
+                  <c>-&gt;</c>
+                  <c>bx</c>
+                  <c />
+                </r>
+                <r>
+                  <c>km</c>
+                  <c>OR</c>
+                  <c>kn</c>
+                  <c>-&gt;</c>
+                  <c>ko</c>
+                  <c />
+                </r>
+                <r>
+                  <c>ko</c>
+                  <c>AND</c>
+                  <c>kq</c>
+                  <c>-&gt;</c>
+                  <c>kr</c>
+                  <c />
+                </r>
+                <r>
+                  <c>bv</c>
+                  <c>AND</c>
+                  <c>bx</c>
+                  <c>-&gt;</c>
+                  <c>by</c>
+                  <c />
+                </r>
+                <r>
+                  <c>kl</c>
+                  <c>OR</c>
+                  <c>kr</c>
+                  <c>-&gt;</c>
+                  <c>ks</c>
+                  <c />
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>AND</c>
+                  <c>ht</c>
+                  <c>-&gt;</c>
+                  <c>hu</c>
+                  <c />
+                </r>
+                <r>
+                  <c>df</c>
+                  <c>AND</c>
+                  <c>dg</c>
+                  <c>-&gt;</c>
+                  <c>di</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>ag</c>
+                  <c>-&gt;</c>
+                  <c>ah</c>
+                  <c />
+                </r>
+                <r>
+                  <c>d</c>
+                  <c>OR</c>
+                  <c>j</c>
+                  <c>-&gt;</c>
+                  <c>k</c>
+                  <c />
+                </r>
+                <r>
+                  <c>d</c>
+                  <c>AND</c>
+                  <c>j</c>
+                  <c>-&gt;</c>
+                  <c>l</c>
+                  <c />
+                </r>
+                <r>
+                  <c>b</c>
+                  <c>AND</c>
+                  <c>n</c>
+                  <c>-&gt;</c>
+                  <c>p</c>
+                  <c />
+                </r>
+                <r>
+                  <c>gf</c>
+                  <c>OR</c>
+                  <c>ge</c>
+                  <c>-&gt;</c>
+                  <c>gg</c>
+                  <c />
+                </r>
+                <r>
+                  <c>gg</c>
+                  <c>LSHIFT</c>
+                  <c>1</c>
+                  <c>-&gt;</c>
+                  <c>ha</c>
+                  <c />
+                </r>
+                <r>
+                  <c>bn</c>
+                  <c>RSHIFT</c>
+                  <c>5</c>
+                  <c>-&gt;</c>
+                  <c>bq</c>
+                  <c />
+                </r>
+                <r>
+                  <c>bo</c>
+                  <c>OR</c>
+                  <c>bu</c>
+                  <c>-&gt;</c>
+                  <c>bv</c>
+                  <c />
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>AND</c>
+                  <c>gy</c>
+                  <c>-&gt;</c>
+                  <c>gz</c>
+                  <c />
+                </r>
+                <r>
+                  <c>s</c>
+                  <c>LSHIFT</c>
+                  <c>15</c>
+                  <c>-&gt;</c>
+                  <c>w</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>ie</c>
+                  <c>-&gt;</c>
+                  <c>if</c>
+                  <c />
+                </r>
+                <r>
+                  <c>as</c>
+                  <c>RSHIFT</c>
+                  <c>5</c>
+                  <c>-&gt;</c>
+                  <c>av</c>
+                  <c />
+                </r>
+                <r>
+                  <c>bo</c>
+                  <c>AND</c>
+                  <c>bu</c>
+                  <c>-&gt;</c>
+                  <c>bw</c>
+                  <c />
+                </r>
+                <r>
+                  <c>hz</c>
+                  <c>AND</c>
+                  <c>ik</c>
+                  <c>-&gt;</c>
+                  <c>im</c>
+                  <c />
+                </r>
+                <r>
+                  <c>bp</c>
+                  <c>AND</c>
+                  <c>bq</c>
+                  <c>-&gt;</c>
+                  <c>bs</c>
+                  <c />
+                </r>
+                <r>
+                  <c>b</c>
+                  <c>RSHIFT</c>
+                  <c>1</c>
+                  <c>-&gt;</c>
+                  <c>v</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>l</c>
+                  <c>-&gt;</c>
+                  <c>m</c>
+                  <c />
+                </r>
+                <r>
+                  <c>bp</c>
+                  <c>OR</c>
+                  <c>bq</c>
+                  <c>-&gt;</c>
+                  <c>br</c>
+                  <c />
+                </r>
+                <r>
+                  <c>g</c>
+                  <c>AND</c>
+                  <c>i</c>
+                  <c>-&gt;</c>
+                  <c>j</c>
+                  <c />
+                </r>
+                <r>
+                  <c>br</c>
+                  <c>AND</c>
+                  <c>bt</c>
+                  <c>-&gt;</c>
+                  <c>bu</c>
+                  <c />
+                </r>
+                <r>
+                  <c>t</c>
+                  <c>OR</c>
+                  <c>s</c>
+                  <c>-&gt;</c>
+                  <c>u</c>
+                  <c />
+                </r>
+                <r>
+                  <c>hz</c>
+                  <c>RSHIFT</c>
+                  <c>5</c>
+                  <c>-&gt;</c>
+                  <c>ic</c>
+                  <c />
+                </r>
+                <r>
+                  <c>gk</c>
+                  <c>AND</c>
+                  <c>gq</c>
+                  <c>-&gt;</c>
+                  <c>gs</c>
+                  <c />
+                </r>
+                <r>
+                  <c>fl</c>
+                  <c>LSHIFT</c>
+                  <c>1</c>
+                  <c>-&gt;</c>
+                  <c>gf</c>
+                  <c />
+                </r>
+                <r>
+                  <c>he</c>
+                  <c>RSHIFT</c>
+                  <c>3</c>
+                  <c>-&gt;</c>
+                  <c>hg</c>
+                  <c />
+                </r>
+                <r>
+                  <c>gz</c>
+                  <c>LSHIFT</c>
+                  <c>15</c>
+                  <c>-&gt;</c>
+                  <c>hd</c>
+                  <c />
+                </r>
+                <r>
+                  <c>hf</c>
+                  <c>OR</c>
+                  <c>hl</c>
+                  <c>-&gt;</c>
+                  <c>hm</c>
+                  <c />
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>AND</c>
+                  <c>gd</c>
+                  <c>-&gt;</c>
+                  <c>ge</c>
+                  <c />
+                </r>
+                <r>
+                  <c>fo</c>
+                  <c>OR</c>
+                  <c>fz</c>
+                  <c>-&gt;</c>
+                  <c>ga</c>
+                  <c />
+                </r>
+                <r>
+                  <c>id</c>
+                  <c>AND</c>
+                  <c>if</c>
+                  <c>-&gt;</c>
+                  <c>ig</c>
+                  <c />
+                </r>
+                <r>
+                  <c>fo</c>
+                  <c>AND</c>
+                  <c>fz</c>
+                  <c>-&gt;</c>
+                  <c>gb</c>
+                  <c />
+                </r>
+                <r>
+                  <c>gr</c>
+                  <c>AND</c>
+                  <c>gt</c>
+                  <c>-&gt;</c>
+                  <c>gu</c>
+                  <c />
+                </r>
+                <r>
+                  <c>he</c>
+                  <c>OR</c>
+                  <c>hp</c>
+                  <c>-&gt;</c>
+                  <c>hq</c>
+                  <c />
+                </r>
+                <r>
+                  <c>fq</c>
+                  <c>AND</c>
+                  <c>fr</c>
+                  <c>-&gt;</c>
+                  <c>ft</c>
+                  <c />
+                </r>
+                <r>
+                  <c>ga</c>
+                  <c>AND</c>
+                  <c>gc</c>
+                  <c>-&gt;</c>
+                  <c>gd</c>
+                  <c />
+                </r>
+                <r>
+                  <c>fo</c>
+                  <c>RSHIFT</c>
+                  <c>2</c>
+                  <c>-&gt;</c>
+                  <c>fp</c>
+                  <c />
+                </r>
+                <r>
+                  <c>gl</c>
+                  <c>OR</c>
+                  <c>gm</c>
+                  <c>-&gt;</c>
+                  <c>gn</c>
+                  <c />
+                </r>
+                <r>
+                  <c>hg</c>
+                  <c>AND</c>
+                  <c>hh</c>
+                  <c>-&gt;</c>
+                  <c>hj</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>hn</c>
+                  <c>-&gt;</c>
+                  <c>ho</c>
+                  <c />
+                </r>
+                <r>
+                  <c>gl</c>
+                  <c>AND</c>
+                  <c>gm</c>
+                  <c>-&gt;</c>
+                  <c>go</c>
+                  <c />
+                </r>
+                <r>
+                  <c>he</c>
+                  <c>RSHIFT</c>
+                  <c>5</c>
+                  <c>-&gt;</c>
+                  <c>hh</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>gb</c>
+                  <c>-&gt;</c>
+                  <c>gc</c>
+                  <c />
+                </r>
+                <r>
+                  <c>hq</c>
+                  <c>AND</c>
+                  <c>hs</c>
+                  <c>-&gt;</c>
+                  <c>ht</c>
+                  <c />
+                </r>
+                <r>
+                  <c>hz</c>
+                  <c>RSHIFT</c>
+                  <c>3</c>
+                  <c>-&gt;</c>
+                  <c>ib</c>
+                  <c />
+                </r>
+                <r>
+                  <c>hz</c>
+                  <c>RSHIFT</c>
+                  <c>2</c>
+                  <c>-&gt;</c>
+                  <c>ia</c>
+                  <c />
+                </r>
+                <r>
+                  <c>fq</c>
+                  <c>OR</c>
+                  <c>fr</c>
+                  <c>-&gt;</c>
+                  <c>fs</c>
+                  <c />
+                </r>
+                <r>
+                  <c>hx</c>
+                  <c>OR</c>
+                  <c>hy</c>
+                  <c>-&gt;</c>
+                  <c>hz</c>
+                  <c />
+                </r>
+                <r>
+                  <c>he</c>
+                  <c>AND</c>
+                  <c>hp</c>
+                  <c>-&gt;</c>
+                  <c>hr</c>
+                  <c />
+                </r>
+                <r>
+                  <c>gj</c>
+                  <c>RSHIFT</c>
+                  <c>5</c>
+                  <c>-&gt;</c>
+                  <c>gm</c>
+                  <c />
+                </r>
+                <r>
+                  <c>hf</c>
+                  <c>AND</c>
+                  <c>hl</c>
+                  <c>-&gt;</c>
+                  <c>hn</c>
+                  <c />
+                </r>
+                <r>
+                  <c>hv</c>
+                  <c>OR</c>
+                  <c>hu</c>
+                  <c>-&gt;</c>
+                  <c>hw</c>
+                  <c />
+                </r>
+                <r>
+                  <c />
+                  <c>NOT</c>
+                  <c>hj</c>
+                  <c>-&gt;</c>
+                  <c>hk</c>
+                  <c />
+                </r>
+                <r>
+                  <c>gj</c>
+                  <c>RSHIFT</c>
+                  <c>3</c>
+                  <c>-&gt;</c>
+                  <c>gl</c>
+                  <c />
+                </r>
+                <r>
+                  <c>fo</c>
+                  <c>RSHIFT</c>
+                  <c>3</c>
+                  <c>-&gt;</c>
+                  <c>fq</c>
+                  <c />
+                </r>
+                <r>
+                  <c>he</c>
+                  <c>RSHIFT</c>
+                  <c>2</c>
+                  <c>-&gt;</c>
+                  <c>hf</c>
+                  <c />
+                </r>
+              </Data>
+            </Configuration>
+          </TextInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Input</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="1" size="2" source="TextInput:" type="String" />
+            <Field name="2" size="6" source="TextInput:" type="String" />
+            <Field name="3" size="5" source="TextInput:" type="String" />
+            <Field name="4" size="2" source="TextInput:" type="String" />
+            <Field name="5" size="2" source="TextInput:" type="String" />
+            <Field name="6" source="TextInput:" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="49" Connection="Join" />
+      <Destination ToolID="50" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="49" Connection="Right" />
+      <Destination ToolID="53" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="52" Connection="Output" />
+      <Destination ToolID="53" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="50" Connection="Output" />
+      <Destination ToolID="51" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="51" Connection="Output" />
+      <Destination ToolID="52" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="53" Connection="Output" />
+      <Destination ToolID="61" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="53" Connection="Output" />
+      <Destination ToolID="61" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="61" Connection="Join" />
+      <Destination ToolID="62" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="61" Connection="Right" />
+      <Destination ToolID="65" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="64" Connection="Output" />
+      <Destination ToolID="65" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="62" Connection="Output" />
+      <Destination ToolID="63" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="63" Connection="Output" />
+      <Destination ToolID="64" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="65" Connection="Output" />
+      <Destination ToolID="67" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="65" Connection="Output" />
+      <Destination ToolID="67" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="67" Connection="Join" />
+      <Destination ToolID="68" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="67" Connection="Right" />
+      <Destination ToolID="71" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="70" Connection="Output" />
+      <Destination ToolID="71" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="68" Connection="Output" />
+      <Destination ToolID="69" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="69" Connection="Output" />
+      <Destination ToolID="70" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="71" Connection="Output" />
+      <Destination ToolID="56" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="76" Connection="Output" />
+      <Destination ToolID="49" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="76" Connection="Output" />
+      <Destination ToolID="49" Connection="Right" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <Constants>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Input (76)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+    </Constants>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Day_7_workflow_macro_v2</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="e8f9e728-53dd-4807-8174-781967047feb" />
+      <Telemetry>
+        <PreviousWorkflowId value="" />
+        <OriginWorkflowId value="e8f9e728-53dd-4807-8174-781967047feb" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="False" />
+    </Events>
+    <RuntimeProperties>
+      <Actions />
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (54)</Name>
+          <ToolId value="54" />
+          <Questions>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (56)</Description>
+              <Name>Macro Output (56)</Name>
+              <ToolId value="56" />
+            </Question>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (76)</Name>
+              <ToolId value="76" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <IterativeMacro>
+        <Input>Input76</Input>
+        <Output>Output56</Output>
+        <IterationLimit value="4" />
+        <LimitBehavior>Ignore</LimitBehavior>
+        <OutputMode>AllSame</OutputMode>
+      </IterativeMacro>
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="56" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>

@@ -1,0 +1,975 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.1">
+  <Nodes>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="1230" y="158" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Output1</Name>
+          <Abbrev>1</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>1 Output</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="268" y="158" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="5" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="1" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_1" selected="True" rename="Right_1" input="Right_" />
+                <SelectField field="Right_2" selected="True" rename="Right_2" input="Right_" />
+                <SelectField field="Right_3" selected="True" rename="Right_3" input="Right_" />
+                <SelectField field="Right_4" selected="True" rename="Right_4" input="Right_" />
+                <SelectField field="Right_5" selected="True" rename="Right_5" input="Right_" />
+                <SelectField field="Right_6" selected="True" rename="Right_6" input="Right_" />
+                <SelectField field="Left_Field_1" selected="False" input="Left_" />
+                <SelectField field="Right_Field_1" selected="False" rename="Right_Field_1" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Find Next Values</AnnotationText>
+          <DefaultAnnotationText>Find Next Values</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="1" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="2" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="3" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="4" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="5" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="6" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="5" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="1" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="2" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="3" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="4" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="5" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="6" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="Right_1" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="Right_2" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="Right_3" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="Right_4" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="Right_5" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="Right_6" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="5" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="1" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="2" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="3" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="4" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="5" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="6" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="1" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="21">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="373" y="158" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IF REGEX_Match(tostring([6]), '^-?\d+$') THEN [6] ELSE [Right_1] ENDIF" field="Right_1" size="2147483647" type="V_String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Populate Next Values</AnnotationText>
+          <DefaultAnnotationText>Right_1 = IF REGEX_Match(tostring([6]), '^-?\d+$') THEN [6] ELSE [Right_1] ENDIF...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="1" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="2" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="3" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="4" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="5" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="6" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="Right_1" size="254" source="Formula: IF REGEX_Match(tostring([6]), '^-?\d+$') THEN [6] ELSE [Right_1] ENDIF" type="V_String" />
+            <Field name="Right_2" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="Right_3" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="Right_4" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="Right_5" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="Right_6" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="5" order="" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="46">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="758" y="158" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <AutoResetMode>Custom</AutoResetMode>
+          <MultiMetaInfo>
+            <MetaInfo name="#3">
+              <RecordInfo>
+                <Field name="1" size="2147483647" source="TextInput:" type="V_String" column="1" />
+                <Field name="2" size="2147483647" source="TextInput:" type="V_String" column="2" />
+                <Field name="3" size="2147483647" source="TextInput:" type="V_String" column="3" />
+                <Field name="4" size="2147483647" source="TextInput:" type="V_String" column="4" />
+                <Field name="5" size="2147483647" source="TextInput:" type="V_String" column="5" />
+                <Field name="6" source="TextInput:" type="Int32" column="6" />
+              </RecordInfo>
+            </MetaInfo>
+            <MetaInfo name="#5">
+              <RecordInfo>
+                <Field name="1" size="2147483647" source="TextInput:" type="V_String" column="1" />
+                <Field name="2" size="2147483647" source="TextInput:" type="V_String" column="2" />
+                <Field name="3" size="2147483647" source="TextInput:" type="V_String" column="3" />
+                <Field name="4" size="2147483647" source="TextInput:" type="V_String" column="4" />
+                <Field name="5" size="2147483647" source="TextInput:" type="V_String" column="5" />
+                <Field name="6" source="TextInput:" type="Int32" column="6" />
+              </RecordInfo>
+            </MetaInfo>
+            <MetaInfo name="#1">
+              <RecordInfo>
+                <Field name="1" size="2147483647" source="TextInput:" type="V_String" column="1" />
+                <Field name="2" size="2147483647" source="TextInput:" type="V_String" column="2" />
+                <Field name="3" size="2147483647" source="TextInput:" type="V_String" column="3" />
+                <Field name="4" size="2147483647" source="TextInput:" type="V_String" column="4" />
+                <Field name="5" size="2147483647" source="TextInput:" type="V_String" column="5" />
+                <Field name="6" source="TextInput:" type="Int32" column="6" />
+              </RecordInfo>
+            </MetaInfo>
+            <MetaInfo name="#6">
+              <RecordInfo>
+                <Field name="1" size="2147483647" source="(Multiple Sources)" type="V_String" column="1" />
+                <Field name="2" size="2147483647" source="TextInput:" type="V_String" column="2" />
+                <Field name="3" size="2147483647" source="(Multiple Sources)" type="V_String" column="3" />
+                <Field name="4" size="2147483647" source="TextInput:" type="V_String" column="4" />
+                <Field name="5" size="2147483647" source="TextInput:" type="V_String" column="5" />
+                <Field name="6" source="TextInput:" type="Int32" column="6" />
+              </RecordInfo>
+            </MetaInfo>
+            <MetaInfo name="#2">
+              <RecordInfo>
+                <Field name="1" size="2147483647" source="TextInput:" type="V_String" column="1" />
+                <Field name="2" size="2147483647" source="TextInput:" type="V_String" column="2" />
+                <Field name="3" size="2147483647" source="TextInput:" type="V_String" column="3" />
+                <Field name="4" size="2147483647" source="TextInput:" type="V_String" column="4" />
+                <Field name="5" size="2147483647" source="TextInput:" type="V_String" column="5" />
+                <Field name="6" source="TextInput:" type="Int32" column="6" />
+              </RecordInfo>
+            </MetaInfo>
+            <MetaInfo name="#4">
+              <RecordInfo>
+                <Field name="1" size="2147483647" source="TextInput:" type="V_String" column="1" />
+                <Field name="2" size="2147483647" source="TextInput:" type="V_String" column="2" />
+                <Field name="3" size="2147483647" source="TextInput:" type="V_String" column="3" />
+                <Field name="4" size="2147483647" source="TextInput:" type="V_String" column="4" />
+                <Field name="5" size="2147483647" source="TextInput:" type="V_String" column="5" />
+                <Field name="6" source="TextInput:" type="Int32" column="6" />
+              </RecordInfo>
+            </MetaInfo>
+          </MultiMetaInfo>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ManualDelayed</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Bring Values 
+Back Together</AnnotationText>
+          <DefaultAnnotationText>Bring Values 
+Back Together</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="1" size="254" source="(Multiple Sources)" type="V_String" />
+            <Field name="2" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="3" size="254" source="(Multiple Sources)" type="V_String" />
+            <Field name="4" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="5" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="6" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="50">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="125" y="158" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="True" />
+          <Name>Input155</Name>
+          <Abbrev />
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <FileInput>
+            <Configuration>
+              <Passwords />
+              <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv</File>
+              <FormatSpecificOptions>
+                <HeaderRow>True</HeaderRow>
+                <IgnoreErrors>False</IgnoreErrors>
+                <AllowShareWrite>False</AllowShareWrite>
+                <ImportLine>1</ImportLine>
+                <FieldLen>254</FieldLen>
+                <SingleThreadRead>False</SingleThreadRead>
+                <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+                <Delimeter>,</Delimeter>
+                <QuoteRecordBreak>False</QuoteRecordBreak>
+                <CodePage>28591</CodePage>
+              </FormatSpecificOptions>
+            </Configuration>
+          </FileInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>output1.csv</DefaultAnnotationText>
+          <Left value="True" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="1" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="2" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="3" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="4" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="5" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="6" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="56">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="1232" y="302" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="0">output1.csv</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <LineEndStyle>CRLF</LineEndStyle>
+            <Delimeter>,</Delimeter>
+            <ForceQuotes>False</ForceQuotes>
+            <HeaderRow>True</HeaderRow>
+            <CodePage>28591</CodePage>
+            <WriteBOM>True</WriteBOM>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>output1.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="58">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="636" y="158" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Right_1" selected="False" />
+            <SelectField field="Right_2" selected="False" />
+            <SelectField field="Right_3" selected="False" />
+            <SelectField field="Right_4" selected="False" />
+            <SelectField field="Right_5" selected="False" />
+            <SelectField field="Right_6" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>First 6 cols</AnnotationText>
+          <DefaultAnnotationText>First 6 cols</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="1" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="2" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="3" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="4" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="5" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="6" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="59">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="633" y="308" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="1" selected="False" />
+            <SelectField field="2" selected="False" />
+            <SelectField field="3" selected="False" />
+            <SelectField field="4" selected="False" />
+            <SelectField field="5" selected="False" />
+            <SelectField field="6" selected="False" />
+            <SelectField field="Right_1" selected="True" rename="1" />
+            <SelectField field="Right_2" selected="True" rename="2" />
+            <SelectField field="Right_3" selected="True" rename="3" />
+            <SelectField field="Right_4" selected="True" rename="4" />
+            <SelectField field="Right_5" selected="True" rename="5" />
+            <SelectField field="Right_6" selected="True" rename="6" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Last 6 cols</AnnotationText>
+          <DefaultAnnotationText>Last 6 cols</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="1" size="254" source="(Multiple Sources)" type="V_String" />
+            <Field name="2" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="3" size="254" source="(Multiple Sources)" type="V_String" />
+            <Field name="4" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="5" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="6" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="60">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="274" y="308" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="5" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="3" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_1" selected="True" rename="Right_1" input="Right_" />
+                <SelectField field="Right_2" selected="True" rename="Right_2" input="Right_" />
+                <SelectField field="Right_3" selected="True" rename="Right_3" input="Right_" />
+                <SelectField field="Right_4" selected="True" rename="Right_4" input="Right_" />
+                <SelectField field="Right_5" selected="True" rename="Right_5" input="Right_" />
+                <SelectField field="Right_6" selected="True" rename="Right_6" input="Right_" />
+                <SelectField field="Left_Field_1" selected="False" input="Left_" />
+                <SelectField field="Right_Field_1" selected="False" rename="Right_Field_1" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Find Next Values</AnnotationText>
+          <DefaultAnnotationText>Find Next Values</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="1" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="2" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="3" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="4" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="5" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="6" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="5" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="1" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="2" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="3" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="4" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="5" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="6" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="Right_1" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="Right_2" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="Right_3" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="Right_4" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="Right_5" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="Right_6" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="5" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="1" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="2" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="3" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="4" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="5" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="6" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="3" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="61">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="379" y="308" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IF REGEX_Match(tostring([6]), '^-?\d+$') THEN [6] ELSE [Right_3] ENDIF" field="Right_3" size="2147483647" type="V_String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Populate Next Values</AnnotationText>
+          <DefaultAnnotationText>Right_3 = IF REGEX_Match(tostring([6]), '^-?\d+$') THEN [6] ELSE [Right_3] ENDIF...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="1" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="2" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="3" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="4" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="5" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="6" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="Right_1" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="Right_2" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="Right_3" size="254" source="Formula: IF REGEX_Match(tostring([6]), '^-?\d+$') THEN [6] ELSE [Right_3] ENDIF" type="V_String" />
+            <Field name="Right_4" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="Right_5" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="Right_6" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="5" order="" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="65">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="501" y="158" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <AutoResetMode>ByName</AutoResetMode>
+          <MultiMetaInfo>
+            <MetaInfo name="#1">
+              <RecordInfo>
+                <Field name="1" size="2147483647" source="TextInput:" type="V_String" column="1" />
+                <Field name="2" size="2147483647" source="TextInput:" type="V_String" column="2" />
+                <Field name="3" size="2147483647" source="TextInput:" type="V_String" column="3" />
+                <Field name="4" size="2147483647" source="TextInput:" type="V_String" column="4" />
+                <Field name="5" size="2147483647" source="TextInput:" type="V_String" column="5" />
+                <Field name="6" source="TextInput:" type="Int32" column="6" />
+                <Field name="Right_1" size="2147483647" source="Formula: IF REGEX_Match(tostring([6]), '^-?\d+$') THEN [6] ELSE [Right_1] ENDIF" type="V_String" column="7" />
+                <Field name="Right_2" size="2147483647" source="TextInput:" type="V_String" column="8" />
+                <Field name="Right_3" size="2147483647" source="TextInput:" type="V_String" column="9" />
+                <Field name="Right_4" size="2147483647" source="TextInput:" type="V_String" column="10" />
+                <Field name="Right_5" size="2147483647" source="TextInput:" type="V_String" column="11" />
+                <Field name="Right_6" source="TextInput:" type="Int32" column="12" />
+              </RecordInfo>
+            </MetaInfo>
+            <MetaInfo name="#2">
+              <RecordInfo>
+                <Field name="1" size="2147483647" source="TextInput:" type="V_String" column="1" />
+                <Field name="2" size="2147483647" source="TextInput:" type="V_String" column="2" />
+                <Field name="3" size="2147483647" source="TextInput:" type="V_String" column="3" />
+                <Field name="4" size="2147483647" source="TextInput:" type="V_String" column="4" />
+                <Field name="5" size="2147483647" source="TextInput:" type="V_String" column="5" />
+                <Field name="6" source="TextInput:" type="Int32" column="6" />
+                <Field name="Right_1" size="2147483647" source="TextInput:" type="V_String" column="7" />
+                <Field name="Right_2" size="2147483647" source="TextInput:" type="V_String" column="8" />
+                <Field name="Right_3" size="2147483647" source="Formula: IF REGEX_Match(tostring([6]), '^-?\d+$') THEN [6] ELSE [Right_3] ENDIF" type="V_String" column="9" />
+                <Field name="Right_4" size="2147483647" source="TextInput:" type="V_String" column="10" />
+                <Field name="Right_5" size="2147483647" source="TextInput:" type="V_String" column="11" />
+                <Field name="Right_6" source="TextInput:" type="Int32" column="12" />
+              </RecordInfo>
+            </MetaInfo>
+          </MultiMetaInfo>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ManualDelayed</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="1" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="2" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="3" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="4" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="5" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="6" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="Right_1" size="254" source="(Multiple Sources)" type="V_String" />
+            <Field name="Right_2" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="Right_3" size="254" source="(Multiple Sources)" type="V_String" />
+            <Field name="Right_4" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="Right_5" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="Right_6" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="66">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+        <Position x="956" y="159" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UniqueFields>
+            <Field field="1" />
+            <Field field="2" />
+            <Field field="3" />
+            <Field field="4" />
+            <Field field="5" />
+          </UniqueFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Unique">
+          <RecordInfo>
+            <Field name="1" size="254" source="(Multiple Sources)" type="V_String" />
+            <Field name="2" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="3" size="254" source="(Multiple Sources)" type="V_String" />
+            <Field name="4" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="5" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="6" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="1" order="Asc" />
+            <Field field="2" order="Asc" />
+            <Field field="3" order="Asc" />
+            <Field field="4" order="Asc" />
+            <Field field="5" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Duplicates">
+          <RecordInfo>
+            <Field name="1" size="254" source="(Multiple Sources)" type="V_String" />
+            <Field name="2" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="3" size="254" source="(Multiple Sources)" type="V_String" />
+            <Field name="4" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="5" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="6" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="1" order="Asc" />
+            <Field field="2" order="Asc" />
+            <Field field="3" order="Asc" />
+            <Field field="4" order="Asc" />
+            <Field field="5" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+    </Node>
+    <Node ToolID="67">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1055" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IF &#xA;	[2] = &quot;RSHIFT&quot;  &#xA;	&amp;&amp; REGEX_Match(tostring([1]), '^-?\d+$') &#xA;	&amp;&amp; REGEX_Match(tostring([3]), '^-?\d+$')&#xA;THEN ShiftRight(ToNumber([1]), ToNumber([3]))&#xA;	ELSEIF [2] = &quot;LSHIFT&quot; &#xA;		&amp;&amp; REGEX_Match(tostring([1]), '^-?\d+$') &#xA;		&amp;&amp; REGEX_Match(tostring([3]), '^-?\d+$')&#xA;	THEN ShiftLeft(ToNumber([1]),ToNumber([3]))&#xA;	ELSEIF &#xA;		[2] = &quot;AND&quot; &#xA;		&amp;&amp; REGEX_Match(tostring([1]), '^-?\d+$')&#xA;		&amp;&amp; REGEX_Match(tostring([3]), '^-?\d+$')&#xA;	THEN BinaryAnd(ToNumber([1]),ToNumber([3]))&#xA;	ELSEIF &#xA;		[2] = &quot;OR&quot; &#xA;		&amp;&amp; REGEX_Match(tostring([1]), '^-?\d+$')&#xA;		&amp;&amp; REGEX_Match(tostring([3]), '^-?\d+$')&#xA;	THEN BinaryOr(ToNumber([1]),ToNumber([3]))&#xA;	ELSEIF &#xA;		[2] = &quot;NOT&quot; &#xA;		&amp;&amp; REGEX_Match(tostring([3]), '^-?\d+$')&#xA;	THEN BinaryNot(ToNumber([3]))&#xA;    ELSE [6]&#xA;ENDIF" field="6" size="254" type="V_String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Calc Next Values</AnnotationText>
+          <DefaultAnnotationText>6 = IF 
+	[2] = "RSHIFT"  
+	&amp;&amp; REGEX_Match(tostring([1]), '^-?\d+$') 
+	&amp;&amp; REGEX_M...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="1" size="254" source="(Multiple Sources)" type="V_String" />
+            <Field name="2" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="3" size="254" source="(Multiple Sources)" type="V_String" />
+            <Field name="4" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="5" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="6" size="254" source="Formula: IF &#xA; [2] = &quot;RSHIFT&quot;  &#xA; &amp;&amp; REGEX_Match(tostring([1]), '^-?\d+$') &#xA; &amp;&amp; REGEX_Match(tostring([3]), '^-?\d+$')&#xA;THEN ShiftRight(ToNumber([1]), ToNumber([3]))&#xA; ELSEIF [2] = &quot;LSHIFT&quot; &#xA;  &amp;&amp; REGEX_Match(tostring([1]), '^-?\d+$') &#xA;  &amp;&amp; REGEX_Match(tostring([3]), '^-?\d+$')&#xA; THEN ShiftLeft(ToNumber([1]),ToNumber([3]))&#xA; ELSEIF &#xA;  [2] = &quot;AND&quot; &#xA;  &amp;&amp; REGEX_Match(tostring([1]), '^-?\d+$')&#xA;  &amp;&amp; REGEX_Match(tostring([3]), '^-?\d+$')&#xA; THEN BinaryAnd(ToNumber([1]),ToNumber([3]))&#xA; ELSEIF &#xA;  [2] = &quot;OR&quot; &#xA;  &amp;&amp; REGEX_Match(tostring([1]), '^-?\d+$')&#xA;  &amp;&amp; REGEX_Match(tostring([3]), '^-?\d+$')&#xA; THEN BinaryOr(ToNumber([1]),ToNumber([3]))&#xA; ELSEIF &#xA;  [2] = &quot;NOT&quot; &#xA;  &amp;&amp; REGEX_Match(tostring([3]), '^-?\d+$')&#xA; THEN BinaryNot(ToNumber([3]))&#xA;    ELSE [6]&#xA;ENDIF" type="V_String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="1" order="Asc" />
+            <Field field="2" order="Asc" />
+            <Field field="3" order="Asc" />
+            <Field field="4" order="Asc" />
+            <Field field="5" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="69">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1236" y="225" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>5</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2022-10-28 14:22:32</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>lx</Operand>
+              <StartDate>2022-10-28 14:22:32</StartDate>
+              <EndDate>2022-10-28 14:22:32</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[5] = "lx"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="1" size="254" source="(Multiple Sources)" type="V_String" />
+            <Field name="2" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="3" size="254" source="(Multiple Sources)" type="V_String" />
+            <Field name="4" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="5" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="6" size="254" source="Formula: IF &#xA; [2] = &quot;RSHIFT&quot;  &#xA; &amp;&amp; REGEX_Match(tostring([1]), '^-?\d+$') &#xA; &amp;&amp; REGEX_Match(tostring([3]), '^-?\d+$')&#xA;THEN ShiftRight(ToNumber([1]), ToNumber([3]))&#xA; ELSEIF [2] = &quot;LSHIFT&quot; &#xA;  &amp;&amp; REGEX_Match(tostring([1]), '^-?\d+$') &#xA;  &amp;&amp; REGEX_Match(tostring([3]), '^-?\d+$')&#xA; THEN ShiftLeft(ToNumber([1]),ToNumber([3]))&#xA; ELSEIF &#xA;  [2] = &quot;AND&quot; &#xA;  &amp;&amp; REGEX_Match(tostring([1]), '^-?\d+$')&#xA;  &amp;&amp; REGEX_Match(tostring([3]), '^-?\d+$')&#xA; THEN BinaryAnd(ToNumber([1]),ToNumber([3]))&#xA; ELSEIF &#xA;  [2] = &quot;OR&quot; &#xA;  &amp;&amp; REGEX_Match(tostring([1]), '^-?\d+$')&#xA;  &amp;&amp; REGEX_Match(tostring([3]), '^-?\d+$')&#xA; THEN BinaryOr(ToNumber([1]),ToNumber([3]))&#xA; ELSEIF &#xA;  [2] = &quot;NOT&quot; &#xA;  &amp;&amp; REGEX_Match(tostring([3]), '^-?\d+$')&#xA; THEN BinaryNot(ToNumber([3]))&#xA;    ELSE [6]&#xA;ENDIF" type="V_String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="1" order="Asc" />
+            <Field field="2" order="Asc" />
+            <Field field="3" order="Asc" />
+            <Field field="4" order="Asc" />
+            <Field field="5" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="1" size="254" source="(Multiple Sources)" type="V_String" />
+            <Field name="2" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="3" size="254" source="(Multiple Sources)" type="V_String" />
+            <Field name="4" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="5" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="6" size="254" source="Formula: IF &#xA; [2] = &quot;RSHIFT&quot;  &#xA; &amp;&amp; REGEX_Match(tostring([1]), '^-?\d+$') &#xA; &amp;&amp; REGEX_Match(tostring([3]), '^-?\d+$')&#xA;THEN ShiftRight(ToNumber([1]), ToNumber([3]))&#xA; ELSEIF [2] = &quot;LSHIFT&quot; &#xA;  &amp;&amp; REGEX_Match(tostring([1]), '^-?\d+$') &#xA;  &amp;&amp; REGEX_Match(tostring([3]), '^-?\d+$')&#xA; THEN ShiftLeft(ToNumber([1]),ToNumber([3]))&#xA; ELSEIF &#xA;  [2] = &quot;AND&quot; &#xA;  &amp;&amp; REGEX_Match(tostring([1]), '^-?\d+$')&#xA;  &amp;&amp; REGEX_Match(tostring([3]), '^-?\d+$')&#xA; THEN BinaryAnd(ToNumber([1]),ToNumber([3]))&#xA; ELSEIF &#xA;  [2] = &quot;OR&quot; &#xA;  &amp;&amp; REGEX_Match(tostring([1]), '^-?\d+$')&#xA;  &amp;&amp; REGEX_Match(tostring([3]), '^-?\d+$')&#xA; THEN BinaryOr(ToNumber([1]),ToNumber([3]))&#xA; ELSEIF &#xA;  [2] = &quot;NOT&quot; &#xA;  &amp;&amp; REGEX_Match(tostring([3]), '^-?\d+$')&#xA; THEN BinaryNot(ToNumber([3]))&#xA;    ELSE [6]&#xA;ENDIF" type="V_String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="1" order="Asc" />
+            <Field field="2" order="Asc" />
+            <Field field="3" order="Asc" />
+            <Field field="4" order="Asc" />
+            <Field field="5" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="70">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="857" y="159" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="1033">
+            <Field field="6" order="Descending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>6 - Descending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="1" size="254" source="(Multiple Sources)" type="V_String" />
+            <Field name="2" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="3" size="254" source="(Multiple Sources)" type="V_String" />
+            <Field name="4" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="5" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+            <Field name="6" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\output1.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="20" Connection="Join" />
+      <Destination ToolID="21" Connection="Input" />
+    </Connection>
+    <Connection name="#3" Wireless="True">
+      <Origin ToolID="20" Connection="Left" />
+      <Destination ToolID="46" Connection="Input" />
+    </Connection>
+    <Connection name="#5" Wireless="True">
+      <Origin ToolID="20" Connection="Right" />
+      <Destination ToolID="46" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="58" Connection="Output" />
+      <Destination ToolID="46" Connection="Input" />
+    </Connection>
+    <Connection name="#6">
+      <Origin ToolID="59" Connection="Output" />
+      <Destination ToolID="46" Connection="Input" />
+    </Connection>
+    <Connection name="#2" Wireless="True">
+      <Origin ToolID="60" Connection="Left" />
+      <Destination ToolID="46" Connection="Input" />
+    </Connection>
+    <Connection name="#4" Wireless="True">
+      <Origin ToolID="60" Connection="Right" />
+      <Destination ToolID="46" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="21" Connection="Output" />
+      <Destination ToolID="65" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="61" Connection="Output" />
+      <Destination ToolID="65" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="46" Connection="Output" />
+      <Destination ToolID="70" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="50" Connection="Output" />
+      <Destination ToolID="20" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="50" Connection="Output" />
+      <Destination ToolID="20" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="50" Connection="Output" />
+      <Destination ToolID="60" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="50" Connection="Output" />
+      <Destination ToolID="60" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="60" Connection="Join" />
+      <Destination ToolID="61" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="65" Connection="Output" />
+      <Destination ToolID="58" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="65" Connection="Output" />
+      <Destination ToolID="59" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="66" Connection="Unique" />
+      <Destination ToolID="67" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="67" Connection="Output" />
+      <Destination ToolID="56" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="67" Connection="Output" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="67" Connection="Output" />
+      <Destination ToolID="69" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="70" Connection="Output" />
+      <Destination ToolID="66" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Day_7_workflow_macro</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="ebcb1577-db7c-4edd-a427-7a5f17685dcb" />
+      <Telemetry>
+        <PreviousWorkflowId value="7a6f62a1-949e-4fa7-a06c-a792a073e0e6" />
+        <OriginWorkflowId value="7a6f62a1-949e-4fa7-a06c-a792a073e0e6" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="False" />
+    </Events>
+    <RuntimeProperties>
+      <Actions />
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (16)</Name>
+          <ToolId value="16" />
+          <Questions>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (17)</Description>
+              <Name>Macro Output (17)</Name>
+              <ToolId value="17" />
+            </Question>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (50)</Name>
+              <ToolId value="50" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <IterativeMacro>
+        <Input>Input155</Input>
+        <Output>Output1</Output>
+        <IterationLimit value="500" />
+        <LimitBehavior>Ignore</LimitBehavior>
+        <OutputMode>AllSame</OutputMode>
+      </IterativeMacro>
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="17" Selected="True" />
+        <Tool ToolId="50" Selected="True" />
+        <Tool ToolId="56" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>

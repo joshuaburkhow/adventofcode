@@ -1,0 +1,285 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.3">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="98" y="107" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">\\Mac\Home\Library\CloudStorage\OneDrive-alteryx.com\Challenges\AoC\2022\day_8_input.txt</File>
+          <FormatSpecificOptions>
+            <HeaderRow>False</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>\0</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>day_8_input.txt</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="254" source="File: \\Mac\Home\Library\CloudStorage\OneDrive-alteryx.com\Challenges\AoC\2022\day_8_input.txt" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RegEx.RegEx">
+        <Position x="229" y="105" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>Field_1</Field>
+          <RegExExpression value="." />
+          <CaseInsensitve value="False" />
+          <Method>ParseSimple</Method>
+          <Replace expression="">
+            <CopyUnmatched value="True" />
+          </Replace>
+          <ParseSimple>
+            <SplitToRows value="False" />
+            <RootName>
+            </RootName>
+            <NumFields value="99" />
+            <ErrorHandling>Warn</ErrorHandling>
+          </ParseSimple>
+          <ParseComplex>
+            <Field field="No Marked Groups Found" type="No Marked Groups Found" size="No Marked Groups Found" />
+          </ParseComplex>
+          <Match>
+            <Field>Field_1_Matched</Field>
+            <ErrorUnmatched value="False" />
+          </Match>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRegEx" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="471" y="103" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_2276_674ea969998b0a4889625b1b78b84286_\Engine_2276_3ab44fb2bbca00448254b4c5c2c4d9a8~.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="345" y="104" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Field_1" selected="False" />
+            <SelectField field="1" selected="True" type="Double" size="8" />
+            <SelectField field="2" selected="True" type="Double" size="8" />
+            <SelectField field="3" selected="True" type="Double" size="8" />
+            <SelectField field="4" selected="True" type="Double" size="8" />
+            <SelectField field="5" selected="True" type="Double" size="8" />
+            <SelectField field="6" selected="True" type="Double" size="8" />
+            <SelectField field="7" selected="True" type="Double" size="8" />
+            <SelectField field="8" selected="True" type="Double" size="8" />
+            <SelectField field="9" selected="True" type="Double" size="8" />
+            <SelectField field="10" selected="True" type="Double" size="8" />
+            <SelectField field="11" selected="True" type="Double" size="8" />
+            <SelectField field="12" selected="True" type="Double" size="8" />
+            <SelectField field="13" selected="True" type="Double" size="8" />
+            <SelectField field="14" selected="True" type="Double" size="8" />
+            <SelectField field="15" selected="True" type="Double" size="8" />
+            <SelectField field="16" selected="True" type="Double" size="8" />
+            <SelectField field="17" selected="True" type="Double" size="8" />
+            <SelectField field="18" selected="True" type="Double" size="8" />
+            <SelectField field="19" selected="True" type="Double" size="8" />
+            <SelectField field="20" selected="True" type="Double" size="8" />
+            <SelectField field="21" selected="True" type="Double" size="8" />
+            <SelectField field="22" selected="True" type="Double" size="8" />
+            <SelectField field="23" selected="True" type="Double" size="8" />
+            <SelectField field="24" selected="True" type="Double" size="8" />
+            <SelectField field="25" selected="True" type="Double" size="8" />
+            <SelectField field="26" selected="True" type="Double" size="8" />
+            <SelectField field="27" selected="True" type="Double" size="8" />
+            <SelectField field="28" selected="True" type="Double" size="8" />
+            <SelectField field="29" selected="True" type="Double" size="8" />
+            <SelectField field="30" selected="True" type="Double" size="8" />
+            <SelectField field="31" selected="True" type="Double" size="8" />
+            <SelectField field="32" selected="True" type="Double" size="8" />
+            <SelectField field="33" selected="True" type="Double" size="8" />
+            <SelectField field="34" selected="True" type="Double" size="8" />
+            <SelectField field="35" selected="True" type="Double" size="8" />
+            <SelectField field="36" selected="True" type="Double" size="8" />
+            <SelectField field="37" selected="True" type="Double" size="8" />
+            <SelectField field="38" selected="True" type="Double" size="8" />
+            <SelectField field="39" selected="True" type="Double" size="8" />
+            <SelectField field="40" selected="True" type="Double" size="8" />
+            <SelectField field="41" selected="True" type="Double" size="8" />
+            <SelectField field="42" selected="True" type="Double" size="8" />
+            <SelectField field="43" selected="True" type="Double" size="8" />
+            <SelectField field="44" selected="True" type="Double" size="8" />
+            <SelectField field="45" selected="True" type="Double" size="8" />
+            <SelectField field="46" selected="True" type="Double" size="8" />
+            <SelectField field="47" selected="True" type="Double" size="8" />
+            <SelectField field="48" selected="True" type="Double" size="8" />
+            <SelectField field="49" selected="True" type="Double" size="8" />
+            <SelectField field="50" selected="True" type="Double" size="8" />
+            <SelectField field="51" selected="True" type="Double" size="8" />
+            <SelectField field="52" selected="True" type="Double" size="8" />
+            <SelectField field="53" selected="True" type="Double" size="8" />
+            <SelectField field="54" selected="True" type="Double" size="8" />
+            <SelectField field="55" selected="True" type="Double" size="8" />
+            <SelectField field="56" selected="True" type="Double" size="8" />
+            <SelectField field="57" selected="True" type="Double" size="8" />
+            <SelectField field="58" selected="True" type="Double" size="8" />
+            <SelectField field="59" selected="True" type="Double" size="8" />
+            <SelectField field="60" selected="True" type="Double" size="8" />
+            <SelectField field="61" selected="True" type="Double" size="8" />
+            <SelectField field="62" selected="True" type="Double" size="8" />
+            <SelectField field="63" selected="True" type="Double" size="8" />
+            <SelectField field="64" selected="True" type="Double" size="8" />
+            <SelectField field="65" selected="True" type="Double" size="8" />
+            <SelectField field="66" selected="True" type="Double" size="8" />
+            <SelectField field="67" selected="True" type="Double" size="8" />
+            <SelectField field="68" selected="True" type="Double" size="8" />
+            <SelectField field="69" selected="True" type="Double" size="8" />
+            <SelectField field="70" selected="True" type="Double" size="8" />
+            <SelectField field="71" selected="True" type="Double" size="8" />
+            <SelectField field="72" selected="True" type="Double" size="8" />
+            <SelectField field="73" selected="True" type="Double" size="8" />
+            <SelectField field="74" selected="True" type="Double" size="8" />
+            <SelectField field="75" selected="True" type="Double" size="8" />
+            <SelectField field="76" selected="True" type="Double" size="8" />
+            <SelectField field="77" selected="True" type="Double" size="8" />
+            <SelectField field="78" selected="True" type="Double" size="8" />
+            <SelectField field="79" selected="True" type="Double" size="8" />
+            <SelectField field="80" selected="True" type="Double" size="8" />
+            <SelectField field="81" selected="True" type="Double" size="8" />
+            <SelectField field="82" selected="True" type="Double" size="8" />
+            <SelectField field="83" selected="True" type="Double" size="8" />
+            <SelectField field="84" selected="True" type="Double" size="8" />
+            <SelectField field="85" selected="True" type="Double" size="8" />
+            <SelectField field="86" selected="True" type="Double" size="8" />
+            <SelectField field="87" selected="True" type="Double" size="8" />
+            <SelectField field="88" selected="True" type="Double" size="8" />
+            <SelectField field="89" selected="True" type="Double" size="8" />
+            <SelectField field="90" selected="True" type="Double" size="8" />
+            <SelectField field="91" selected="True" type="Double" size="8" />
+            <SelectField field="92" selected="True" type="Double" size="8" />
+            <SelectField field="93" selected="True" type="Double" size="8" />
+            <SelectField field="94" selected="True" type="Double" size="8" />
+            <SelectField field="95" selected="True" type="Double" size="8" />
+            <SelectField field="96" selected="True" type="Double" size="8" />
+            <SelectField field="97" selected="True" type="Double" size="8" />
+            <SelectField field="98" selected="True" type="Double" size="8" />
+            <SelectField field="99" selected="True" type="Double" size="8" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <RunWithE2 value="True" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>day_8_workflow</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="a1c2d6ad-bfd8-4c11-a22e-d1df961fca85" />
+      <Telemetry>
+        <PreviousWorkflowId value="7019a0e6-e577-48b8-bccc-7264a6224067" />
+        <OriginWorkflowId value="7019a0e6-e577-48b8-bccc-7264a6224067" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
