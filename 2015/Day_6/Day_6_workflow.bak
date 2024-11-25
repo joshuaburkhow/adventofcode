@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
-<AlteryxDocument yxmdVer="2024.2" RunE2="T">
+<AlteryxDocument yxmdVer="2022.1">
   <Nodes>
     <Node ToolID="1">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="54" y="93" />
+        <Position x="88" y="64" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <Passwords />
-          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\Users\joshua.burkhow\Documents\GitHub\adventofcode\2015\Day_6\day_6_input.txt</File>
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\day_6_input.txt</File>
           <FormatSpecificOptions>
             <HeaderRow>False</HeaderRow>
             <IgnoreErrors>False</IgnoreErrors>
@@ -29,7 +29,7 @@
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="Field_1" size="254" source="File: C:\Users\joshua.burkhow\Documents\GitHub\adventofcode\2015\Day_6\day_6_input.txt" type="V_String" />
+            <Field name="Field_1" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\day_6_input.txt" type="V_String" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -37,7 +37,7 @@
     </Node>
     <Node ToolID="3">
       <GuiSettings Plugin="AlteryxBasePluginsGui.RegEx.RegEx">
-        <Position x="188" y="93" />
+        <Position x="222" y="64" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -86,19 +86,18 @@
     </Node>
     <Node ToolID="18">
       <GuiSettings Plugin="AlteryxBasePluginsGui.GenerateRows.GenerateRows">
-        <Position x="455" y="93" />
+        <Position x="489" y="64" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <UpdateField value="False" />
+          <UpdateField value="True" />
           <UpdateField_Name>x1</UpdateField_Name>
-          <CreateField_Name>x_point</CreateField_Name>
+          <CreateField_Name>RowCount</CreateField_Name>
           <CreateField_Type>Int32</CreateField_Type>
           <CreateField_Size>4</CreateField_Size>
           <Expression_Init>x1</Expression_Init>
-          <Expression_Cond>x_point &lt;= x2</Expression_Cond>
-          <Expression_Loop>x_point + 1</Expression_Loop>
-          <RecordCount value="82519" />
+          <Expression_Cond>x1 &lt;= x2</Expression_Cond>
+          <Expression_Loop>x1 + 1</Expression_Loop>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
@@ -108,13 +107,12 @@
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="RecordID" source="RecordID: Starting Value=1" type="Int16" />
-            <Field name="Field_1" size="254" source="File: C:\Users\joshua.burkhow\Documents\GitHub\adventofcode\2015\Day_6\day_6_input.txt" type="V_String" />
+            <Field name="Field_1" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\day_6_input.txt" type="V_String" />
             <Field description="RegEx: Parsed from Field_1" name="Action" size="254" source="RegEx: Parsed from Field_1" type="V_String" />
             <Field description="RegEx: Parsed from Field_1" name="x1" source="RegEx: Parsed from Field_1" type="Int64" />
             <Field description="RegEx: Parsed from Field_1" name="y1" source="RegEx: Parsed from Field_1" type="Int64" />
             <Field description="RegEx: Parsed from Field_1" name="x2" source="RegEx: Parsed from Field_1" type="Int64" />
             <Field description="RegEx: Parsed from Field_1" name="y2" source="RegEx: Parsed from Field_1" type="Int64" />
-            <Field name="x_point" source="GenerateRows" type="Int32" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -122,19 +120,18 @@
     </Node>
     <Node ToolID="19">
       <GuiSettings Plugin="AlteryxBasePluginsGui.GenerateRows.GenerateRows">
-        <Position x="589" y="93" />
+        <Position x="623" y="64" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <UpdateField value="False" />
+          <UpdateField value="True" />
           <UpdateField_Name>y1</UpdateField_Name>
-          <CreateField_Name>y_point</CreateField_Name>
+          <CreateField_Name>RowCount</CreateField_Name>
           <CreateField_Type>Int32</CreateField_Type>
           <CreateField_Size>4</CreateField_Size>
           <Expression_Init>y1</Expression_Init>
-          <Expression_Cond>y_point &lt;= y2</Expression_Cond>
-          <Expression_Loop>y_point + 1</Expression_Loop>
-          <RecordCount value="18246724" />
+          <Expression_Cond>y1 &lt;= y2</Expression_Cond>
+          <Expression_Loop>y1 + 1</Expression_Loop>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
@@ -144,14 +141,12 @@
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="RecordID" source="RecordID: Starting Value=1" type="Int16" />
-            <Field name="Field_1" size="254" source="File: C:\Users\joshua.burkhow\Documents\GitHub\adventofcode\2015\Day_6\day_6_input.txt" type="V_String" />
+            <Field name="Field_1" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\day_6_input.txt" type="V_String" />
             <Field description="RegEx: Parsed from Field_1" name="Action" size="254" source="RegEx: Parsed from Field_1" type="V_String" />
             <Field description="RegEx: Parsed from Field_1" name="x1" source="RegEx: Parsed from Field_1" type="Int64" />
             <Field description="RegEx: Parsed from Field_1" name="y1" source="RegEx: Parsed from Field_1" type="Int64" />
             <Field description="RegEx: Parsed from Field_1" name="x2" source="RegEx: Parsed from Field_1" type="Int64" />
             <Field description="RegEx: Parsed from Field_1" name="y2" source="RegEx: Parsed from Field_1" type="Int64" />
-            <Field name="x_point" source="GenerateRows" type="Int32" />
-            <Field name="y_point" source="GenerateRows" type="Int32" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -159,7 +154,7 @@
     </Node>
     <Node ToolID="20">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="722" y="93" />
+        <Position x="756" y="64" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -191,7 +186,7 @@
     </Node>
     <Node ToolID="26">
       <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
-        <Position x="321" y="93" />
+        <Position x="355" y="64" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -200,7 +195,6 @@
           <FieldType>Int16</FieldType>
           <FieldSize>6</FieldSize>
           <Position>0</Position>
-          <GroupFields orderChanged="False" />
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
@@ -210,7 +204,7 @@
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="RecordID" source="RecordID: Starting Value=1" type="Int16" />
-            <Field name="Field_1" size="254" source="File: C:\Users\joshua.burkhow\Documents\GitHub\adventofcode\2015\Day_6\day_6_input.txt" type="V_String" />
+            <Field name="Field_1" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\Challenges\AoC\2015\day_6_input.txt" type="V_String" />
             <Field description="RegEx: Parsed from Field_1" name="Action" size="254" source="RegEx: Parsed from Field_1" type="V_String" />
             <Field description="RegEx: Parsed from Field_1" name="x1" source="RegEx: Parsed from Field_1" type="Int64" />
             <Field description="RegEx: Parsed from Field_1" name="y1" source="RegEx: Parsed from Field_1" type="Int64" />
@@ -234,254 +228,199 @@
         </Annotation>
       </Properties>
     </Node>
-    <Node ToolID="73">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
-        <Position x="860" y="91" />
+    <Node ToolID="64">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="850" y="65" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <AutoResetMode>Custom</AutoResetMode>
-          <MultiMetaInfo>
-            <MetaInfo name="#2">
-              <RecordInfo>
-                <Field name="RecordID" source="RecordID: Starting Value=1" type="Int16" column="1" />
-                <Field description="RegEx: Parsed from Field_1" name="Action" size="254" source="RegEx: Parsed from Field_1" type="V_String" column="2" />
-                <Field description="RegEx: Parsed from Field_1" name="x1" source="RegEx: Parsed from Field_1" type="Int64" column="3" />
-                <Field description="RegEx: Parsed from Field_1" name="y1" source="RegEx: Parsed from Field_1" type="Int64" column="4" />
-              </RecordInfo>
-            </MetaInfo>
-            <MetaInfo name="#1">
-              <RecordInfo>
-                <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" column="1" />
-                <Field name="action" size="1073741823" source="Formula: &quot;turn off&quot;" type="V_WString" column="2" />
-                <Field name="x1" source="GenerateRows" type="Int32" column="3" />
-                <Field name="y1" source="GenerateRows" type="Int32" column="4" />
-              </RecordInfo>
-            </MetaInfo>
-          </MultiMetaInfo>
-          <ByName_ErrorMode>Warning</ByName_ErrorMode>
-          <ByName_OutputMode>All</ByName_OutputMode>
-          <Mode>ManualDelayed</Mode>
-          <SetOutputOrder value="False" />
+          <SortInfo locale="1033">
+            <Field field="x1" order="Ascending" />
+            <Field field="y1" order="Ascending" />
+            <Field field="RecordID" order="Ascending" />
+          </SortInfo>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
-          <DefaultAnnotationText />
+          <DefaultAnnotationText>x1 - Ascending
+y1 - Ascending
+RecordID - Ascending</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
-            <Field name="action" size="1073741823" source="(Multiple Sources)" type="V_WString" />
-            <Field name="x1" source="(Multiple Sources)" type="Int64" />
-            <Field name="y1" source="(Multiple Sources)" type="Int64" />
+            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int16" />
+            <Field description="RegEx: Parsed from Field_1" name="Action" size="254" source="RegEx: Parsed from Field_1" type="V_String" />
+            <Field description="RegEx: Parsed from Field_1" name="x1" source="RegEx: Parsed from Field_1" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="y1" source="RegEx: Parsed from Field_1" type="Int64" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
     </Node>
-    <Node ToolID="74">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
-        <Position x="512" y="283" />
+    <Node ToolID="69">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
+        <Position x="1112" y="244" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <FieldName>RecordID</FieldName>
-          <StartValue>1</StartValue>
-          <FieldType>Int32</FieldType>
-          <FieldSize>6</FieldSize>
-          <Position>0</Position>
-          <GroupFields orderChanged="False" />
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-        <MetaInfo connection="Output">
-          <RecordInfo>
-            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
-            <Field name="x1" source="GenerateRows" type="Int32" />
-            <Field name="y1" source="GenerateRows" type="Int32" />
-            <Field name="action" size="1073741823" source="Formula: &quot;turn off&quot;" type="V_WString" />
-          </RecordInfo>
-        </MetaInfo>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
-    </Node>
-    <Node ToolID="75">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="392" y="283" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <FormulaFields>
-            <FormulaField expression="&quot;turn off&quot;" field="action" size="1073741823" type="V_WString" enabled="true" />
-          </FormulaFields>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText><![CDATA[action = "turn off"
-]]></DefaultAnnotationText>
-          <Left value="False" />
-        </Annotation>
-        <MetaInfo connection="Output">
-          <RecordInfo>
-            <Field name="x1" source="GenerateRows" type="Int32" />
-            <Field name="y1" source="GenerateRows" type="Int32" />
-            <Field name="action" size="1073741823" source="Formula: &quot;turn off&quot;" type="V_WString" />
-          </RecordInfo>
-        </MetaInfo>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
-    </Node>
-    <Node ToolID="72">
-      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="1013" y="305" width="449" height="195" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <Caption>Container 72</Caption>
-          <Style TextColor="#314c4a" FillColor="#ffffff" BorderColor="#314c4a" Transparency="25" Margin="25" />
-          <Disabled value="False" />
-          <Folded value="False" />
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <ChildNodes>
-        <Node ToolID="69">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
-            <Position x="1038" y="354" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <UpdateField value="False" />
-              <UpdateField_Name>value</UpdateField_Name>
-              <CreateField_Name>value</CreateField_Name>
-              <CreateField_Type>Int32</CreateField_Type>
-              <CreateField_Size>4</CreateField_Size>
-              <OtherRows>Empty</OtherRows>
-              <NumRows value="1" />
-              <Expression>IF [Action] = 'toggle' THEN [Row-1:value] + 2
+          <UpdateField value="True" />
+          <UpdateField_Name>value</UpdateField_Name>
+          <CreateField_Name>New Field</CreateField_Name>
+          <CreateField_Type>Int32</CreateField_Type>
+          <CreateField_Size>4</CreateField_Size>
+          <OtherRows>Empty</OtherRows>
+          <NumRows value="1" />
+          <Expression>IF [Action] = 'toggle' THEN [Row-1:value] + 2
 ELSEIF [Action] = 'turn on' THEN [Row-1:value] + 1
 ELSEIF [Row-1:value] = 0 THEN 0 
 ELSE [Row-1:value] - 1
 ENDIF</Expression>
-              <GroupByFields>
-                <Field field="x1" />
-                <Field field="y1" />
-              </GroupByFields>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText>IF [Action] = 'toggle' THEN [Row-1:value] + 2
+          <GroupByFields>
+            <Field field="x1" />
+            <Field field="y1" />
+          </GroupByFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>IF [Action] = 'toggle' THEN [Row-1:value] + 2
 ELSEIF [Action]...</DefaultAnnotationText>
-              <Left value="False" />
-            </Annotation>
-            <MetaInfo connection="Output">
-              <RecordInfo>
-                <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
-                <Field name="action" size="1073741823" source="(Multiple Sources)" type="V_WString" />
-                <Field name="x1" source="(Multiple Sources)" type="Int64" />
-                <Field name="y1" source="(Multiple Sources)" type="Int64" />
-                <Field name="value" type="Int32" />
-              </RecordInfo>
-            </MetaInfo>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
-        </Node>
-        <Node ToolID="71">
-          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-            <Position x="1352" y="355" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <SummarizeFields>
-                <SummarizeField field="value" action="Sum" rename="Sum_value" />
-              </SummarizeFields>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field description="RegEx: Parsed from Field_1" name="x1" source="RegEx: Parsed from Field_1" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="y1" source="RegEx: Parsed from Field_1" type="Int64" />
+            <Field name="value" source="Formula: 0" type="Byte" />
+            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int16" />
+            <Field description="RegEx: Parsed from Field_1" name="Action" size="254" source="RegEx: Parsed from Field_1" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
+    </Node>
+    <Node ToolID="70">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1240" y="239" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="RecordID" action="Max" rename="Max_RecordID" />
+            <SummarizeField field="x1" action="GroupBy" rename="x1" />
+            <SummarizeField field="y1" action="GroupBy" rename="y1" />
+            <SummarizeField field="value" action="Last" rename="Last_value" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText><![CDATA[Get Last Value ]]></AnnotationText>
+          <DefaultAnnotationText><![CDATA[Get Last Value ]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Max_RecordID" source="RecordID: Starting Value=1" type="Int16" />
+            <Field description="RegEx: Parsed from Field_1" name="x1" source="RegEx: Parsed from Field_1" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="y1" source="RegEx: Parsed from Field_1" type="Int64" />
+            <Field name="Last_value" source="Formula: 0" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="71">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1359" y="243" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Last_value" action="Sum" rename="Lights On" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Count 1's (aka Lights On)</AnnotationText>
+          <DefaultAnnotationText>Count 1's (aka Lights On)</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Lights On" source="Summarize: Sum - Last_value" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="63">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="975" y="74" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="x1" />
+            <Field field="y1" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="x" />
+            <Field field="y" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_x1" selected="True" input="Left_" />
+                <SelectField field="Left_y1" selected="True" input="Left_" />
+                <SelectField field="Right_value" selected="True" input="Right_" />
+                <SelectField field="Left_Actions" selected="True" input="Left_" />
+                <SelectField field="Left_Count" selected="True" input="Left_" />
+                <SelectField field="Right_x" selected="False" input="Right_" />
+                <SelectField field="Right_y" selected="False" input="Right_" />
+                <SelectField field="Left_RecordID" selected="True" input="Left_" />
+                <SelectField field="Left_Action" selected="True" input="Left_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
             </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <AnnotationText>Count 1's (aka Lights On)</AnnotationText>
-              <DefaultAnnotationText />
-              <Left value="False" />
-            </Annotation>
-            <MetaInfo connection="Output">
-              <RecordInfo>
-                <Field name="Sum_value" source="Summarize: Sum - value" type="Int64" />
-              </RecordInfo>
-            </MetaInfo>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
-        </Node>
-        <Node ToolID="77">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
-            <Position x="1158" y="354" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <SortInfo locale="1033">
-                <Field field="x1" order="Ascending" />
-                <Field field="y1" order="Ascending" />
-              </SortInfo>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText>x1 - Ascending
-y1 - Ascending</DefaultAnnotationText>
-              <Left value="False" />
-            </Annotation>
-            <MetaInfo connection="Output">
-              <RecordInfo>
-                <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
-                <Field name="action" size="1073741823" source="(Multiple Sources)" type="V_WString" />
-                <Field name="x1" source="(Multiple Sources)" type="Int64" />
-                <Field name="y1" source="(Multiple Sources)" type="Int64" />
-                <Field name="value" type="Int32" />
-              </RecordInfo>
-            </MetaInfo>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
-        </Node>
-        <Node ToolID="78">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
-            <Position x="1254" y="354" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <Mode>Last</Mode>
-              <N>1</N>
-              <GroupFields orderChanged="False">
-                <Field name="x1" />
-                <Field name="y1" />
-              </GroupFields>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText>Last 1 rows</DefaultAnnotationText>
-              <Left value="False" />
-            </Annotation>
-            <MetaInfo connection="Output">
-              <RecordInfo>
-                <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
-                <Field name="action" size="1073741823" source="(Multiple Sources)" type="V_WString" />
-                <Field name="x1" source="(Multiple Sources)" type="Int64" />
-                <Field name="y1" source="(Multiple Sources)" type="Int64" />
-                <Field name="value" type="Int32" />
-              </RecordInfo>
-            </MetaInfo>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSample" />
-        </Node>
-      </ChildNodes>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int16" />
+            <Field description="RegEx: Parsed from Field_1" name="Action" size="254" source="RegEx: Parsed from Field_1" type="V_String" />
+            <Field description="RegEx: Parsed from Field_1" name="x1" source="RegEx: Parsed from Field_1" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="y1" source="RegEx: Parsed from Field_1" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field description="RegEx: Parsed from Field_1" name="x1" source="RegEx: Parsed from Field_1" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="y1" source="RegEx: Parsed from Field_1" type="Int64" />
+            <Field name="value" source="Formula: 0" type="Byte" />
+            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int16" />
+            <Field description="RegEx: Parsed from Field_1" name="Action" size="254" source="RegEx: Parsed from Field_1" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="x" source="TextInput:" type="Int32" />
+            <Field name="y" source="GenerateRows" type="Int32" />
+            <Field name="value" source="Formula: 0" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
     </Node>
     <Node ToolID="68">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="1063" y="54" width="251" height="195" />
+        <Position x="1102" y="26" width="374" height="195" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -499,13 +438,13 @@ y1 - Ascending</DefaultAnnotationText>
       <ChildNodes>
         <Node ToolID="65">
           <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
-            <Position x="1088" y="103" />
+            <Position x="1127" y="75" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <UpdateField value="False" />
+              <UpdateField value="True" />
               <UpdateField_Name>value</UpdateField_Name>
-              <CreateField_Name>value</CreateField_Name>
+              <CreateField_Name>New Field</CreateField_Name>
               <CreateField_Type>Int32</CreateField_Type>
               <CreateField_Size>4</CreateField_Size>
               <OtherRows>Empty</OtherRows>
@@ -515,7 +454,10 @@ ELSEIF [Action] = 'turn on' THEN 1
 ELSEIF [Row-1:value] = 0 THEN 1 
 ELSE 0
 ENDIF</Expression>
-              <GroupByFields />
+              <GroupByFields>
+                <Field field="x1" />
+                <Field field="y1" />
+              </GroupByFields>
             </Configuration>
             <Annotation DisplayMode="0">
               <Name />
@@ -525,51 +467,75 @@ ELSEIF [Action] = 'turn on' T...</DefaultAnnotationText>
             </Annotation>
             <MetaInfo connection="Output">
               <RecordInfo>
-                <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
-                <Field name="action" size="1073741823" source="(Multiple Sources)" type="V_WString" />
-                <Field name="x1" source="(Multiple Sources)" type="Int64" />
-                <Field name="y1" source="(Multiple Sources)" type="Int64" />
-                <Field name="value" type="Int32" />
+                <Field description="RegEx: Parsed from Field_1" name="x1" source="RegEx: Parsed from Field_1" type="Int64" />
+                <Field description="RegEx: Parsed from Field_1" name="y1" source="RegEx: Parsed from Field_1" type="Int64" />
+                <Field name="value" source="Formula: 0" type="Byte" />
+                <Field name="RecordID" source="RecordID: Starting Value=1" type="Int16" />
+                <Field description="RegEx: Parsed from Field_1" name="Action" size="254" source="RegEx: Parsed from Field_1" type="V_String" />
               </RecordInfo>
             </MetaInfo>
           </Properties>
           <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
         </Node>
-        <Node ToolID="76">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
-            <Position x="1220" y="103" />
+        <Node ToolID="66">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="1247" y="75" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <Mode>Last</Mode>
-              <N>1</N>
-              <GroupFields orderChanged="False">
-                <Field name="y1" />
-                <Field name="x1" />
-              </GroupFields>
+              <SummarizeFields>
+                <SummarizeField field="RecordID" action="Max" rename="Max_RecordID" />
+                <SummarizeField field="x1" action="GroupBy" rename="x1" />
+                <SummarizeField field="y1" action="GroupBy" rename="y1" />
+                <SummarizeField field="value" action="Last" rename="Last_value" />
+              </SummarizeFields>
             </Configuration>
             <Annotation DisplayMode="0">
               <Name />
-              <DefaultAnnotationText>Last 1 rows</DefaultAnnotationText>
+              <AnnotationText><![CDATA[Get Last Value ]]></AnnotationText>
+              <DefaultAnnotationText><![CDATA[Get Last Value ]]></DefaultAnnotationText>
               <Left value="False" />
             </Annotation>
             <MetaInfo connection="Output">
               <RecordInfo>
-                <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
-                <Field name="action" size="1073741823" source="(Multiple Sources)" type="V_WString" />
-                <Field name="x1" source="(Multiple Sources)" type="Int64" />
-                <Field name="y1" source="(Multiple Sources)" type="Int64" />
-                <Field name="value" type="Int32" />
+                <Field name="Max_RecordID" source="RecordID: Starting Value=1" type="Int16" />
+                <Field description="RegEx: Parsed from Field_1" name="x1" source="RegEx: Parsed from Field_1" type="Int64" />
+                <Field description="RegEx: Parsed from Field_1" name="y1" source="RegEx: Parsed from Field_1" type="Int64" />
+                <Field name="Last_value" source="Formula: 0" type="Byte" />
               </RecordInfo>
             </MetaInfo>
           </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSample" />
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+        <Node ToolID="67">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="1366" y="79" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="Last_value" action="Sum" rename="Lights On" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>Count 1's (aka Lights On)</AnnotationText>
+              <DefaultAnnotationText>Count 1's (aka Lights On)</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Lights On" source="Summarize: Sum - Last_value" type="Int64" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
         </Node>
       </ChildNodes>
     </Node>
     <Node ToolID="16">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="143" y="229" width="225" height="138" />
+        <Position x="78" y="199" width="433" height="151" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -585,21 +551,21 @@ ELSEIF [Action] = 'turn on' T...</DefaultAnnotationText>
         </Annotation>
       </Properties>
       <ChildNodes>
-        <Node ToolID="5">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.GenerateRows.GenerateRows">
-            <Position x="168" y="278" />
+        <Node ToolID="4">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+            <Position x="103" y="248" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <UpdateField value="False" />
-              <UpdateField_Name>x</UpdateField_Name>
-              <CreateField_Name>x1</CreateField_Name>
-              <CreateField_Type>Int32</CreateField_Type>
-              <CreateField_Size>4</CreateField_Size>
-              <Expression_Init>1</Expression_Init>
-              <Expression_Cond>x1 &lt;= 1000</Expression_Cond>
-              <Expression_Loop>x1 + 1</Expression_Loop>
-              <RecordCount value="1000" />
+              <NumRows value="1" />
+              <Fields>
+                <Field name="x" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>0</c>
+                </r>
+              </Data>
             </Configuration>
             <Annotation DisplayMode="0">
               <Name />
@@ -608,7 +574,35 @@ ELSEIF [Action] = 'turn on' T...</DefaultAnnotationText>
             </Annotation>
             <MetaInfo connection="Output">
               <RecordInfo>
-                <Field name="x1" source="GenerateRows" type="Int32" />
+                <Field name="x" source="TextInput:" type="Int32" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+        </Node>
+        <Node ToolID="5">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.GenerateRows.GenerateRows">
+            <Position x="202" y="249" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <UpdateField value="True" />
+              <UpdateField_Name>x</UpdateField_Name>
+              <CreateField_Name>RowCount</CreateField_Name>
+              <CreateField_Type>Int32</CreateField_Type>
+              <CreateField_Size>4</CreateField_Size>
+              <Expression_Init>1</Expression_Init>
+              <Expression_Cond>x &lt;= 1000</Expression_Cond>
+              <Expression_Loop>x + 1</Expression_Loop>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="x" source="TextInput:" type="Int32" />
               </RecordInfo>
             </MetaInfo>
           </Properties>
@@ -616,19 +610,18 @@ ELSEIF [Action] = 'turn on' T...</DefaultAnnotationText>
         </Node>
         <Node ToolID="14">
           <GuiSettings Plugin="AlteryxBasePluginsGui.GenerateRows.GenerateRows">
-            <Position x="284" y="283" />
+            <Position x="316" y="249" />
           </GuiSettings>
           <Properties>
             <Configuration>
               <UpdateField value="False" />
               <UpdateField_Name />
-              <CreateField_Name>y1</CreateField_Name>
+              <CreateField_Name>y</CreateField_Name>
               <CreateField_Type>Int32</CreateField_Type>
               <CreateField_Size>4</CreateField_Size>
               <Expression_Init>1</Expression_Init>
-              <Expression_Cond>y1 &lt;= 1000</Expression_Cond>
-              <Expression_Loop>y1 + 1</Expression_Loop>
-              <RecordCount value="1000000" />
+              <Expression_Cond>y &lt;= 1000</Expression_Cond>
+              <Expression_Loop>y + 1</Expression_Loop>
             </Configuration>
             <Annotation DisplayMode="0">
               <Name />
@@ -637,12 +630,38 @@ ELSEIF [Action] = 'turn on' T...</DefaultAnnotationText>
             </Annotation>
             <MetaInfo connection="Output">
               <RecordInfo>
-                <Field name="x1" source="GenerateRows" type="Int32" />
-                <Field name="y1" source="GenerateRows" type="Int32" />
+                <Field name="x" source="TextInput:" type="Int32" />
+                <Field name="y" source="GenerateRows" type="Int32" />
               </RecordInfo>
             </MetaInfo>
           </Properties>
           <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxGenerateRows" />
+        </Node>
+        <Node ToolID="15">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="427" y="250" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="0" field="value" size="1" type="Byte" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[value = 0
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="x" source="TextInput:" type="Int32" />
+                <Field name="y" source="GenerateRows" type="Int32" />
+                <Field name="value" source="Formula: 0" type="Byte" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
         </Node>
       </ChildNodes>
     </Node>
@@ -664,45 +683,49 @@ ELSEIF [Action] = 'turn on' T...</DefaultAnnotationText>
       <Origin ToolID="19" Connection="Output" />
       <Destination ToolID="20" Connection="Input" />
     </Connection>
-    <Connection name="#2">
+    <Connection>
       <Origin ToolID="20" Connection="Output" />
-      <Destination ToolID="73" Connection="Input" />
-    </Connection>
-    <Connection name="#1">
-      <Origin ToolID="74" Connection="Output" />
-      <Destination ToolID="73" Connection="Input" />
+      <Destination ToolID="64" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="26" Connection="Output" />
       <Destination ToolID="18" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="73" Connection="Output" />
-      <Destination ToolID="65" Connection="Input" />
+      <Origin ToolID="64" Connection="Output" />
+      <Destination ToolID="63" Connection="Left" />
     </Connection>
     <Connection>
-      <Origin ToolID="73" Connection="Output" />
-      <Destination ToolID="69" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="75" Connection="Output" />
-      <Destination ToolID="74" Connection="Input" />
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="63" Connection="Right" />
     </Connection>
     <Connection>
       <Origin ToolID="69" Connection="Output" />
-      <Destination ToolID="77" Connection="Input" />
+      <Destination ToolID="70" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="77" Connection="Output" />
-      <Destination ToolID="78" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="78" Connection="Output" />
+      <Origin ToolID="70" Connection="Output" />
       <Destination ToolID="71" Connection="Input" />
     </Connection>
     <Connection>
+      <Origin ToolID="63" Connection="Join" />
+      <Destination ToolID="65" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="63" Connection="Join" />
+      <Destination ToolID="69" Connection="Input" />
+    </Connection>
+    <Connection>
       <Origin ToolID="65" Connection="Output" />
-      <Destination ToolID="76" Connection="Input" />
+      <Destination ToolID="66" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="66" Connection="Output" />
+      <Destination ToolID="67" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="5" Connection="Output" />
@@ -710,7 +733,7 @@ ELSEIF [Action] = 'turn on' T...</DefaultAnnotationText>
     </Connection>
     <Connection>
       <Origin ToolID="14" Connection="Output" />
-      <Destination ToolID="75" Connection="Input" />
+      <Destination ToolID="15" Connection="Input" />
     </Connection>
   </Connections>
   <Properties>
@@ -731,7 +754,6 @@ ELSEIF [Action] = 'turn on' T...</DefaultAnnotationText>
     <ShowConnectionStatusOnlyWhenRunning value="True" />
     <ZoomLevel value="0" />
     <LayoutType>Horizontal</LayoutType>
-    <IsTemplate value="False" />
     <MetaInfo>
       <NameIsFileName value="True" />
       <Name>Day_6_workflow</Name>
@@ -754,7 +776,6 @@ ELSEIF [Action] = 'turn on' T...</DefaultAnnotationText>
         <PreviousWorkflowId value="f2e59630-7fc5-445b-ba1c-f4979c33d11e" />
         <OriginWorkflowId value="19d422bd-f3c4-4e9a-91d5-96a13f737f4d" />
       </Telemetry>
-      <PlatformWorkflowId value="" />
     </MetaInfo>
     <Events>
       <Enabled value="True" />

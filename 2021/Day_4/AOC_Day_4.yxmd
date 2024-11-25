@@ -1,0 +1,611 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2021.4">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\Users\joshua.burkhow\Documents\input_day_4.txt</File>
+          <FormatSpecificOptions>
+            <HeaderRow>False</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>,</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>input_day_4.txt</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_2" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_3" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_4" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_5" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_6" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_7" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_8" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_9" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_10" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_11" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_12" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_13" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_14" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_15" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_16" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_17" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_18" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_19" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_20" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_21" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_22" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_23" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_24" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_25" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_26" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_27" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_28" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_29" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_30" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_31" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_32" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_33" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_34" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_35" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_36" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_37" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_38" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_39" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_40" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_41" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_42" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_43" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_44" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_45" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_46" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_47" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_48" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_49" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_50" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_51" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_52" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_53" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_54" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_55" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_56" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_57" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_58" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_59" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_60" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_61" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_62" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_63" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_64" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_65" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_66" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_67" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_68" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_69" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_70" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_71" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_72" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_73" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_74" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_75" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_76" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_77" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_78" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_79" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_80" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_81" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_82" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_83" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_84" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_85" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_86" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_87" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_88" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_89" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_90" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_91" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_92" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_93" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_94" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_95" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_96" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_97" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_98" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_99" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+            <Field name="Field_100" size="254" source="File: C:\Users\joshua.burkhow\Documents\input_day_4.txt" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
+        <Position x="150" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>First</Mode>
+          <N>1</N>
+          <GroupFields orderChanged="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>First 1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSample" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
+        <Position x="150" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Skip</Mode>
+          <N>2</N>
+          <GroupFields orderChanged="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Skip 1st 2</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSample" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="438" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>Field_1</Field>
+          <ErrorHandling>Last</ErrorHandling>
+          <RootName>Col</RootName>
+          <Delimeters value="|" />
+          <NumFields value="5" />
+          <Flags value="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="246" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Field_1" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
+        <Position x="534" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UpdateField value="True" />
+          <UpdateField_Name>RowNum</UpdateField_Name>
+          <CreateField_Name>RowNum</CreateField_Name>
+          <CreateField_Type>Int32</CreateField_Type>
+          <CreateField_Size>4</CreateField_Size>
+          <OtherRows>Empty</OtherRows>
+          <NumRows value="1" />
+          <Expression>If isnull([Row-1:Col1]) then [RowNum] else [Row-1:RowNum]+1 endif</Expression>
+          <GroupByFields />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>If isnull([Row-1:Col1]) then [RowNum] else [Row-1:RowNum]+1 e...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
+        <Position x="642" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UpdateField value="False" />
+          <UpdateField_Name>BoardNum</UpdateField_Name>
+          <CreateField_Name>BoardNum</CreateField_Name>
+          <CreateField_Type>Int32</CreateField_Type>
+          <CreateField_Size>4</CreateField_Size>
+          <OtherRows>Empty</OtherRows>
+          <NumRows value="1" />
+          <Expression>IF [RowNum]=6 then [Row-1:BoardNum]+1 ELSE [Row-1:BoardNum] endif</Expression>
+          <GroupByFields />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>IF [RowNum]=6 then [Row-1:BoardNum]+1 ELSE [Row-1:BoardNum] e...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="750" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>!=</Operator>
+            <Field>RowNum</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-04 08:02:53</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>6</Operand>
+              <StartDate>2021-12-04 08:02:53</StartDate>
+              <EndDate>2021-12-04 08:02:53</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[RowNum] != 6</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="846" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Field_1" selected="False" />
+            <SelectField field="BoardNum" selected="True" type="V_String" size="254" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Transpose.Transpose">
+        <Position x="246" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ErrorWarn>Warn</ErrorWarn>
+          <KeyFields />
+          <DataFields>
+            <Field field="Field_1" selected="True" />
+            <Field field="Field_2" selected="True" />
+            <Field field="Field_3" selected="True" />
+            <Field field="Field_4" selected="True" />
+            <Field field="Field_5" selected="True" />
+            <Field field="Field_6" selected="True" />
+            <Field field="Field_7" selected="True" />
+            <Field field="Field_8" selected="True" />
+            <Field field="Field_9" selected="True" />
+            <Field field="Field_10" selected="True" />
+            <Field field="Field_11" selected="True" />
+            <Field field="Field_12" selected="True" />
+            <Field field="Field_13" selected="True" />
+            <Field field="Field_14" selected="True" />
+            <Field field="Field_15" selected="True" />
+            <Field field="Field_16" selected="True" />
+            <Field field="Field_17" selected="True" />
+            <Field field="Field_18" selected="True" />
+            <Field field="Field_19" selected="True" />
+            <Field field="Field_20" selected="True" />
+            <Field field="Field_21" selected="True" />
+            <Field field="Field_22" selected="True" />
+            <Field field="Field_23" selected="True" />
+            <Field field="Field_24" selected="True" />
+            <Field field="Field_25" selected="True" />
+            <Field field="Field_26" selected="True" />
+            <Field field="Field_27" selected="True" />
+            <Field field="Field_28" selected="True" />
+            <Field field="Field_29" selected="True" />
+            <Field field="Field_30" selected="True" />
+            <Field field="Field_31" selected="True" />
+            <Field field="Field_32" selected="True" />
+            <Field field="Field_33" selected="True" />
+            <Field field="Field_34" selected="True" />
+            <Field field="Field_35" selected="True" />
+            <Field field="Field_36" selected="True" />
+            <Field field="Field_37" selected="True" />
+            <Field field="Field_38" selected="True" />
+            <Field field="Field_39" selected="True" />
+            <Field field="Field_40" selected="True" />
+            <Field field="Field_41" selected="True" />
+            <Field field="Field_42" selected="True" />
+            <Field field="Field_43" selected="True" />
+            <Field field="Field_44" selected="True" />
+            <Field field="Field_45" selected="True" />
+            <Field field="Field_46" selected="True" />
+            <Field field="Field_47" selected="True" />
+            <Field field="Field_48" selected="True" />
+            <Field field="Field_49" selected="True" />
+            <Field field="Field_50" selected="True" />
+            <Field field="Field_51" selected="True" />
+            <Field field="Field_52" selected="True" />
+            <Field field="Field_53" selected="True" />
+            <Field field="Field_54" selected="True" />
+            <Field field="Field_55" selected="True" />
+            <Field field="Field_56" selected="True" />
+            <Field field="Field_57" selected="True" />
+            <Field field="Field_58" selected="True" />
+            <Field field="Field_59" selected="True" />
+            <Field field="Field_60" selected="True" />
+            <Field field="Field_61" selected="True" />
+            <Field field="Field_62" selected="True" />
+            <Field field="Field_63" selected="True" />
+            <Field field="Field_64" selected="True" />
+            <Field field="Field_65" selected="True" />
+            <Field field="Field_66" selected="True" />
+            <Field field="Field_67" selected="True" />
+            <Field field="Field_68" selected="True" />
+            <Field field="Field_69" selected="True" />
+            <Field field="Field_70" selected="True" />
+            <Field field="Field_71" selected="True" />
+            <Field field="Field_72" selected="True" />
+            <Field field="Field_73" selected="True" />
+            <Field field="Field_74" selected="True" />
+            <Field field="Field_75" selected="True" />
+            <Field field="Field_76" selected="True" />
+            <Field field="Field_77" selected="True" />
+            <Field field="Field_78" selected="True" />
+            <Field field="Field_79" selected="True" />
+            <Field field="Field_80" selected="True" />
+            <Field field="Field_81" selected="True" />
+            <Field field="Field_82" selected="True" />
+            <Field field="Field_83" selected="True" />
+            <Field field="Field_84" selected="True" />
+            <Field field="Field_85" selected="True" />
+            <Field field="Field_86" selected="True" />
+            <Field field="Field_87" selected="True" />
+            <Field field="Field_88" selected="True" />
+            <Field field="Field_89" selected="True" />
+            <Field field="Field_90" selected="True" />
+            <Field field="Field_91" selected="True" />
+            <Field field="Field_92" selected="True" />
+            <Field field="Field_93" selected="True" />
+            <Field field="Field_94" selected="True" />
+            <Field field="Field_95" selected="True" />
+            <Field field="Field_96" selected="True" />
+            <Field field="Field_97" selected="True" />
+            <Field field="Field_98" selected="True" />
+            <Field field="Field_99" selected="True" />
+            <Field field="Field_100" selected="True" />
+            <Field field="*Unknown" selected="True" />
+          </DataFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTranspose" />
+    </Node>
+    <Node ToolID="29">
+      <GuiSettings>
+        <Position x="1086" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="BatchMacroGroupBy"><![CDATA[Control=BoardNum
+Input2=BoardNum
+]]></Value>
+          <Value name="ControlParams"><![CDATA[Control Parameter (19)=BoardNum
+]]></Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name>AOC_Day_4_Iteration (13)</Name>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output8">
+          <RecordInfo>
+            <Field description="Formula: If isnull([Row-1:Col1]) then [RowNum] else [Row-1:RowNum]+1 endif" name="RowNum" source="Formula: If isnull([Row-1:Col1]) then [RowNum] else [Row-1:RowNum]+1 endif (BatchMacro)" type="Int16" />
+            <Field description="TextToColumns: Parsed from Field_1" name="Col1" size="3" source="Formula: If [_CurrentField_] == [Value] THEN &quot;X&quot; ELSE [_CurrentField_] ENDIF (BatchMacro)" type="String" />
+            <Field description="TextToColumns: Parsed from Field_1" name="Col2" size="3" source="Formula: If [_CurrentField_] == [Value] THEN &quot;X&quot; ELSE [_CurrentField_] ENDIF (BatchMacro)" type="String" />
+            <Field description="TextToColumns: Parsed from Field_1" name="Col3" size="3" source="Formula: If [_CurrentField_] == [Value] THEN &quot;X&quot; ELSE [_CurrentField_] ENDIF (BatchMacro)" type="String" />
+            <Field description="TextToColumns: Parsed from Field_1" name="Col4" size="3" source="Formula: If [_CurrentField_] == [Value] THEN &quot;X&quot; ELSE [_CurrentField_] ENDIF (BatchMacro)" type="String" />
+            <Field description="TextToColumns: Parsed from Field_1" name="Col5" size="3" source="Formula: If [_CurrentField_] == [Value] THEN &quot;X&quot; ELSE [_CurrentField_] ENDIF (BatchMacro)" type="String" />
+            <Field description="Formula: IF [RowNum]=6 then [Row-1:BoardNum]+1 ELSE [Row-1:BoardNum] endif" name="BoardNum" size="3" source="Formula: IF [RowNum]=6 then [Row-1:BoardNum]+1 ELSE [Row-1:BoardNum] endif (BatchMacro)" type="String" />
+            <Field name="ControParam" size="1073741823" source="Formula: [#1] (BatchMacro)" type="V_WString" />
+            <Field name="Result" source="Formula: REGEX_CountMatches([Col1]+[Col2]+[Col3]+[Col4]+[Col5],&quot;X&quot;)&#xA; (BatchMacro)" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings Macro="AOC_Day_4_Iteration.yxmc" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="342" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="Replace(Replace([Field_1],&quot;  &quot;,&quot;|&quot;),&quot; &quot;,&quot;|&quot;)" field="Field_1" size="254" type="V_String" />
+            <FormulaField expression="1" field="RowNum" size="2" type="Int16" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Field_1 = Replace(Replace([Field_1],"  ","|")," ","|")
+RowNum = 1
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="930" y="6" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="BoardNum" action="GroupBy" rename="BoardNum" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="True" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="29" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="29" Connection="Input1" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Output" />
+      <Destination ToolID="29" Connection="Control" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="25" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="True" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>AOC_Day_4</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="46419c87-1973-4ae6-823f-5a319cfc653e" />
+      <Telemetry>
+        <PreviousWorkflowId value="9a94aad5-eb36-4555-823f-4ad2528af137" />
+        <OriginWorkflowId value="9a94aad5-eb36-4555-823f-4ad2528af137" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

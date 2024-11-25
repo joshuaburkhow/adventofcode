@@ -1,0 +1,681 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2021.4">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="342" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="Replace([Field1],&quot;()&quot;,&quot;&quot;)" field="Field1" size="109" type="V_String" />
+            <FormulaField expression="Replace([Field1],&quot;[]&quot;,&quot;&quot;)" field="Field1" size="109" type="V_String" />
+            <FormulaField expression="Replace([Field1],&quot;{}&quot;,&quot;&quot;)" field="Field1" size="109" type="V_String" />
+            <FormulaField expression="Replace([Field1],&quot;&lt;&gt;&quot;,&quot;&quot;)" field="Field1" size="109" type="V_String" />
+            <FormulaField expression="Replace([Field1],&quot;[][]&quot;,&quot;&quot;)" field="Field1" size="109" type="V_String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Field1 = Replace([Field1],"()","")
+Field1 = Replace([Field1],"[]","")
+Field1 = R...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Length" source="TextInput:" type="Int16" />
+            <Field name="Field1" size="109" source="Formula: Replace([Field1],&quot;[][]&quot;,&quot;&quot;)" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="198" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="False" />
+          <Name>Input2</Name>
+          <Abbrev />
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <TextInput>
+            <Configuration>
+              <NumRows value="94" />
+              <Fields>
+                <Field name="Length" />
+                <Field name="Field1" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>2345</c>
+                  <c>[{{{{{&lt;([({{&lt;[&lt;&gt;()][{}()]&gt;{&lt;{}{}&gt;{[]{}}}}{({{}{}][&lt;&gt;{}])(&lt;&lt;&gt;()&gt;&lt;{}&lt;&gt;&gt;)}}&lt;[&lt;({}())&lt;{}{}&gt;&gt;[[()[]](&lt;&gt;[])]]&lt;(</c>
+                </r>
+                <r>
+                  <c />
+                  <c>(&lt;&lt;({{({((([[{(){}}(&lt;&gt;&lt;&gt;)][{[][]}&lt;()()&gt;&gt;][[[()&lt;&gt;]&lt;()()&gt;]])))}(&lt;(&lt;[[{()&lt;&gt;}]({&lt;&gt;{}})]&gt;&lt;&lt;(&lt;()[]&gt;[[]{}])&gt;[{{[</c>
+                </r>
+                <r>
+                  <c />
+                  <c>&lt;{&lt;{({[&lt;{&lt;{([&lt;&lt;&gt;&lt;&gt;&gt;[()[]]])[&lt;{[]&lt;&gt;}&lt;&lt;&gt;()&gt;&gt;]}{{&lt;(()&lt;&gt;)&lt;(){}&gt;&gt;(&lt;[]&lt;&gt;&gt;)}[&lt;[()[]]&lt;&lt;&gt;{}&gt;&gt;[{{}{}}[&lt;&gt;&lt;&gt;]]&gt;}&gt;({</c>
+                </r>
+                <r>
+                  <c />
+                  <c>[[[[[(&lt;{(&lt;&lt;{&lt;({}&lt;&gt;)&lt;&lt;&gt;&lt;&gt;&gt;&gt;{&lt;&lt;&gt;()&gt;&lt;&lt;&gt;()&gt;]}&lt;[&lt;{}{}&gt;{&lt;&gt;()}]&lt;[{}[]][{}()]&gt;&gt;&gt;[&lt;({[]}{{}[]})&lt;{&lt;&gt;{</c>
+                </r>
+                <r>
+                  <c />
+                  <c>[[{[&lt;(&lt;(&lt;(({{&lt;{}()&gt;{{}&lt;&gt;}}[&lt;()[]&gt;&lt;&lt;&gt;{}&gt;]}(&lt;[{}[]][{}[]]&gt;&lt;&lt;&lt;&gt;{}&gt;&lt;()&lt;&gt;&gt;])))&gt;[[(({[{}[]][{}{}]}{&lt;&lt;&gt;()&gt;[(){}]</c>
+                </r>
+                <r>
+                  <c />
+                  <c>&lt;([[&lt;&lt;(([{&lt;&lt;{&lt;[]&gt;&lt;(){}&gt;}&lt;[{}][{}{}]&gt;&gt;{({{}()})[[[]()][()()]]}&gt;}][&lt;([[[{}{}][[]]]]&lt;&lt;&lt;{}&lt;&gt;&gt;{[][]</c>
+                </r>
+                <r>
+                  <c />
+                  <c>({(&lt;{{([({[{(&lt;{}&lt;&gt;&gt;&lt;{}[]&gt;)&lt;&lt;[][]&gt;{[]{}}&gt;}{[{{}[]}[{}{}]]{{{}[]}{(){}}}}]}&gt;]){&lt;&lt;{((([&lt;&gt;&lt;&gt;])([&lt;&gt;[]]{{}(</c>
+                </r>
+                <r>
+                  <c />
+                  <c>&lt;{{{[{[(({&lt;(&lt;&lt;{}{}&gt;{&lt;&gt;&lt;&gt;}&gt;[{()[]}({}[])])([{()()}[&lt;&gt;&lt;&gt;]](&lt;{}()&gt;({}())))&gt;&lt;&lt;(((){})[[]()])&lt;(&lt;&gt;[</c>
+                </r>
+                <r>
+                  <c />
+                  <c>{{&lt;({&lt;&lt;&lt;{&lt;&lt;[[{{}{}}&lt;()[]&gt;]]&lt;&lt;[&lt;&gt;[]]([]{})&gt;[[[]](&lt;&gt;())]&gt;&gt;(([{&lt;&gt;&lt;&gt;}])[{{{}()}(&lt;&gt;[])}&lt;{[]&lt;&gt;}[{}</c>
+                </r>
+                <r>
+                  <c />
+                  <c>{[&lt;([[[(&lt;[[[{[&lt;&gt;()]&lt;()[]&gt;}]{{{{}[]}{&lt;&gt;{}}}[([]())]}]&lt;[({[]{}}(&lt;&gt;()&gt;){&lt;{}{}&gt;&lt;()&lt;&gt;&gt;}][((()[])[()[]])([()()]&lt;[</c>
+                </r>
+                <r>
+                  <c />
+                  <c>[([([(&lt;(({{[[((){})({}{})]]&lt;({{}()})&lt;&lt;[]&gt;[&lt;&gt;[]]&gt;&gt;}{({[()()]([][])}(([])[[]&lt;&gt;]))(&lt;{{}{}}[(){}</c>
+                </r>
+                <r>
+                  <c />
+                  <c>({(&lt;&lt;({&lt;&lt;&lt;(&lt;[[[]()]]&lt;[&lt;&gt;()]&lt;()[]&gt;}&gt;[&lt;&lt;()()&gt;&gt;(&lt;()[]&gt;[[]])])({&lt;&lt;[]{}&gt;{()[]}&gt;({(){}}&lt;&lt;&gt;[]&gt;)}(&lt;{(){}}&lt;{}()&gt;</c>
+                </r>
+                <r>
+                  <c />
+                  <c>&lt;[((&lt;[[{[&lt;&lt;[({[]&lt;&gt;}&lt;&lt;&gt;()&gt;)](&lt;[&lt;&gt;&lt;&gt;]&gt;{[{}[]]&lt;{}[]&gt;})&gt;&lt;&lt;[[&lt;&gt;()]&lt;[][]&gt;]&lt;[{}&lt;&gt;](&lt;&gt;&lt;&gt;)&gt;&gt;{{[&lt;&gt;{}</c>
+                </r>
+                <r>
+                  <c />
+                  <c>&lt;&lt;&lt;&lt;&lt;({[{[[[[&lt;{}{}&gt;]{((){}){&lt;&gt;[]}}][&lt;([]{}){[]()}&gt;[(&lt;&gt;())(&lt;&gt;[])]]]{{{&lt;&lt;&gt;{}&gt;({}())}(({}&lt;&gt;)[{}()])}}]({</c>
+                </r>
+                <r>
+                  <c />
+                  <c>&lt;[({&lt;((&lt;&lt;[{(&lt;(()()){&lt;&gt;&lt;&gt;}&gt;&lt;({}{})(&lt;&gt;{})&gt;){[[()&lt;&gt;){{}&lt;&gt;}]([&lt;&gt;()]&lt;[]&lt;&gt;&gt;)}}&lt;&lt;[&lt;{}[]&gt;((){})][{{}[]}{()</c>
+                </r>
+                <r>
+                  <c />
+                  <c>{([({{{&lt;[&lt;{{{[&lt;&gt;&lt;&gt;&gt;{[]()}}}(&lt;((){})[&lt;&gt;[]]&gt;(&lt;[]&lt;&gt;&gt;{{}&lt;&gt;}))}[[[[()()]&lt;{}()&gt;][[()&lt;&gt;]&lt;{}[]&gt;]]&lt;&lt;&lt;[]()&gt;&lt;()</c>
+                </r>
+                <r>
+                  <c />
+                  <c>[{{(&lt;[{&lt;&lt;{[{(&lt;()[]&gt;({}{}))[(&lt;&gt;){[]{}}]}({&lt;&lt;&gt;{}&gt;{&lt;&gt;()}}&lt;&lt;[]&lt;&gt;&gt;(()())&gt;)]((&lt;[[]()]{{}{}}&gt;{&lt;&lt;&gt;&gt;{&lt;&gt;{</c>
+                </r>
+                <r>
+                  <c />
+                  <c>&lt;[&lt;{(&lt;[({([({([]())([]())}({{}[]}{{}{}}))&lt;{{{}{}}{{}()}}&lt;[&lt;&gt;()][()()]&gt;&gt;]([[[{}{}][&lt;&gt;&lt;&gt;]][[()&lt;&gt;]&lt;{}{}&gt;]</c>
+                </r>
+                <r>
+                  <c />
+                  <c>[[&lt;&lt;{{&lt;[[{&lt;{({&lt;&gt;[]}[()()])[{()[]}[[]&lt;&gt;]]}&lt;({[]}((){})){[[]()]&lt;&lt;&gt;&lt;&gt;&gt;}&gt;&gt;}])&gt;&lt;&lt;{(&lt;{{&lt;[]&lt;&gt;&gt;(&lt;&gt;&lt;&gt;)}[&lt;&lt;&gt;{}</c>
+                </r>
+                <r>
+                  <c />
+                  <c>&lt;([{[(&lt;[&lt;&lt;[(({{}&lt;&gt;}{&lt;&gt;&lt;&gt;})&lt;{[]()}&gt;)({{&lt;&gt;&lt;&gt;&gt;&lt;{}{}&gt;}[([]())[{}()]])]&gt;&gt;[&lt;[[[({}){[]()}][[()][</c>
+                </r>
+                <r>
+                  <c />
+                  <c>&lt;&lt;&lt;{(&lt;(&lt;[{([[[[]()]&lt;()&lt;&gt;&gt;](&lt;&lt;&gt;[]&gt;[{}[]])])}&lt;[({&lt;&lt;&gt;{}&gt;([]{})})]&gt;]&lt;[([[({}{})(())]{({}{})}]({(()[])}&lt;&lt;[]{}&gt;[(</c>
+                </r>
+                <r>
+                  <c />
+                  <c>[{(([[({[({[[{()[]}&lt;()&lt;&gt;&gt;][[{}[]](&lt;&gt;&lt;&gt;)]]((&lt;{}&lt;&gt;&gt;)({{}()}&lt;()()&gt;))}&lt;{[[&lt;&gt;{}][[]()]]&lt;[()()]{()</c>
+                </r>
+                <r>
+                  <c />
+                  <c>{(&lt;({&lt;({&lt;{((({()()}&lt;{}[]&gt;)(&lt;(){}&gt;[()()])){&lt;{{}[]}{&lt;&gt;{}}&gt;[&lt;&lt;&gt;{}&gt;[[]&lt;&gt;]]})&lt;(&lt;[&lt;&gt;{}]&lt;{}&lt;&gt;&gt;&gt;&lt;[{}][()&lt;&gt;]&gt;)</c>
+                </r>
+                <r>
+                  <c />
+                  <c>&lt;{{&lt;&lt;({{&lt;&lt;((&lt;{[]}{()&lt;&gt;}&gt;&lt;([][]){&lt;&gt;()}&gt;)[{(&lt;&gt;())[&lt;&gt;[]]}{&lt;&lt;&gt;()&gt;(()())}])&gt;((({{{}&lt;&gt;}&lt;()()&gt;}[(&lt;&gt;{})[</c>
+                </r>
+                <r>
+                  <c />
+                  <c>{&lt;({({{[&lt;&lt;&lt;{[({}{})&lt;{}[]&gt;](&lt;[]&lt;&gt;&gt;(&lt;&gt;[]))}&gt;({{{&lt;&gt;[]}({}[])}([()&lt;&gt;]({}&lt;&gt;))})&gt;&gt;({&lt;((&lt;&lt;&gt;&lt;&gt;&gt;{[]()})</c>
+                </r>
+                <r>
+                  <c />
+                  <c>{[[(&lt;{[&lt;[([&lt;[{{}}]((()&lt;&gt;){{}()})&gt;(({&lt;&gt;&lt;&gt;}{{}&lt;&gt;})&lt;[[]]&gt;)]&lt;{[([][])[{}{}]](&lt;[]{}&gt;&lt;{}{}&gt;}}[(([])[[]()])]&gt;)]{(&lt;&lt;&lt;</c>
+                </r>
+                <r>
+                  <c />
+                  <c>{{((&lt;[&lt;&lt;[[&lt;(({&lt;&gt;}){&lt;&lt;&gt;&lt;&gt;&gt;[[]&lt;&gt;]})[{{()&lt;&gt;}&lt;[]{}&gt;}([(){}]&lt;{}{}&gt;)]&gt;]{&lt;{&lt;{()()}{{}}&gt;[{[]&lt;&gt;}&gt;}[&lt;([]()){&lt;&gt;[]</c>
+                </r>
+                <r>
+                  <c />
+                  <c>&lt;{{[{[{[(({((&lt;()()&gt;({}&lt;&gt;)){((){})[[]{}]})}([{({}[])(()[])}[[&lt;&gt;{}]{(){}}]&gt;)){(&lt;&lt;&lt;{}&gt;[&lt;&gt;()]&gt;</c>
+                </r>
+                <r>
+                  <c />
+                  <c>[&lt;&lt;&lt;[&lt;{&lt;[{(&lt;[[{}[]]([]{})]{&lt;{}{}&gt;{[][]}}&gt;)[([[{}&lt;&gt;]{&lt;&gt;{}}](&lt;{}{}&gt;[{}]))((&lt;&lt;&gt;{}&gt;)&lt;{()()}[[]{}]&gt;)]}]&gt;</c>
+                </r>
+                <r>
+                  <c />
+                  <c>(&lt;[&lt;([{({{(([{[]&lt;&gt;}({}[])])&lt;[({}())[{}{}]]{([][])({}&lt;&gt;)}&gt;)&lt;&lt;&lt;[&lt;&gt;{}]&gt;&lt;({}&lt;&gt;)&lt;&lt;&gt;()&gt;&gt;&gt;&lt;{{()&lt;&gt;}[&lt;&gt;()]}(&lt;&lt;</c>
+                </r>
+                <r>
+                  <c />
+                  <c>&lt;{({(&lt;&lt;&lt;{{{[[(&lt;&gt;{}){&lt;&gt;&lt;&gt;}][[{}[]]]]&lt;&lt;(&lt;&gt;&lt;&gt;){{}&lt;&gt;}&gt;&lt;{&lt;&gt;{}}&lt;()&lt;&gt;&gt;&gt;&gt;}[[[((){}){{}()}][{&lt;&gt;&lt;&gt;}&lt;()()&gt;]]</c>
+                </r>
+                <r>
+                  <c />
+                  <c>&lt;(&lt;({{[[[&lt;&lt;(({{}{}}[&lt;&gt;[]]))(([&lt;&gt;&lt;&gt;])&lt;[{}()]&lt;&lt;&gt;{}&gt;&gt;)&gt;&gt;&lt;({&lt;&lt;&lt;&gt;&gt;[&lt;&gt;[]]&gt;&lt;({}&lt;&gt;)&lt;()[]&gt;&gt;}{(&lt;&lt;&gt;&lt;&gt;&gt;{()&lt;&gt;})})&gt;]]{{&lt;</c>
+                </r>
+                <r>
+                  <c />
+                  <c>(&lt;([([(&lt;&lt;[[&lt;[&lt;[]&gt;)(([][])[&lt;&gt;&lt;&gt;])&gt;]&lt;[({(){}}&lt;{}{}&gt;)[&lt;[][]&gt;{()[]}]][&lt;&lt;&lt;&gt;{}&gt;{(){}}&gt;&lt;(()[])[[][]]&gt;]&gt;][{[({[]&lt;&gt;}&lt;{</c>
+                </r>
+                <r>
+                  <c />
+                  <c>{{&lt;&lt;&lt;&lt;&lt;([&lt;&lt;((&lt;{}{}&gt;){{{}&lt;&gt;}&lt;[][]]})(({{}()}&lt;[]&lt;&gt;&gt;)&lt;&lt;&lt;&gt;()&gt;[[][]]&gt;)&gt;&gt;])&gt;&lt;(&lt;{[{{[[]&lt;&gt;]&lt;[][]&gt;}}]}[&lt;{(</c>
+                </r>
+                <r>
+                  <c />
+                  <c>([[&lt;[&lt;({(&lt;&lt;{&lt;((){}][()()]&gt;[&lt;{}()&gt;[&lt;&gt;()]]}{{[&lt;&gt;[]]}{{[][]}{[][]}}}&gt;(({[&lt;&gt;()]{[][]}}(&lt;[]&lt;&gt;&gt;(&lt;&gt;())))&lt;{&lt;()()</c>
+                </r>
+                <r>
+                  <c />
+                  <c>[[[[&lt;(&lt;{{&lt;[&lt;([[]{}](()&lt;&gt;))&lt;(&lt;&gt;[])[{}[]]&gt;&gt;{{(()&lt;&gt;)&lt;{}{}&gt;}{[()()][{}{}]}}]&lt;[&lt;&lt;[]()&gt;([]{})&gt;{{</c>
+                </r>
+                <r>
+                  <c />
+                  <c>{&lt;[{&lt;[[{{{{{((&lt;&gt;&lt;&gt;)[&lt;&gt;[]])([&lt;&gt;{}]([]()))}([[{}[]](())][({}{}){{}()}])}}{((&lt;&lt;[]&gt;&lt;(){}&gt;&gt;)&lt;&lt;&lt;{}&lt;&gt;&gt;{[]{}}&gt;((()&lt;&gt;)</c>
+                </r>
+                <r>
+                  <c />
+                  <c>&lt;{[&lt;[&lt;{{((&lt;&lt;&lt;[(){}](&lt;&gt;)&gt;&gt;{&lt;[{}{}]&lt;[]{}&gt;&gt;}&gt;)([[{[[]&lt;&gt;][[][]]}(&lt;&lt;&gt;()&gt;(()&lt;&gt;))]&gt;{(&lt;[(){}][&lt;&gt;{}]&gt;</c>
+                </r>
+                <r>
+                  <c />
+                  <c>([({[[{([(([({[]{}}(()()))&lt;&lt;{})&gt;])&lt;&lt;&lt;[&lt;&gt;&lt;&gt;][(){}]&gt;({[]}{{}()})&gt;([({}[]){(){}}][&lt;&lt;&gt;&lt;&gt;&gt;([][])])&gt;)(&lt;([&lt;&lt;&gt;[</c>
+                </r>
+                <r>
+                  <c />
+                  <c>[(([[&lt;{(&lt;([({[[]{}]([]())}{&lt;{}{}&gt;&lt;[]&lt;&gt;&gt;})(&lt;&lt;{}[]&gt;[[]]&gt;)][{&lt;&lt;[]{}&gt;{{}&lt;&gt;})}([[()()][[]]]&lt;&lt;{}{}&gt;&lt;{}{}&gt;&gt;)]</c>
+                </r>
+                <r>
+                  <c />
+                  <c>&lt;[[(&lt;&lt;&lt;&lt;{&lt;[{[&lt;[]()&gt;]&lt;(&lt;&gt;[])[[]{}]&gt;}]&lt;&lt;{({}&lt;&gt;)([]&lt;&gt;)}&gt;(((&lt;&gt;&lt;&gt;)(()()))&lt;&lt;[][]&gt;(&lt;&gt;)&gt;)&gt;&gt;(&lt;{[[{}[]]&lt;&lt;&gt;{}&gt;]}&gt;</c>
+                </r>
+                <r>
+                  <c />
+                  <c>&lt;[&lt;[{([&lt;{(((([[]{}])&lt;&lt;&lt;&gt;()&gt;[(){}]&gt;)){&lt;&lt;[[]{}]{&lt;&gt;{}}&gt;&gt;&lt;[&lt;()[]&gt;&lt;[][]&gt;]{[{}&lt;&gt;]&lt;[][]&gt;}&gt;}){&lt;{{[</c>
+                </r>
+                <r>
+                  <c />
+                  <c>&lt;[{&lt;{&lt;[&lt;[[{{{{[][]}[{}()]}(&lt;[]&gt;&lt;()[]&gt;)}&lt;((&lt;&gt;()){()[]})[(&lt;&gt;[])]&gt;}({[[{}[]]{[][]}]}(&lt;&lt;&lt;&gt;()&gt;{&lt;&gt;[]}&gt;[{{}[]}{&lt;&gt;&lt;</c>
+                </r>
+                <r>
+                  <c />
+                  <c>&lt;{{{&lt;[[{&lt;(((({[]{}}{[]{}})){[{()[]}({}{})]&lt;&lt;&lt;&gt;&gt;(&lt;&gt;[])&gt;})[(([(){}]&lt;()&lt;&gt;&gt;)({{}()}[{}{}]))&lt;{({}[]){[]&lt;&gt;}}{[</c>
+                </r>
+                <r>
+                  <c />
+                  <c>&lt;{{([&lt;([(({&lt;&lt;{&lt;&gt;[]}{(){}}&gt;{({}()){{}&lt;&gt;}}&gt;}&lt;(&lt;{&lt;&gt;{}}(()()&gt;&gt;&lt;((){})(())&gt;)({&lt;[]&gt;&lt;&lt;&gt;&gt;})&gt;)[[{{[</c>
+                </r>
+                <r>
+                  <c />
+                  <c>[{([[{&lt;&lt;{[(({{[][]}{{}[]}}[([]{}){()[]}]))({[[()()]][[&lt;&gt;()]{[]&lt;&gt;}]}{[({})[()&lt;&gt;]](&lt;{}()]({}[]))})]}(&lt;[&lt;</c>
+                </r>
+                <r>
+                  <c />
+                  <c>{{[{&lt;{[{&lt;&lt;&lt;(({()[]})&lt;&lt;()&lt;&gt;&gt;&gt;)&gt;&lt;{&lt;&lt;()()&gt;{[]()}&gt;&lt;({}{})&lt;&lt;&gt;{}&gt;&gt;&gt;{&lt;(()())[(){}]&gt;&lt;([]&lt;&gt;)[[][]]&gt;}</c>
+                </r>
+                <r>
+                  <c />
+                  <c>&lt;[[{{{{(&lt;{&lt;[[[[]()]&lt;&lt;&gt;[]&gt;][{{}{}}&lt;[]()&gt;]][[&lt;{}{}&gt;{{}&lt;&gt;}]{&lt;&lt;&gt;{}&gt;(())}]&gt;{(({{}&lt;&gt;})[([][])&lt;[]{}&gt;]){{(&lt;&gt;{}){</c>
+                </r>
+                <r>
+                  <c />
+                  <c>{&lt;&lt;{&lt;{(([(({(&lt;[]&lt;&gt;&gt;{[]&lt;&gt;})[&lt;[]&lt;&gt;&gt;&lt;[]{}&gt;]})[&lt;({()&lt;&gt;}{{}{}})((()[])&lt;{}()&gt;)&gt;&lt;((())){&lt;()()&gt;{[]}}&gt;])([({[&lt;</c>
+                </r>
+                <r>
+                  <c />
+                  <c>&lt;&lt;[&lt;{&lt;{&lt;((&lt;[{[[]&lt;&gt;][()()]}({&lt;&gt;())[&lt;&gt;[]])][[(&lt;&gt;[])[(){}]]]&gt;{{{&lt;[][]&gt;}{[[][]]&lt;{}&lt;&gt;&gt;}}((((){})&lt;()()&gt;)</c>
+                </r>
+                <r>
+                  <c />
+                  <c>([&lt;([[(&lt;([([&lt;(()()){(){}}&gt;{(&lt;&gt;())&lt;[]()&gt;}]{({[][]})}){[&lt;(&lt;&gt;())[[]{}]&gt;&lt;[{}&lt;&gt;][{}{}]&gt;){(&lt;()&gt;)[&lt;&lt;&gt;{</c>
+                </r>
+                <r>
+                  <c />
+                  <c>&lt;[&lt;(([{&lt;[[[{&lt;&lt;&lt;&gt;&lt;&gt;&gt;(&lt;&gt;[]}&gt;{{()}&lt;[]()&gt;}}{{&lt;()&gt;([]{})}&lt;{&lt;&gt;[]}&lt;{}[]&gt;&gt;}](&lt;(&lt;{}[]&gt;{{}{}})[[&lt;&gt;&lt;&gt;]&lt;{}&lt;&gt;&gt;]&gt;{{&lt;(){}</c>
+                </r>
+                <r>
+                  <c />
+                  <c>&lt;{{&lt;(&lt;{&lt;[&lt;(&lt;(&lt;&lt;&gt;&gt;)[&lt;()()&gt;&lt;&lt;&gt;&lt;&gt;&gt;]&gt;{{&lt;&lt;&gt;&lt;&gt;&gt;([]&lt;&gt;)}})(&lt;[([][])][(&lt;&gt;())(&lt;&gt;{})]&gt;{[(()&lt;&gt;)[&lt;&gt;&lt;&gt;]]</c>
+                </r>
+                <r>
+                  <c />
+                  <c>[(([&lt;&lt;&lt;[{{&lt;{{{{}&lt;&gt;}([]&lt;&gt;)}&lt;[{}[]][[]&lt;&gt;]&gt;}([[[]{}][&lt;&gt;&lt;&gt;]])&gt;&lt;&lt;[{{}}{[]&lt;&gt;}]&lt;&lt;{}[]&gt;(()())&gt;&gt;[&lt;[&lt;&gt;&lt;&gt;]{&lt;&gt;()}&gt;([()()]</c>
+                </r>
+                <r>
+                  <c />
+                  <c>{[{([([[[(([{&lt;[]()&gt;([][])}([{}()][{}&lt;&gt;])](&lt;(()[])&lt;[]()&gt;&gt;([[][]])))&lt;(&lt;&lt;(){}&gt;&lt;[]()&gt;&gt;{[{}&lt;&gt;]}}({(()())&lt;[][]&gt;}</c>
+                </r>
+                <r>
+                  <c />
+                  <c>((&lt;(&lt;{(&lt;({(({([][])[[]{}]})&lt;{&lt;&lt;&gt;()&gt;[&lt;&gt;()]}{[[]{}][[][]]}&gt;){&lt;({[][]}&lt;{}{}&gt;)&lt;(&lt;&gt;())&lt;{}[]&gt;&gt;&gt;}}{{&lt;</c>
+                </r>
+                <r>
+                  <c />
+                  <c>([{[&lt;(&lt;(({[[{({}{})[{}&lt;&gt;]}{{&lt;&gt;&lt;&gt;}}]{(&lt;()&lt;&gt;&gt;(&lt;&gt;{}))}][([({}[]){&lt;&gt;[]}]{({})})&lt;[{{}&lt;&gt;}(&lt;&gt;())]{(&lt;&gt;{})((){})}&gt;]}</c>
+                </r>
+                <r>
+                  <c />
+                  <c>{[&lt;&lt;(&lt;&lt;[([[(&lt;[()[]]([]())&gt;{&lt;&lt;&gt;&lt;&gt;&gt;{()()}})[((&lt;&gt;[])&lt;()()&gt;)&lt;(()&lt;&gt;)&lt;{}()&gt;&gt;]][[{[()](())}]]]{&lt;(</c>
+                </r>
+                <r>
+                  <c />
+                  <c>(&lt;(&lt;&lt;{{[[{&lt;(({{}&lt;&gt;}{[]&lt;&gt;}){([]&lt;&gt;){[][]}}){(&lt;{}()&gt;{()})[&lt;&lt;&gt;{}&gt;]}&gt;}({[(&lt;&lt;&gt;[]&gt;([]&lt;&gt;))]&lt;[[[]&lt;&gt;]{[]&lt;&gt;</c>
+                </r>
+                <r>
+                  <c />
+                  <c>{(&lt;&lt;{&lt;&lt;[&lt;{[{[&lt;&lt;&gt;{}&gt;([]{})]({&lt;&gt;[]]{()[]})}{[((){}){&lt;&gt;()}]{&lt;[][]&gt;([]&lt;&gt;)}}]&lt;((&lt;(){}&gt;{()[]}){[&lt;</c>
+                </r>
+                <r>
+                  <c />
+                  <c>&lt;&lt;({({(&lt;[&lt;{{(&lt;(){}&gt;{[]})(&lt;&lt;&gt;&lt;&gt;&gt;&lt;()()&gt;)}}[({([]){&lt;&gt;{}}}{&lt;&lt;&gt;{}&gt;&lt;()&lt;&gt;&gt;})]&gt;(([[(&lt;&gt;()){(){}}]([(){})(&lt;&gt;()))</c>
+                </r>
+                <r>
+                  <c />
+                  <c>{&lt;[{(&lt;([[{([&lt;{[][]}([]{})&gt;][([(){}])([[]&lt;&gt;](()[]))])[({[()&lt;&gt;][[]&lt;&gt;]}([&lt;&gt;&lt;&gt;][&lt;&gt;[]])&gt;]}]((&lt;(((()</c>
+                </r>
+                <r>
+                  <c />
+                  <c>(&lt;[[[[[({&lt;[[&lt;({}&lt;&gt;)&gt;(({}[])[{}()])][&lt;{{}[]}(&lt;&gt;{})&gt;&lt;&lt;[]{}&gt;{[]{}}&gt;]]&lt;&lt;[{[]()}&lt;{}[]&gt;]&lt;([]())[&lt;&gt;&lt;&gt;]&gt;&gt;&gt;&gt;&lt;{&lt;(&lt;[]&lt;&gt;</c>
+                </r>
+                <r>
+                  <c />
+                  <c>([[&lt;(&lt;[{&lt;&lt;&lt;&lt;({[]()}{()()})&gt;&gt;&lt;&lt;{{&lt;&gt;&lt;&gt;}&lt;{}()&gt;}(({}[])&lt;&lt;&gt;&lt;&gt;&gt;)&gt;&lt;({[]{}}{&lt;&gt;[]})&lt;{[]{}}[[][]]&gt;&gt;&gt;&gt;&gt;}(&lt;[{([</c>
+                </r>
+                <r>
+                  <c />
+                  <c>((((({({&lt;{([{{{}()}({}&lt;&gt;)}{&lt;{}[]&gt;&lt;{}()&gt;}][(&lt;&lt;&gt;&lt;&gt;&gt;&lt;&lt;&gt;[]&gt;)[{()&lt;&gt;}]])([[[&lt;&gt;{}][()()]]({&lt;&gt;[]}&lt;()(</c>
+                </r>
+                <r>
+                  <c />
+                  <c>&lt;{[({{{{&lt;{((({()&lt;&gt;}&lt;{}&lt;&gt;&gt;)[&lt;[]{}&gt;]){[&lt;&lt;&gt;[]&gt;[(){}]]})}&lt;([&lt;&lt;{}{}&gt;&gt;{(()()){{}()}}][&lt;&lt;{}[]&gt;[(){}]</c>
+                </r>
+                <r>
+                  <c />
+                  <c>[({(([({{[{[[(()[])&lt;[]()&gt;]([{}[]][(){}])]{[{()[]}([]&lt;&gt;)]&lt;[&lt;&gt;[]][&lt;&gt;()]&gt;}}&lt;(&lt;({}())(&lt;&gt;&lt;&gt;)&gt;(&lt;[]&lt;&gt;&gt;{[]&lt;&gt;}))(({</c>
+                </r>
+                <r>
+                  <c />
+                  <c>((&lt;[&lt;{[{&lt;({{([&lt;&gt;&lt;&gt;]&lt;&lt;&gt;[]&gt;)[[&lt;&gt;()]({}{})]}([{{}&lt;&gt;}[[]()]]{(&lt;&gt;{})({}&lt;&gt;)}]})&lt;&lt;{&lt;[{}][{}]&gt;[{[]</c>
+                </r>
+                <r>
+                  <c />
+                  <c>&lt;(&lt;({(([((&lt;{([&lt;&gt;()]&lt;[][]&gt;)}&lt;{{()&lt;&gt;}([][])}&gt;&gt;)){({[{{[]&lt;&gt;}(&lt;&gt;{})}{{()}&lt;{}&lt;&gt;&gt;}](((()&lt;&gt;)([][]))[{()&lt;&gt;}[()&lt;&gt;]</c>
+                </r>
+                <r>
+                  <c />
+                  <c>&lt;([[({[[[({[[((){})(&lt;&gt;[])]][[((){})[{}{}]]([(){}][()&lt;&gt;])]})[[[(&lt;[]&lt;&gt;&gt;[{}[]])([[][]]&lt;&lt;&gt;{}&gt;)][{&lt;[]{}&gt;{&lt;</c>
+                </r>
+                <r>
+                  <c />
+                  <c>(([&lt;&lt;[{{[&lt;&lt;&lt;&lt;{{}[]}&lt;[]{}&gt;&gt;{[()&lt;&gt;]({}[])}&gt;(({{}})&lt;({}[])&lt;()&lt;&gt;&gt;&gt;)&gt;&gt;]{{[(((()())&lt;[]()&gt;){[()&lt;&gt;]{&lt;&gt;()}}){</c>
+                </r>
+                <r>
+                  <c />
+                  <c>[{&lt;([&lt;({[&lt;([{(&lt;&gt;&lt;&gt;){()()}}{&lt;&lt;&gt;&lt;&gt;&gt;({})]])&lt;{[&lt;[]()&gt;[[]&lt;&gt;]]({[]()}&lt;[]()&gt;)}[[[(){}]((){})][[{}&lt;&gt;](</c>
+                </r>
+                <r>
+                  <c />
+                  <c>[[({{({([({(&lt;{()()}(&lt;&gt;{})&gt;{([]())&lt;[]()&gt;})[([&lt;&gt;[]]{{}()}){([]())[&lt;&gt;&lt;&gt;]}]}{{[([][]}[[]]]{&lt;&lt;&gt;(</c>
+                </r>
+                <r>
+                  <c />
+                  <c>&lt;(&lt;[({&lt;&lt;[([(&lt;{[]&lt;&gt;}(&lt;&gt;())&gt;&lt;([][])({}&lt;&gt;)&gt;)&lt;&lt;{&lt;&gt;()}({}&lt;&gt;)&gt;&lt;&lt;{}&lt;&gt;&gt;{()()}&gt;&gt;]({(&lt;{}[]&gt;([][])){&lt;</c>
+                </r>
+                <r>
+                  <c />
+                  <c>&lt;[&lt;{&lt;(&lt;({(&lt;[{&lt;()[]&gt;{{}[]}}]({[()()](()[])}{({}{})([]&lt;&gt;)})&gt;({([{}[]][&lt;&gt;()])&lt;&lt;&lt;&gt;{}&gt;({}&lt;&gt;)&gt;}))}&lt;[({&lt;[(</c>
+                </r>
+                <r>
+                  <c />
+                  <c>[(&lt;{{&lt;{{(({&lt;&lt;{&lt;&gt;[]}([][])&gt;&gt;&lt;{[&lt;&gt;{}](&lt;&gt;&lt;&gt;)}{[[]()]}&gt;}((&lt;({}{})&lt;()[]&gt;&gt;)[&lt;{&lt;&gt;[]}[{}&lt;&gt;]&gt;]))({([</c>
+                </r>
+                <r>
+                  <c />
+                  <c>[[&lt;[{&lt;(&lt;([([[&lt;()&lt;&gt;&gt;{&lt;&gt;&lt;&gt;}]](&lt;&lt;[]()&gt;&lt;&lt;&gt;&gt;&gt;[[()[]]({}{})]))])&gt;&lt;[((({(()[])&lt;()&lt;&gt;&gt;}[&lt;&lt;&gt;{}&gt;&lt;[][]&gt;])&lt;&lt;{(</c>
+                </r>
+                <r>
+                  <c />
+                  <c>&lt;&lt;{{&lt;[{({&lt;{&lt;[[()&lt;&gt;][{}()&gt;][({}&lt;&gt;)({}&lt;&gt;)]&gt;&lt;&lt;(&lt;&gt;&lt;&gt;)[&lt;&gt;&lt;&gt;]&gt;&gt;}([&lt;{[][]}({}[])&gt;&lt;({}{})&gt;][(&lt;&lt;&gt;()&gt;&lt;</c>
+                </r>
+                <r>
+                  <c />
+                  <c>([[(([[&lt;{(&lt;{{(()()){[][]}}&lt;{{}}[(){}]&gt;}&lt;{[(){}]&lt;{}{}&gt;}&gt;&gt;{{{{[]&lt;&gt;}(&lt;&gt;[])}[&lt;(){}&gt;([]())])[&lt;[&lt;&gt;</c>
+                </r>
+                <r>
+                  <c />
+                  <c>{{(([{({((([[&lt;[]{}&gt;({}[])]({&lt;&gt;})]&lt;[&lt;[]()&gt;&lt;[]&lt;&gt;&gt;]({()&lt;&gt;](&lt;&gt;()))&gt;){{[(&lt;&gt;&lt;&gt;)[{}[]]][&lt;&lt;&gt;{}&gt;({}())]}(&lt;&lt;[][]&gt;(&lt;&gt;()</c>
+                </r>
+                <r>
+                  <c />
+                  <c>({&lt;&lt;{&lt;[{&lt;[(({[&lt;&gt;&lt;&gt;]}{{{}[]}[[]{}]}){{{{}[]}&lt;&lt;&gt;&lt;&gt;&gt;][([]())(())]})[&lt;&lt;[[]&lt;&gt;]&lt;{}{}&gt;&gt;&lt;&lt;{}[]&gt;&lt;{}[]&gt;&gt;&gt;({[&lt;&gt;[]]</c>
+                </r>
+                <r>
+                  <c />
+                  <c>{[&lt;({&lt;(&lt;[&lt;([{{&lt;&gt;{}}{()&lt;&gt;}}([(){}]&lt;[][]&gt;)][(({}[]){()})([[][]]([]()))]&gt;&gt;]&gt;)[&lt;[(({[{{}[]}(()())]{&lt;{}&lt;&gt;&gt;&lt;[][]&gt;}</c>
+                </r>
+                <r>
+                  <c />
+                  <c>[([{&lt;{{&lt;({&lt;[({&lt;&gt;[]}{()()})(&lt;[]{}&gt;[()[]])]{{({}[])&lt;()[]&gt;}[([]&lt;&gt;)((){})]}&gt;})[{&lt;&lt;&lt;[{}[]][(){}]</c>
+                </r>
+                <r>
+                  <c />
+                  <c>{[[{&lt;[&lt;&lt;[{&lt;([[{}[]][{}()]]{[{}[]]{[]{}}})(({()&lt;&gt;}[{}()}){[[]{}]})&gt;[{[&lt;&lt;&gt;{}&gt;]{({}&lt;&gt;)&lt;{}{}&gt;}}&lt;{[[]&lt;&gt;]</c>
+                </r>
+                <r>
+                  <c />
+                  <c>[{{{&lt;([(&lt;[[[(&lt;&lt;&gt;{}&gt;&lt;&lt;&gt;[]&gt;){([]&lt;&gt;){[]&lt;&gt;}}]({[[]&lt;&gt;](&lt;&gt;&lt;&gt;)}({&lt;&gt;{}}{{}()}))]{(({{}{}}&lt;{}[]&gt;}&lt;&lt;&lt;&gt;&gt;&gt;)}]</c>
+                </r>
+                <r>
+                  <c />
+                  <c>{{&lt;({(&lt;(([&lt;{{[()()]&lt;[]&lt;&gt;&gt;}}[&lt;&lt;[]{}&gt;[&lt;&gt;()]&gt;[(()())&lt;&lt;&gt;&gt;]]&gt;&lt;&lt;&lt;{()()][&lt;&gt;&lt;&gt;]&gt;[&lt;&lt;&gt;&lt;&gt;&gt;{()[]}]&gt;{(&lt;()[]&gt;</c>
+                </r>
+                <r>
+                  <c />
+                  <c>{{&lt;([&lt;[[{&lt;({{({}())&lt;{}()&gt;}{&lt;{}()&gt;[[][]]}&gt;)&lt;&lt;[&lt;&lt;&gt;&lt;&gt;&gt;{()[]}]&lt;{[]&lt;&gt;}(()[])&gt;&gt;&gt;&gt;}([{[&lt;{&lt;&gt;{}}({}())&gt;((&lt;&gt;</c>
+                </r>
+                <r>
+                  <c />
+                  <c>[{[(&lt;&lt;(&lt;[[[[({&lt;&gt;()}{&lt;&gt;&lt;&gt;})]([&lt;[][]&gt;&lt;&lt;&gt;&gt;])]{&lt;({{}&lt;&gt;}[{}{}])[&lt;{}&lt;&gt;&gt;&lt;&lt;&gt;&lt;&gt;&gt;]&gt;{[&lt;&lt;&gt;[]&gt;&lt;&lt;&gt;{}&gt;]{[</c>
+                </r>
+                <r>
+                  <c />
+                  <c>((((&lt;{{(&lt;[{{{{()[]}[()&lt;&gt;]}[([]())[&lt;&gt;{}]]}{{[()()]&lt;()&lt;&gt;&gt;}&lt;&lt;&lt;&gt;{}&gt;&lt;[]&gt;&gt;}}&lt;((&lt;&lt;&gt;&gt;)[{[][]}&lt;&lt;&gt;()&gt;])&lt;[&lt;[]{}&gt;(</c>
+                </r>
+                <r>
+                  <c />
+                  <c>&lt;[&lt;&lt;[&lt;{([(&lt;(&lt;(()())(()())&gt;{(()[])&lt;{}()&gt;})({[[]()][[][]]})&gt;&lt;{{{{}&gt;[{}{}]}[&lt;{}()&gt;[(){}]]}{{{()()}{()[</c>
+                </r>
+                <r>
+                  <c />
+                  <c>&lt;&lt;&lt;[(([([{&lt;({&lt;(){}&gt;}{[()[]]{&lt;&gt;[]}})}{[(&lt;[]{}&gt;{{}()})({{}&lt;&gt;})]((&lt;()[]&gt;)&lt;([]&lt;&gt;)&gt;)}}({[{{&lt;&gt;()}{&lt;&gt;()}}(&lt;(){}&gt;[</c>
+                </r>
+                <r>
+                  <c />
+                  <c>{&lt;&lt;(({[[&lt;&lt;&lt;{(({}{}}{&lt;&gt;[]})[{&lt;&gt;()}{()[]}]}(({&lt;&gt;[]}[{}{}]){{(){}}[()&lt;&gt;]})&gt;[[&lt;{[][]}[&lt;&gt;{}]&gt;][[&lt;()&lt;&gt;&gt;&lt;()[]&gt;]{</c>
+                </r>
+                <r>
+                  <c />
+                  <c>(([[&lt;({{{({&lt;[(()[])[[]{}]]&gt;}[{(&lt;[][]&gt;[{}&lt;&gt;]){{[]{}}(&lt;&gt;()]}}({[[]()]}[&lt;[][]&gt;([]())])])}{{[{([{}()](&lt;</c>
+                </r>
+                <r>
+                  <c />
+                  <c>[([&lt;&lt;({(([&lt;&lt;([[]{}]&lt;()()&gt;){&lt;{}&lt;&gt;&gt;[[]{}]}&gt;[[&lt;[]{}&gt;(&lt;&gt;&lt;&gt;)]{{(){}}[&lt;&gt;&lt;&gt;]}]&gt;&lt;({(&lt;&gt;&lt;&gt;)(()())}{{(){}}((){}</c>
+                </r>
+              </Data>
+            </Configuration>
+          </TextInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Input</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Length" source="TextInput:" type="Int16" />
+            <Field name="Field1" size="109" source="TextInput:" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="666" y="78" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Output4</Name>
+          <Abbrev />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Output</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="474" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>tonumber([#1])&gt;[Engine.IterationNumber]</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>tonumber([#1])&gt;[Engine.IterationNumber]</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Length" source="TextInput:" type="Int16" />
+            <Field name="Field1" size="109" source="Formula: Replace([Field1],&quot;[][]&quot;,&quot;&quot;)" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Length" source="TextInput:" type="Int16" />
+            <Field name="Field1" size="109" source="Formula: Replace([Field1],&quot;[][]&quot;,&quot;&quot;)" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.NumericUpDown.NumericUpDown">
+        <Position x="462" y="6" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Numeric Up Down (6)</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="666" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Output7</Name>
+          <Abbrev />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Output</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="6" Connection="Question" />
+      <Destination ToolID="5" Connection="Question" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="1" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="True" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="False" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <Constants>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Numeric Up Down (6)</Name>
+        <Value />
+        <IsNumeric value="True" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Output (7)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+    </Constants>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>AOC_Day_10_Iteration</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="195496bd-dde6-49e4-b73e-298529711042" />
+      <Telemetry>
+        <PreviousWorkflowId value="8f64f607-4167-4a77-83b1-12fe2245b5f0" />
+        <OriginWorkflowId value="8f64f607-4167-4a77-83b1-12fe2245b5f0" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="False" />
+    </Events>
+    <RuntimeProperties>
+      <Actions />
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (3)</Name>
+          <ToolId value="3" />
+          <Questions>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (2)</Name>
+              <ToolId value="2" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (4)</Description>
+              <Name>Macro Output (4)</Name>
+              <ToolId value="4" />
+            </Question>
+            <Question>
+              <Type>NumericUpDown</Type>
+              <Description>Iteration</Description>
+              <Name>Numeric Up Down (6)</Name>
+              <ToolId value="6" />
+              <Minimum value="0" />
+              <Maximum value="100" />
+              <Increment value="1" />
+              <Default value="50" />
+              <Decimals value="0" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (7)</Description>
+              <Name>Macro Output (7)</Name>
+              <ToolId value="7" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <IterativeMacro>
+        <Input>Input2</Input>
+        <Output>Output4</Output>
+        <IterationLimit value="100" />
+        <LimitBehavior>Error</LimitBehavior>
+        <OutputMode>AllSame</OutputMode>
+      </IterativeMacro>
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="4" Selected="True" />
+        <Tool ToolId="7" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>
