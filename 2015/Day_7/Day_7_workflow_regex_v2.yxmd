@@ -1,0 +1,1325 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2024.2" RunE2="T">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="116" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\Users\joshua.burkhow\OneDrive - alteryx.com\GitHub\adventofcode\2015\Day_7\day_7_input.txt</File>
+          <FormatSpecificOptions>
+            <HeaderRow>False</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>\0</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>day_7_input.txt</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="254" source="File: C:\Users\joshua.burkhow\OneDrive - alteryx.com\GitHub\adventofcode\2015\Day_7\day_7_input.txt" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="306" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>Field_1</Field>
+          <ErrorHandling>Last</ErrorHandling>
+          <RootName>
+          </RootName>
+          <Delimeters value="|" />
+          <NumFields value="2" />
+          <Flags value="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="179" y="116" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IF Left([Field_1], 3) = 'NOT' THEN Replace([Field_1],'NOT',' NOT') ELSE [Field_1] ENDIF" field="Field_1" size="254" type="V_String" enabled="false" />
+            <FormulaField expression="REGEX_Replace([Field_1],'(^\d\d+)', '  $1')" field="Field_1" size="254" type="V_String" />
+            <FormulaField expression="IF Left([Field_1], 2) = 'lx' THEN Replace([Field_1],'lx','  lx') ELSE [Field_1] ENDIF" field="Field_1" size="254" type="V_String" />
+            <FormulaField expression="IF Left([Field_1], 1) = '0' THEN Replace([Field_1],'0 ','  0 ') ELSE [Field_1] ENDIF" field="Field_1" size="254" type="V_String" />
+            <FormulaField expression="Replace([Field_1],&quot; -&gt; &quot;,&quot;|&quot;)" field="Field_1" size="254" type="V_String" enabled="true" />
+            <FormulaField expression="TrimLeft([Field_1])" field="Field_1" size="254" type="V_String" enabled="true" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Field_1 = IF Left([Field_1], 3) = 'NOT' THEN Replace([Field_1],'NOT',' NOT') ELS...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="188">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="450" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IF [2]=&quot;a&quot; THEN 1 ELSEIF REGEX_Match([2],&quot;[gefhkdin]&quot;) Then 3 ELSEIF REGEX_Match([1],'\d+') THEN 4 ELSE 2 ENDIF" field="SortOrder" size="2" type="Int16" enabled="true" />
+            <FormulaField expression="&quot;-1&quot;" field="Boolean" size="1073741823" type="V_WString" enabled="true" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>SortOrder = IF [2]="a" THEN 1 ELSEIF REGEX_Match([2],"[gefhkdin]") Then 3 ELSEIF...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="193">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="570" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="1033">
+            <Field field="SortOrder" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>SortOrder - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="200">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="678" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>1</Field>
+          <Delimeters value="\s" />
+          <NumFields value="1" />
+          <Flags value="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="209">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
+        <Position x="906" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldName>RecordID</FieldName>
+          <StartValue>1</StartValue>
+          <FieldType>Int32</FieldType>
+          <FieldSize>6</FieldSize>
+          <Position>0</Position>
+          <GroupFields orderChanged="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
+    </Node>
+    <Node ToolID="210">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="786" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression><![CDATA[[1] NOT IN ("NOT", "OR", "AND", "RSHIFT", "LSHIFT")
+]]></Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[[1] NOT IN ("NOT", "OR", "AND", "RSHIFT", "LSHIFT")
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="215">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="1061" y="101" width="156" height="24" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 215</Caption>
+          <Style TextColor="#314c4a" FillColor="#ffffff" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="208">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.FuzzyMatch.FuzzyMatch">
+            <Position x="1086" y="150" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <RecordIdField>RecordID</RecordIdField>
+              <MatchThreshold value="80" />
+              <OutputScore value="True" />
+              <OutputKey value="True" />
+              <OutputUnmatched value="True" />
+              <OutputMakeGroup value="False" />
+              <GenerateKeys value="False" />
+              <MatchFields>
+                <MatchField>
+                  <FieldName>1</FieldName>
+                  <Style Name="Exact">
+                    <KeyGeneration>
+                      <KeyFunction>WholeFieldUpper</KeyFunction>
+                      <UseWords value="False" />
+                      <IgnoreEmpty value="True" />
+                      <MaxKeyLen value="25" />
+                    </KeyGeneration>
+                    <Match>
+                      <MatchFunction>None</MatchFunction>
+                      <AdditionalMatchFunction>NoSpace</AdditionalMatchFunction>
+                      <WordStats />
+                      <NicknameFile />
+                      <NicknamePenalty value="15" />
+                      <MatchThreshold value="80" />
+                      <MatchWeight value="100" />
+                    </Match>
+                  </Style>
+                </MatchField>
+              </MatchFields>
+              <MergeMode value="False" />
+              <SourceIdField />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFuzzyMatch" />
+        </Node>
+        <Node ToolID="211">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.MakeGroup.MakeGroup">
+            <Position x="1206" y="150" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Key1st>RecordID</Key1st>
+              <Key2nd>RecordID2</Key2nd>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMakeGroup" />
+        </Node>
+        <Node ToolID="212">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="1326" y="162" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="Group" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="RecordID" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="213">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="1458" y="198" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="Key" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="RecordID" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Left_RecordID" selected="False" input="Left_" />
+                    <SelectField field="Right_RecordID" selected="False" rename="Right_RecordID" input="Right_" />
+                    <SelectField field="Right_Field_1" selected="True" rename="Right_Field_1" input="Right_" />
+                    <SelectField field="Right_1" selected="True" rename="Right_1" input="Right_" />
+                    <SelectField field="Right_2" selected="True" rename="Right_2" input="Right_" />
+                    <SelectField field="Right_SortOrder" selected="True" rename="Right_SortOrder" input="Right_" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="214">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="1590" y="198" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>[Group] != [Key]</Expression>
+              <Mode>Custom</Mode>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[Group] != [Key]</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="182">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
+        <Position x="1386" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UpdateField value="False" />
+          <UpdateField_Name>Main</UpdateField_Name>
+          <CreateField_Name>Regex_</CreateField_Name>
+          <CreateField_Type>V_String</CreateField_Type>
+          <CreateField_Size>2147483647</CreateField_Size>
+          <OtherRows>Empty</OtherRows>
+          <NumRows value="1" />
+          <Expression>Replace(IF IsEmpty([Row-1:Regex_]) THEN [Formula] ELSE [Row-1:Regex_] ENDIF,[2],[1])</Expression>
+          <GroupByFields />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Replace(IF IsEmpty([Row-1:Regex_]) THEN [Formula] ELSE [Row-1...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
+    </Node>
+    <Node ToolID="201">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
+        <Position x="1086" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UpdateField value="False" />
+          <UpdateField_Name>Field_1</UpdateField_Name>
+          <CreateField_Name>Formula</CreateField_Name>
+          <CreateField_Type>V_String</CreateField_Type>
+          <CreateField_Size>2147483647</CreateField_Size>
+          <OtherRows>Empty</OtherRows>
+          <NumRows value="1" />
+          <Expression>[Row-1:Formula] + [2] + "=" + [1] + ","</Expression>
+          <GroupByFields />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Row-1:Formula] + [2] + "=" + [1] + ","</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
+    </Node>
+    <Node ToolID="202">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
+        <Position x="1182" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Last</Mode>
+          <N>1</N>
+          <GroupFields orderChanged="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Last 1 rows</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSample" />
+    </Node>
+    <Node ToolID="203">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="1278" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Target_Field_1" selected="False" input="Target_" />
+                <SelectField field="Target_Formula" selected="False" input="Target_" />
+                <SelectField field="Source_RecordID" selected="True" rename="Source_RecordID" input="Source_" />
+                <SelectField field="Source_Field_1" selected="False" rename="Source_Field_1" input="Source_" />
+                <SelectField field="Source_1" selected="False" rename="Source_1" input="Source_" />
+                <SelectField field="Source_2" selected="False" rename="Source_2" input="Source_" />
+                <SelectField field="Source_SortOrder" selected="False" rename="Source_SortOrder" input="Source_" />
+                <SelectField field="Source_Boolean" selected="True" rename="Source_Boolean" input="Source_" />
+                <SelectField field="Source_isNumber" selected="True" rename="Source_isNumber" input="Source_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="218">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="570" y="390" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IF [1_1] = &quot;NOT&quot;&#xA;THEN Replace([1],[1_1]+&quot; &quot;,&quot;&quot;)&#xA;//BinaryNot(Tonumber(Replace([1],[1_1]+&quot; &quot;,&quot;&quot;)))&quot;&#xA;ELSE &quot;&quot;&#xA;ENDIF" field="ReFormattedFormula" size="1073741823" type="V_WString" enabled="true" />
+            <FormulaField expression="IF IsNull([RegExOut1]) THEN [ReFormattedFormula] ELSE [RegExOut1] ENDIF" field="RegExOut1" size="254" type="V_String" enabled="true" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>ReFormattedFormula = IF [1_1] = "NOT"
+THEN Replace([1],[1_1]+" ","")
+//BinaryNot...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="219">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RegEx.RegEx">
+        <Position x="390" y="390" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>1</Field>
+          <RegExExpression value="(?:^|(?&lt;= ))(NOT|OR|AND|LSHIFT|RSHIFT)(?:(?= )|$)" />
+          <CaseInsensitve value="True" />
+          <Method>ParseSimple</Method>
+          <Replace expression="">
+            <CopyUnmatched value="True" />
+          </Replace>
+          <ParseSimple>
+            <SplitToRows value="False" />
+            <RootName>1_</RootName>
+            <NumFields value="1" />
+            <ErrorHandling>Warn</ErrorHandling>
+          </ParseSimple>
+          <ParseComplex>
+            <Field field="RegExOut1" type="V_String" size="254" />
+          </ParseComplex>
+          <Match>
+            <Field>Field_1_Matched</Field>
+            <ErrorUnmatched value="False" />
+          </Match>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRegEx" />
+    </Node>
+    <Node ToolID="220">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RegEx.RegEx">
+        <Position x="474" y="390" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>1</Field>
+          <RegExExpression value="^(\w+)\s(?:^|(?&lt;= ))(NOT|OR|AND|LSHIFT|RSHIFT)(?:(?= )|$)\s(\w+)" />
+          <CaseInsensitve value="True" />
+          <Method>ParseComplex</Method>
+          <Replace expression="">
+            <CopyUnmatched value="True" />
+          </Replace>
+          <ParseSimple>
+            <SplitToRows value="False" />
+            <RootName>1</RootName>
+            <NumFields value="3" />
+            <ErrorHandling>Warn</ErrorHandling>
+          </ParseSimple>
+          <ParseComplex>
+            <Field field="RegExOut1" type="V_String" size="254" />
+            <Field field="RegExOut2" type="V_String" size="254" />
+            <Field field="RegExOut3" type="V_String" size="254" />
+          </ParseComplex>
+          <Match>
+            <Field>Field_1_Matched</Field>
+            <ErrorUnmatched value="False" />
+          </Match>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRegEx" />
+    </Node>
+    <Node ToolID="221">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="654" y="390" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Field_1" selected="False" />
+            <SelectField field="RegExOut2" selected="False" />
+            <SelectField field="ReFormattedFormula" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="222">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="738" y="390" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IF [1_1] = &quot;NOT&quot; THEN &quot;BinaryNot(&quot; + [RegExOut1] + &quot;)&quot;&#xA;ELSEIF [1_1] = &quot;OR&quot; THEN &quot;BinaryOr(&quot; + [RegExOut1] + &quot;,&quot; + [RegExOut3] + &quot;)&quot;&#xA;ELSEIF [1_1] = &quot;AND&quot; THEN &quot;BinaryAnd(&quot; + [RegExOut1] + &quot;,&quot; + [RegExOut3] + &quot;)&quot;&#xA;ELSEIF [1_1] = &quot;RSHIFT&quot; THEN &quot;ShiftRight(&quot; + [RegExOut1] + &quot;,&quot; + [RegExOut3] + &quot;)&quot;&#xA;ELSEIF [1_1] = &quot;LSHIFT&quot; THEN &quot;ShiftLeft(&quot; + [RegExOut1] + &quot;,&quot; + [RegExOut3] + &quot;)&quot;&#xA;ELSE &quot;&quot;&#xA;ENDIF" field="Formula" size="1073741823" type="V_WString" enabled="true" />
+            <FormulaField expression="[RegExOut1] = [2]" field="Boolean" size="1073741823" type="V_WString" enabled="true" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Formula = IF [1_1] = "NOT" THEN "BinaryNot(" + [RegExOut1] + ")"
+ELSEIF [1_1] = ...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="216">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DynamicReplace.DynamicReplace">
+        <Position x="1074" y="390" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field_FieldName>2</Field_FieldName>
+          <Field_OutputValue>Formula</Field_OutputValue>
+          <Field_Expression>Boolean</Field_Expression>
+          <ValueIsExpression value="False" />
+          <Unmatched_Behavior>Warn</Unmatched_Behavior>
+          <FieldTypeMode>Autofield</FieldTypeMode>
+          <OutputFieldType type="Double" size="8" scale="1" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Counts">
+          <RecordInfo>
+            <Field name="FieldName" size="2" source="DynamicReplace:" type="String" />
+            <Field name="OutputValue" size="16" source="DynamicReplace:" type="String" />
+            <Field name="Count" source="DynamicReplace: Count" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field description="TextToColumns: Parsed from Field_1" name="1" size="254" source="TextToColumns: Parsed from Field_1" type="V_String" />
+            <Field description="TextToColumns: Parsed from Field_1" name="2" size="254" source="TextToColumns: Parsed from Field_1" type="V_String" />
+            <Field description="RegEx: Parsed from 1" name="1_1" size="254" source="RegEx: Parsed from 1" type="V_String" />
+            <Field description="RegEx: Parsed from 1" name="RegExOut1" size="254" source="Formula: IF IsNull([RegExOut1]) THEN [ReFormattedFormula] ELSE [RegExOut1] ENDIF" type="V_String" />
+            <Field description="RegEx: Parsed from 1" name="RegExOut3" size="254" source="RegEx: Parsed from 1" type="V_String" />
+            <Field name="Formula" size="1073741823" source="Formula: IF [1_1] = &quot;NOT&quot; THEN &quot;BinaryNot(&quot; + [RegExOut1] + &quot;)&quot;&#xA;ELSEIF [1_1] = &quot;OR&quot; THEN &quot;BinaryOr(&quot; + [RegExOut1] + &quot;,&quot; + [RegExOut3] + &quot;)&quot;&#xA;ELSEIF [1_1] = &quot;AND&quot; THEN &quot;BinaryAnd(&quot; + [RegExOut1] + &quot;,&quot; + [RegExOut3] + &quot;)&quot;&#xA;ELSEIF [1_1] = &quot;RSHIFT&quot; THEN &quot;ShiftRight(&quot; + [RegExOut1] + &quot;,&quot; + [RegExOut3] + &quot;)&quot;&#xA;ELSEIF [1_1] = &quot;LSHIFT&quot; THEN &quot;ShiftLeft(&quot; + [RegExOut1] + &quot;,&quot; + [RegExOut3] + &quot;)&quot;&#xA;ELSE &quot;&quot;&#xA;ENDIF" type="V_WString" />
+            <Field name="Boolean" size="1073741823" source="Formula: [RegExOut1] = [2]" type="V_WString" />
+            <Field description="TextToColumns: Parsed from Field_1" name="Source_1" size="254" source="TextToColumns: Parsed from Field_1" type="V_String" />
+            <Field description="TextToColumns: Parsed from Field_1" name="Source_2" size="254" source="TextToColumns: Parsed from Field_1" type="V_String" />
+            <Field description="RegEx: Parsed from 1" name="Source_1_1" size="254" source="RegEx: Parsed from 1" type="V_String" />
+            <Field description="RegEx: Parsed from 1" name="Source_RegExOut1" size="254" source="Formula: IF IsNull([RegExOut1]) THEN [ReFormattedFormula] ELSE [RegExOut1] ENDIF" type="V_String" />
+            <Field description="RegEx: Parsed from 1" name="Source_RegExOut3" size="254" source="RegEx: Parsed from 1" type="V_String" />
+            <Field name="Source_Formula" size="1073741823" source="Formula: IF [1_1] = &quot;NOT&quot; THEN &quot;BinaryNot(&quot; + [RegExOut1] + &quot;)&quot;&#xA;ELSEIF [1_1] = &quot;OR&quot; THEN &quot;BinaryOr(&quot; + [RegExOut1] + &quot;,&quot; + [RegExOut3] + &quot;)&quot;&#xA;ELSEIF [1_1] = &quot;AND&quot; THEN &quot;BinaryAnd(&quot; + [RegExOut1] + &quot;,&quot; + [RegExOut3] + &quot;)&quot;&#xA;ELSEIF [1_1] = &quot;RSHIFT&quot; THEN &quot;ShiftRight(&quot; + [RegExOut1] + &quot;,&quot; + [RegExOut3] + &quot;)&quot;&#xA;ELSEIF [1_1] = &quot;LSHIFT&quot; THEN &quot;ShiftLeft(&quot; + [RegExOut1] + &quot;,&quot; + [RegExOut3] + &quot;)&quot;&#xA;ELSE &quot;&quot;&#xA;ENDIF" type="V_WString" />
+            <Field name="Source_Boolean" size="1073741823" source="Formula: [RegExOut1] = [2]" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDynamicReplace" />
+    </Node>
+    <Node ToolID="223">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="858" y="390" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Allow</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Source_1" selected="True" rename="Source_1" input="Source_" />
+                <SelectField field="Source_2" selected="True" rename="Source_2" input="Source_" />
+                <SelectField field="Source_1_1" selected="True" rename="Source_1_1" input="Source_" />
+                <SelectField field="Source_RegExOut1" selected="True" rename="Source_RegExOut1" input="Source_" />
+                <SelectField field="Source_RegExOut3" selected="True" rename="Source_RegExOut3" input="Source_" />
+                <SelectField field="Source_Formula" selected="True" rename="Source_Formula" input="Source_" />
+                <SelectField field="Source_Boolean" selected="True" rename="Source_Boolean" input="Source_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="199">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="1553" y="137" width="745" height="267" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 199</Caption>
+          <Style TextColor="#314c4a" FillColor="#ffffff" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="187">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="2214" y="186" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_9072_121db2946b194e44a4c8bf1e25f58fd5_\Engine_9072_d3e6f17923c741c78bd37f6cc3a465e4~.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="190">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
+            <Position x="1578" y="198" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Last</Mode>
+              <N>1</N>
+              <GroupFields orderChanged="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Last 1 rows</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSample" />
+        </Node>
+        <Node ToolID="194">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1662" y="197" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="//Get rid of parentheses around a number&#xA;REGEX_Replace([Regex_],&quot;\((\d+)\)&quot;,&quot;$1&quot;)" field="Solve" size="1073741823" type="V_WString" enabled="true" />
+                <FormulaField expression="[Solve]" field="ParseFormulas" size="1073741823" type="V_WString" enabled="true" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Solve = //Get rid of parentheses around a number
+REGEX_Replace([Regex_],"\((\d+)...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="195">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.RegEx.RegEx">
+            <Position x="1854" y="198" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Field>ParseFormulas</Field>
+              <RegExExpression value="\(\d+\s\w+\s\d+\)" />
+              <CaseInsensitve value="True" />
+              <Method>ParseSimple</Method>
+              <Replace expression="">
+                <CopyUnmatched value="True" />
+              </Replace>
+              <ParseSimple>
+                <SplitToRows value="True" />
+              </ParseSimple>
+              <ParseComplex>
+                <Field field="No Marked Groups Found" type="No Marked Groups Found" size="No Marked Groups Found" />
+              </ParseComplex>
+              <Match>
+                <Field>1_Matched</Field>
+                <ErrorUnmatched value="False" />
+              </Match>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRegEx" />
+        </Node>
+        <Node ToolID="196">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1950" y="198" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="IF Contains([ParseFormulas], &quot;RSHIFT&quot;)&#xA;THEN SHIFTRIGHT(ToNumber(REGEX_Replace([ParseFormulas],&quot;\((\d+)\s(\w+)\s(\d+)\)&quot;,&quot;$1&quot;),0,0,&quot;,&quot;), ToNumber(REGEX_Replace([ParseFormulas],&quot;\((\d+)\s(\w+)\s(\d+)\)&quot;,&quot;$3&quot;),0,0,&quot;,&quot;))&#xA;&#xA;ELSEIF Contains([ParseFormulas], &quot;LSHIFT&quot;)&#xA;THEN ShiftLeft(ToNumber(REGEX_Replace([ParseFormulas],&quot;\((\d+)\s(\w+)\s(\d+)\)&quot;,&quot;$1&quot;),0,0,&quot;,&quot;), ToNumber(REGEX_Replace([ParseFormulas],&quot;\((\d+)\s(\w+)\s(\d+)\)&quot;,&quot;$3&quot;),0,0,&quot;,&quot;))&#xA;&#xA;ELSE [ParseFormulas]&#xA;ENDIF" field="ParseFormulasAnswer" size="2147483647" type="V_String" enabled="true" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>ParseFormulasAnswer = IF Contains([ParseFormulas], "RSHIFT")
+THEN SHIFTRIGHT(ToN...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="197">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="1770" y="198" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="1" selected="False" />
+                <SelectField field="2" selected="False" />
+                <SelectField field="SortOrder" selected="False" />
+                <SelectField field="Regex_" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="198">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
+            <Position x="2082" y="198" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <UpdateField value="False" />
+              <UpdateField_Name>Solve</UpdateField_Name>
+              <CreateField_Name>Solve2</CreateField_Name>
+              <CreateField_Type>V_String</CreateField_Type>
+              <CreateField_Size>2147483647</CreateField_Size>
+              <OtherRows>Empty</OtherRows>
+              <NumRows value="1" />
+              <Expression>Replace([Solve], [ParseFormulas], [ParseFormulasAnswer])</Expression>
+              <GroupByFields />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Replace([Solve], [ParseFormulas], [ParseFormulasAnswer])</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="170">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="689" y="65" width="156" height="24" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 170</Caption>
+          <Style TextColor="#314c4a" FillColor="#ffffff" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="161">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="942" y="115" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>=</Operator>
+                <Field>5</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2022-10-28 12:10:31</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>a</Operand>
+                  <StartDate>2022-10-28 12:10:31</StartDate>
+                  <EndDate>2022-10-28 12:10:31</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[5] = "a"</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="168">
+          <GuiSettings>
+            <Position x="810" y="114" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name>Day_7_workflow_macro (144)</Name>
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro=".\Day_7_workflow_macro.yxmc" />
+        </Node>
+        <Node ToolID="6">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="714" y="115" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="IF [5] = 'b' THEN '3176' ELSEIF isempty([2]) &amp;&amp; IsInteger([3]) THEN [3] ELSE [6] ENDIF" field="6" size="254" type="V_String" />
+                <FormulaField expression="IF [5] = 'b' THEN '3176' ELSE [3] ENDIF" field="3" size="254" type="V_String" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>6 = IF [5] = 'b' THEN '3176' ELSEIF isempty([2]) &amp;&amp; IsInteger([3]) THEN [3] ELSE...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="181">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="677" y="126" width="156" height="24" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 181</Caption>
+          <Style TextColor="#314c4a" FillColor="#ffffff" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="172">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
+            <Position x="702" y="175" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FieldName>RecordID</FieldName>
+              <StartValue>1</StartValue>
+              <FieldType>Int32</FieldType>
+              <FieldSize>6</FieldSize>
+              <Position>0</Position>
+              <GroupFields orderChanged="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
+        </Node>
+        <Node ToolID="174">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="786" y="175" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="4" selected="False" />
+                <SelectField field="6" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="177">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
+            <Position x="990" y="175" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <UpdateField value="False" />
+              <UpdateField_Name>RecordID</UpdateField_Name>
+              <CreateField_Name>RunningList</CreateField_Name>
+              <CreateField_Type>V_String</CreateField_Type>
+              <CreateField_Size>2147483647</CreateField_Size>
+              <OtherRows>Empty</OtherRows>
+              <NumRows value="1" />
+              <Expression>Replace(    
+     Replace(
+        [Row-1:RunningList] + "," + [1] + "," + [3] + ",",
+        ",,", 
+        ","
+    ),
+    ",,,",
+    ","
+)</Expression>
+              <GroupByFields />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Replace(    
+     Replace(
+        [Row-1:RunningList] + "," ...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
+        </Node>
+        <Node ToolID="178">
+          <GuiSettings>
+            <Position x="1098" y="175" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="Check Box (135)">False</Value>
+              <Value name="Check Box (136)">False</Value>
+              <Value name="List Box (11)">"RunningList"</Value>
+              <Value name="Check Box (84)">False</Value>
+              <Value name="Check Box (117)">False</Value>
+              <Value name="Check Box (15)">True</Value>
+              <Value name="Check Box (109)">True</Value>
+              <Value name="Check Box (122)">False</Value>
+              <Value name="Check Box (53)">False</Value>
+              <Value name="Check Box (58)">True</Value>
+              <Value name="Check Box (70)">False</Value>
+              <Value name="Check Box (77)">False</Value>
+              <Value name="Drop Down (81)">upper</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Cleanse.yxmc" />
+        </Node>
+        <Node ToolID="179">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.MultiFieldFormula.MultiFieldFormula">
+            <Position x="894" y="175" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FieldType>Text</FieldType>
+              <Fields orderChanged="False">
+                <Field name="1" />
+                <Field name="2" />
+                <Field name="3" selected="False" />
+                <Field name="5" selected="False" />
+                <Field name="*Unknown" selected="False" />
+              </Fields>
+              <CopyOutput value="False" />
+              <Expression>IF IsEmpty([_CurrentField_]) THEN Null() ELSE [_CurrentField_] ENDIF</Expression>
+              <ChangeFieldType value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>IF IsEmpty([_CurrentField_]) THEN Null() ELSE [_CurrentField_...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiFieldFormula" />
+        </Node>
+        <Node ToolID="180">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1194" y="175" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="IF Contains([RunningList],[5]) THEN -1 ELSE 0 ENDIF" field="Check" size="1" type="Bool" enabled="true" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[Check = IF Contains([RunningList],[5]) THEN -1 ELSE 0 ENDIF
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="188" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="172" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="219" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="188" Connection="Output" />
+      <Destination ToolID="193" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="193" Connection="Output" />
+      <Destination ToolID="200" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="200" Connection="Output" />
+      <Destination ToolID="210" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="209" Connection="Output" />
+      <Destination ToolID="208" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="209" Connection="Output" />
+      <Destination ToolID="212" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="211" Connection="Output" />
+      <Destination ToolID="212" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="209" Connection="Output" />
+      <Destination ToolID="213" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="212" Connection="Join" />
+      <Destination ToolID="213" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="209" Connection="Output" />
+      <Destination ToolID="201" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="210" Connection="True" />
+      <Destination ToolID="209" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="208" Connection="Output" />
+      <Destination ToolID="211" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="213" Connection="Join" />
+      <Destination ToolID="214" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="182" Connection="Output" />
+      <Destination ToolID="190" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="201" Connection="Output" />
+      <Destination ToolID="202" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="201" Connection="Output" />
+      <Destination ToolID="203" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="202" Connection="Output" />
+      <Destination ToolID="203" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="203" Connection="Output" />
+      <Destination ToolID="182" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="218" Connection="Output" />
+      <Destination ToolID="221" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="219" Connection="Output" />
+      <Destination ToolID="220" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="220" Connection="Output" />
+      <Destination ToolID="218" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="221" Connection="Output" />
+      <Destination ToolID="222" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="222" Connection="Output" />
+      <Destination ToolID="223" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="222" Connection="Output" />
+      <Destination ToolID="223" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="223" Connection="Output" />
+      <Destination ToolID="216" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="223" Connection="Output" />
+      <Destination ToolID="216" Connection="Expressions" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="190" Connection="Output" />
+      <Destination ToolID="194" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="194" Connection="Output" />
+      <Destination ToolID="197" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="195" Connection="Output" />
+      <Destination ToolID="196" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="196" Connection="Output" />
+      <Destination ToolID="198" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="197" Connection="Output" />
+      <Destination ToolID="195" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="198" Connection="Output" />
+      <Destination ToolID="187" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="168" Connection="Output1" />
+      <Destination ToolID="161" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="168" Connection="Input155" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="172" Connection="Output" />
+      <Destination ToolID="174" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="174" Connection="Output" />
+      <Destination ToolID="179" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="177" Connection="Output" />
+      <Destination ToolID="178" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="178" Connection="Output26" />
+      <Destination ToolID="180" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="179" Connection="Output" />
+      <Destination ToolID="177" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <RunWithE2 value="True" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="True" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <IsTemplate value="False" />
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Day_7_workflow_regex_v2</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="a350dd71-1800-4c55-a83a-831f945166cb" />
+      <Telemetry>
+        <PreviousWorkflowId value="3245bf94-7825-479e-9cb8-bda432e134c0" />
+        <OriginWorkflowId value="b0ddbdd2-dbdc-461a-971b-9c24703d2594" />
+      </Telemetry>
+      <PlatformWorkflowId value="" />
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

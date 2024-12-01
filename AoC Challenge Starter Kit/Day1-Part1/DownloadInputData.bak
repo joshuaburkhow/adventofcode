@@ -1,0 +1,858 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AlteryxDocument yxmdVer="2022.3">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="368" y="478" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="1" />
+          <Fields>
+            <Field name="day" />
+            <Field name="year" />
+            <Field name="prefix" />
+          </Fields>
+          <Data>
+            <r>
+              <c>1</c>
+              <c>2022</c>
+              <c>test</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="day" source="TextInput:" type="Int32" />
+            <Field name="year" source="TextInput:" type="Int32" />
+            <Field name="prefix" size="2147483647" source="TextInput:" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="440" y="478" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IF &quot;%Question.UseToday%&quot;='True'&#xA;THEN DateTimeDay(DateTimeToday())+1&#xA;ELSE [day]&#xA;ENDIF" field="day" size="4" type="Int32" />
+            <FormulaField expression="IF &quot;%Question.UseToday%&quot;='True'&#xA;THEN DateTimeYear(DateTimeToday())&#xA;ELSE [year]&#xA;ENDIF" field="year" size="4" type="Int32" />
+            <FormulaField expression="&quot;53616c7465645f5fbc33aa45ecd70118340a55fcad4698e9f6f893736dbf2ac26b9e617c52d11a4029395178f96f5bf18608f29698519f5d76fa2c5bb714afae&quot;" field="cookieSession" size="2147483647" type="V_String" />
+            <FormulaField expression="&quot;https://adventofcode.com/&quot; + tostring([year]) + &quot;/day/&quot;+ToString([day])+&quot;/input&quot;" field="url" size="2147483647" type="V_String" />
+            <FormulaField expression="&quot;session=&quot; + [cookieSession]" field="cookie" size="2147483647" type="V_String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="2">
+          <Name />
+          <DefaultAnnotationText>day = IF "%Question.UseToday%"='True'
+THEN DateTimeDay(DateTimeToday())+1
+ELSE [...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="day" source="Formula: IF &quot;True&quot;='True'&#xA;THEN DateTimeDay(DateTimeToday())+1&#xA;ELSE [day]&#xA;ENDIF" type="Int32" />
+            <Field name="year" source="Formula: IF &quot;True&quot;='True'&#xA;THEN DateTimeYear(DateTimeToday())&#xA;ELSE [year]&#xA;ENDIF" type="Int32" />
+            <Field name="prefix" size="2147483647" source="TextInput:" type="V_String" />
+            <Field name="cookieSession" size="2147483647" source="Formula: &quot;53616c7465645f5fbc33aa45ecd70118340a55fcad4698e9f6f893736dbf2ac26b9e617c52d11a4029395178f96f5bf18608f29698519f5d76fa2c5bb714afae&quot;" type="V_String" />
+            <Field name="url" size="2147483647" source="Formula: &quot;https://adventofcode.com/&quot; + tostring([year]) + &quot;/day/&quot;+ToString([day])+&quot;/input&quot;" type="V_String" />
+            <Field name="cookie" size="2147483647" source="Formula: &quot;session=&quot; + [cookieSession]" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxConnectorGui.Download.Download">
+        <Position x="512" y="478" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <URLField>url</URLField>
+          <OutputMode>String</OutputMode>
+          <CodePage>65001</CodePage>
+          <EncodeURLs value="True" />
+          <Headers>
+            <NameValues />
+            <Fields orderChanged="False">
+              <Field name="cookie" />
+              <Field name="day" selected="False" />
+              <Field name="year" selected="False" />
+              <Field name="prefix" selected="False" />
+              <Field name="cookieSession" selected="False" />
+              <Field name="url" selected="False" />
+              <Field name="*Unknown" selected="False" />
+            </Fields>
+          </Headers>
+          <Payload>
+            <HTTPAction>GET</HTTPAction>
+            <QueryStringBodyMode>Compose</QueryStringBodyMode>
+            <ComposeNameValues />
+            <ComposeFields orderChanged="False">
+              <Field name="day" selected="False" />
+              <Field name="year" selected="False" />
+              <Field name="prefix" selected="False" />
+              <Field name="cookieSession" selected="False" />
+              <Field name="url" selected="False" />
+              <Field name="cookie" selected="False" />
+              <Field name="*Unknown" selected="False" />
+            </ComposeFields>
+          </Payload>
+          <numConnections>2</numConnections>
+          <Timeout>600</Timeout>
+          <EnableRPM value="False" />
+          <DcmAdvancedAuth value="False" />
+          <Password />
+          <UserName />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="day" source="Formula: IF &quot;True&quot;='True'&#xA;THEN DateTimeDay(DateTimeToday())+1&#xA;ELSE [day]&#xA;ENDIF" type="Int32" />
+            <Field name="year" source="Formula: IF &quot;True&quot;='True'&#xA;THEN DateTimeYear(DateTimeToday())&#xA;ELSE [year]&#xA;ENDIF" type="Int32" />
+            <Field name="prefix" size="2147483647" source="TextInput:" type="V_String" />
+            <Field name="cookieSession" size="2147483647" source="Formula: &quot;53616c7465645f5fbc33aa45ecd70118340a55fcad4698e9f6f893736dbf2ac26b9e617c52d11a4029395178f96f5bf18608f29698519f5d76fa2c5bb714afae&quot;" type="V_String" />
+            <Field name="url" size="2147483647" source="Formula: &quot;https://adventofcode.com/&quot; + tostring([year]) + &quot;/day/&quot;+ToString([day])+&quot;/input&quot;" type="V_String" />
+            <Field name="cookie" size="2147483647" source="Formula: &quot;session=&quot; + [cookieSession]" type="V_String" />
+            <Field name="DownloadData" size="1073741823" source="Download" type="V_WString" />
+            <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxConnectorEngine.dll" EngineDllEntryPoint="AlteryxDownload" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Message.Message">
+        <Position x="584" y="478" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <When>Filter</When>
+          <Filter>!Contains([DownloadHeaders],"200")</Filter>
+          <Type>Warning</Type>
+          <Priority>High</Priority>
+          <Transient>False</Transient>
+          <MessageExpression>[DownloadHeaders]</MessageExpression>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="day" source="Formula: IF &quot;True&quot;='True'&#xA;THEN DateTimeDay(DateTimeToday())+1&#xA;ELSE [day]&#xA;ENDIF" type="Int32" />
+            <Field name="year" source="Formula: IF &quot;True&quot;='True'&#xA;THEN DateTimeYear(DateTimeToday())&#xA;ELSE [year]&#xA;ENDIF" type="Int32" />
+            <Field name="prefix" size="2147483647" source="TextInput:" type="V_String" />
+            <Field name="cookieSession" size="2147483647" source="Formula: &quot;53616c7465645f5fbc33aa45ecd70118340a55fcad4698e9f6f893736dbf2ac26b9e617c52d11a4029395178f96f5bf18608f29698519f5d76fa2c5bb714afae&quot;" type="V_String" />
+            <Field name="url" size="2147483647" source="Formula: &quot;https://adventofcode.com/&quot; + tostring([year]) + &quot;/day/&quot;+ToString([day])+&quot;/input&quot;" type="V_String" />
+            <Field name="cookie" size="2147483647" source="Formula: &quot;session=&quot; + [cookieSession]" type="V_String" />
+            <Field name="DownloadData" size="1073741823" source="Download" type="V_WString" />
+            <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMessage" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="656" y="478" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="DownloadData" selected="True" rename="data" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="data" size="1073741823" source="Download" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="726" y="474" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>data</Field>
+          <Delimeters value="\n" />
+          <NumFields value="1" />
+          <Flags value="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field description="TextToColumns: Parsed from data" name="data" size="1073741823" source="TextToColumns: Parsed from data" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="368" y="538" width="432" height="36" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Download Data</Text>
+          <Font name="Microsoft Sans Serif" size="14.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="3" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="1014" y="486" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Output11</Name>
+          <Abbrev />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Output</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.RadioButtonGroup.RadioButtonGroup">
+        <Position x="54" y="57" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name>UseToday</Name>
+          <DefaultAnnotationText>UseToday</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.RadioButtonGroup.RadioButtonGroup">
+        <Position x="54" y="129" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Radio Button (19)</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="21">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="726" y="582" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="ToString([year])+'_'+[prefix]+PadLeft(ToString([day]), 2, '0')" field="filename" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[filename = ToString([year])+'_'+[prefix]+PadLeft(ToString([day]), 2, '0')
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="day" source="Formula: IF &quot;True&quot;='True'&#xA;THEN DateTimeDay(DateTimeToday())+1&#xA;ELSE [day]&#xA;ENDIF" type="Int32" />
+            <Field name="year" source="Formula: IF &quot;True&quot;='True'&#xA;THEN DateTimeYear(DateTimeToday())&#xA;ELSE [year]&#xA;ENDIF" type="Int32" />
+            <Field name="prefix" size="2147483647" source="TextInput:" type="V_String" />
+            <Field name="cookieSession" size="2147483647" source="Formula: &quot;53616c7465645f5fbc33aa45ecd70118340a55fcad4698e9f6f893736dbf2ac26b9e617c52d11a4029395178f96f5bf18608f29698519f5d76fa2c5bb714afae&quot;" type="V_String" />
+            <Field name="url" size="2147483647" source="Formula: &quot;https://adventofcode.com/&quot; + tostring([year]) + &quot;/day/&quot;+ToString([day])+&quot;/input&quot;" type="V_String" />
+            <Field name="cookie" size="2147483647" source="Formula: &quot;session=&quot; + [cookieSession]" type="V_String" />
+            <Field name="filename" size="1073741823" source="Formula: ToString([year])+'_'+[prefix]+PadLeft(ToString([day]), 2, '0')" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="23">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="822" y="486" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Source_day" selected="False" input="Source_" />
+                <SelectField field="Source_year" selected="False" input="Source_" />
+                <SelectField field="Source_prefix" selected="False" input="Source_" />
+                <SelectField field="Source_cookieSession" selected="False" input="Source_" />
+                <SelectField field="Source_url" selected="False" input="Source_" />
+                <SelectField field="Source_cookie" selected="False" input="Source_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field description="TextToColumns: Parsed from data" name="data" size="1073741823" source="TextToColumns: Parsed from data" type="V_WString" />
+            <Field name="filename" size="1073741823" source="Formula: ToString([year])+'_'+[prefix]+PadLeft(ToString([day]), 2, '0')" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="1014" y="582" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>day info</Name>
+          <Abbrev />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Output</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="822" y="582" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="cookieSession" selected="False" />
+            <SelectField field="url" selected="False" />
+            <SelectField field="cookie" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="day" source="Formula: IF &quot;True&quot;='True'&#xA;THEN DateTimeDay(DateTimeToday())+1&#xA;ELSE [day]&#xA;ENDIF" type="Int32" />
+            <Field name="year" source="Formula: IF &quot;True&quot;='True'&#xA;THEN DateTimeYear(DateTimeToday())&#xA;ELSE [year]&#xA;ENDIF" type="Int32" />
+            <Field name="prefix" size="2147483647" source="TextInput:" type="V_String" />
+            <Field name="filename" size="1073741823" source="Formula: ToString([year])+'_'+[prefix]+PadLeft(ToString([day]), 2, '0')" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="269" y="54" width="635" height="277" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Macro Inputs</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="9">
+          <GuiSettings Plugin="AlteryxGuiToolkit.Questions.NumericUpDown.NumericUpDown">
+            <Position x="294" y="103" width="59" height="59" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Numeric Up Down (9)</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="10">
+          <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
+            <Position x="306" y="247" width="59" height="59" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Update Value</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="12">
+          <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
+            <Position x="558" y="103" width="59" height="59" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>Get the cookie session ID by going to https://adventofcode.com/2022/day/1/input and looking at cookies in Chrome Dev tools</AnnotationText>
+              <DefaultAnnotationText>Text Box (12)</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="13">
+          <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
+            <Position x="570" y="247" width="59" height="59" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Update Value</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="15">
+          <GuiSettings Plugin="AlteryxGuiToolkit.Questions.NumericUpDown.NumericUpDown">
+            <Position x="426" y="103" width="59" height="59" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Numeric Up Down (9)</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="16">
+          <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
+            <Position x="438" y="247" width="59" height="59" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Update Value</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="20">
+          <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
+            <Position x="726" y="103" width="59" height="59" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>Text Box (20)</AnnotationText>
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="22">
+          <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
+            <Position x="738" y="247" width="59" height="59" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>Update Value</AnnotationText>
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="13" Connection="Action" />
+      <Destination ToolID="2" Connection="Action" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="21" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="23" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="21" Connection="Output" />
+      <Destination ToolID="23" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="21" Connection="Output" />
+      <Destination ToolID="25" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="23" Connection="Output" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Output" />
+      <Destination ToolID="24" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="9" Connection="Question" />
+      <Destination ToolID="10" Connection="Question" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="10" Connection="Action" />
+      <Destination ToolID="1" Connection="Action" />
+    </Connection>
+    <Connection name="#3">
+      <Origin ToolID="16" Connection="Action" />
+      <Destination ToolID="1" Connection="Action" />
+    </Connection>
+    <Connection name="#4">
+      <Origin ToolID="22" Connection="Action" />
+      <Destination ToolID="1" Connection="Action" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="12" Connection="Question" />
+      <Destination ToolID="13" Connection="Question" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="15" Connection="Question" />
+      <Destination ToolID="16" Connection="Question" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="20" Connection="Question" />
+      <Destination ToolID="22" Connection="Question" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <RunWithE2 value="True" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <Constants>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Text Box (12)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>UseToday</Name>
+        <Value>True</Value>
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Numeric Up Down (9)</Name>
+        <Value />
+        <IsNumeric value="True" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Numeric Up Down (15)</Name>
+        <Value />
+        <IsNumeric value="True" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Radio Button (19)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Text Box (20)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Output (24)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+    </Constants>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>DownloadInputData</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="dde7bc7e-632b-4b12-a3fd-91b140a5f8ab" />
+      <Telemetry>
+        <PreviousWorkflowId value="0f1c0186-b04e-4070-97ee-7d44728f268c" />
+        <OriginWorkflowId value="6d45e6aa-483e-4dfc-911d-d8877a4a72d3" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+    <RuntimeProperties>
+      <Actions>
+        <NoCondition>
+          <Type>NoCondition</Type>
+          <Description>(Always Run)</Description>
+          <True>
+            <Action>
+              <Type>Dynamic</Type>
+              <Description />
+              <ToolId value="10" />
+              <Expression>{{INPUT}}</Expression>
+              <Destination>1/Data/r[1]/c[1]</Destination>
+              <Mapping>Update Cell</Mapping>
+              <Mode>Expression</Mode>
+              <DynamicConfiguration>row	1
+column	1</DynamicConfiguration>
+              <DefaultConfiguration value="True" />
+            </Action>
+            <Action>
+              <Type>UpdateValue</Type>
+              <Description />
+              <ToolId value="13" />
+              <Mode>Simple</Mode>
+              <Variable />
+              <Replace value="True" />
+              <ReplaceText>53616c7465645f5fbc33aa45ecd70118340a55fcad4698e9f6f893736dbf2ac26b9e617c52d11a4029395178f96f5bf18608f29698519f5d76fa2c5bb714afae</ReplaceText>
+              <Destination>2/FormulaFields/FormulaField[@field='cookieSession']/@expression</Destination>
+            </Action>
+            <Action>
+              <Type>Dynamic</Type>
+              <Description />
+              <ToolId value="16" />
+              <Expression>{{INPUT}}</Expression>
+              <Destination>1/Data/r[1]/c[2]</Destination>
+              <Mapping>Update Cell</Mapping>
+              <Mode>Expression</Mode>
+              <DynamicConfiguration>row	1
+column	2</DynamicConfiguration>
+              <DefaultConfiguration value="False" />
+            </Action>
+            <Action>
+              <Type>Dynamic</Type>
+              <Description />
+              <ToolId value="22" />
+              <Expression>{{INPUT}}</Expression>
+              <Destination>1/Data/r[1]/c[3]</Destination>
+              <Mapping>Update Cell</Mapping>
+              <Mode>Expression</Mode>
+              <DynamicConfiguration>row	1
+column	3</DynamicConfiguration>
+              <DefaultConfiguration value="False" />
+            </Action>
+          </True>
+        </NoCondition>
+      </Actions>
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (8)</Name>
+          <ToolId value="8" />
+          <Questions>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (11)</Description>
+              <Name>Macro Output (11)</Name>
+              <ToolId value="11" />
+            </Question>
+            <Question>
+              <Type>TextBox</Type>
+              <Description>Cookie Session</Description>
+              <Name>Text Box (12)</Name>
+              <ToolId value="12" />
+              <Default>xxxx</Default>
+              <Password value="False" />
+              <Multiline value="False" />
+              <Hidden value="False" />
+            </Question>
+            <Question>
+              <Type>RadioGroup</Type>
+              <Description>Today (PT, MT, CT)</Description>
+              <Name>UseToday</Name>
+              <ToolId value="18" />
+              <Questions />
+              <Default value="True" />
+              <Collapsable value="False" />
+            </Question>
+            <Question>
+              <Type>RadioGroup</Type>
+              <Description>Custom</Description>
+              <Name>Radio Button (19)</Name>
+              <ToolId value="19" />
+              <Questions>
+                <Question>
+                  <Type>NumericUpDown</Type>
+                  <Description>Day Number</Description>
+                  <Name>Numeric Up Down (9)</Name>
+                  <ToolId value="9" />
+                  <Minimum value="1" />
+                  <Maximum value="25" />
+                  <Increment value="1" />
+                  <Default value="1" />
+                  <Decimals value="0" />
+                </Question>
+                <Question>
+                  <Type>NumericUpDown</Type>
+                  <Description>Year Number</Description>
+                  <Name>Numeric Up Down (15)</Name>
+                  <ToolId value="15" />
+                  <Minimum value="2021" />
+                  <Maximum value="2050" />
+                  <Increment value="1" />
+                  <Default value="2022" />
+                  <Decimals value="0" />
+                </Question>
+              </Questions>
+              <Default value="False" />
+              <Collapsable value="True" />
+            </Question>
+            <Question>
+              <Type>TextBox</Type>
+              <Description>Output filename prefix</Description>
+              <Name>Text Box (20)</Name>
+              <ToolId value="20" />
+              <Default>AoC_Input_Day_</Default>
+              <Password value="False" />
+              <Multiline value="False" />
+              <Hidden value="False" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (24)</Description>
+              <Name>Macro Output (24)</Name>
+              <ToolId value="24" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImage>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</MacroImage>
+      <MacroInputs />
+      <MacroOutputs />
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools />
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>

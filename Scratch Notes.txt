@@ -1,0 +1,6 @@
+//Given the value of 'x=' it will return the other side of the equation 
+(?<=\bx=\b)[^,]+
+
+In this example: 1=x,x=y,y=z it will provide 'y'
+
+	
