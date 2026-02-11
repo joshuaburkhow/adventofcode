@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<AlteryxDocument yxmdVer="2024.2" RunE2="T">
+<AlteryxDocument yxmdVer="2025.2" RunE2="T">
   <Nodes>
     <Node ToolID="35">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
@@ -151,11 +151,11 @@ AoC Day X.yxmd</AnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Value name="Text Box (12)">53616c7465645f5f1fb27211cd5e5a198b9ec6a2d3153fdb12b00f0897d989076c907e1f540297f6ba35eb1d02e6c415e0d6ef53ae9ffa0da0f2655502b3655a</Value>
+          <Value name="Text Box (12)">53616c7465645f5f1991c9061b71a169ab5eabc0c73babd0754b051348ed088cc2e670a3dc26846f549443242bfb6d440d262c537dcefb3d87d58e1c57c546a6</Value>
           <Value name="UseToday">False</Value>
           <Value name="Radio Button (19)">True</Value>
-          <Value name="Numeric Up Down (9)">1</Value>
-          <Value name="Numeric Up Down (15)">2024</Value>
+          <Value name="Numeric Up Down (9)">4</Value>
+          <Value name="Numeric Up Down (15)">2025</Value>
           <Value name="Text Box (20)">AoC_Input_Day_</Value>
         </Configuration>
         <Annotation DisplayMode="0">
@@ -283,6 +283,7 @@ AoC Day X.yxmd</AnnotationText>
                 <HeaderRow>True</HeaderRow>
                 <CodePage>65001</CodePage>
                 <WriteBOM>True</WriteBOM>
+                <SuppressBlankFile>False</SuppressBlankFile>
               </FormatSpecificOptions>
               <MultiFile value="True" />
               <MultiFileType>FileName</MultiFileType>
@@ -354,6 +355,7 @@ AoC Day X.yxmd</AnnotationText>
     <DisableBrowse value="False" />
     <EnablePerformanceProfiling value="False" />
     <RunWithE2 value="True" />
+    <DefaultTZ value="Local" />
     <PredictiveToolsCodePage value="1252" />
     <DisableAllOutput value="False" />
     <ShowAllMacroMessages value="False" />
